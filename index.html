@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0B0B12">
+<meta name="description" content="Crea videos virales con inteligencia artificial: ideas, guiones, ganchos, títulos, hashtags y más. Todo gratis.">
+<title>Viral AI Studio Pro</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<style>
+:root{
+  --bg:#0B0B12;--card:#15151F;--card2:#1C1C29;--line:#2A2A38;--txt:#F3F3F8;--mut:#A7A7B8;
+  --acc:#FF4458;--acc2:#FF7A45;--ok:#2BD48A;--rad:18px;
+  --grad:linear-gradient(135deg,#FF4458 0%,#FF7A45 100%);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--txt);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Inter,sans-serif;font-size:16px}
+body{padding-bottom:calc(84px + env(safe-area-inset-bottom))}
+button,input,select,textarea{font:inherit;color:inherit}
+a{color:#FF8A99}
+header{position:sticky;top:0;z-index:5;background:rgba(11,11,18,.92);backdrop-filter:blur(12px);padding:calc(12px + env(safe-area-inset-top)) 18px 12px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--line)}
+header img{width:38px;height:38px;border-radius:10px}
+header h1{font-size:18px;margin:0;letter-spacing:.2px}
+.pro{font-size:11px;font-weight:800;background:var(--grad);color:#111;padding:3px 8px;border-radius:99px;margin-left:6px;vertical-align:middle}
+header .sp{flex:1}
+.iconbtn{background:var(--card);border:1px solid var(--line);border-radius:12px;min-width:44px;height:44px;display:grid;place-items:center;cursor:pointer}
+main{max-width:760px;margin:0 auto;padding:16px}
+.view{display:none}.view.on{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.hero{background:radial-gradient(120% 120% at 0% 0%,#2a1220 0%,var(--card) 60%);border:1px solid var(--line);border-radius:22px;padding:20px;margin-bottom:16px}
+.hero h2{margin:0 0 6px;font-size:22px}
+.hero p{margin:0;color:var(--mut);line-height:1.45}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tool{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:16px;text-align:left;cursor:pointer;min-height:120px;display:flex;flex-direction:column;gap:8px;transition:transform .12s,border-color .12s}
+.tool:active{transform:scale(.98)}
+.tool:hover{border-color:#3d3d52}
+.tool svg{width:28px;height:28px;stroke:var(--acc)}
+.tool b{font-size:15px}
+.tool span{font-size:13px;color:var(--mut);line-height:1.35}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:16px;margin-bottom:14px}
+.card h3{margin:0 0 4px;font-size:18px}
+.sub{color:var(--mut);font-size:14px;margin:0 0 14px;line-height:1.4}
+label{display:block;font-size:13px;color:var(--mut);margin:12px 0 6px;font-weight:600}
+input,select,textarea{width:100%;background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:13px 14px;outline:none;min-height:48px}
+textarea{min-height:96px;resize:vertical}
+input:focus,select:focus,textarea:focus{border-color:var(--acc)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.chip{background:var(--card2);border:1px solid var(--line);border-radius:99px;padding:9px 14px;cursor:pointer;font-size:14px;min-height:40px}
+.chip.on{background:var(--grad);color:#111;border-color:transparent;font-weight:700}
+.btn{width:100%;border:0;border-radius:14px;padding:15px;font-weight:800;font-size:16px;cursor:pointer;background:var(--grad);color:#111;margin-top:16px;min-height:52px;display:flex;align-items:center;justify-content:center;gap:10px}
+.btn.ghost{background:var(--card2);color:var(--txt);border:1px solid var(--line);font-weight:700}
+.btn:disabled{opacity:.6}
+.out{margin-top:16px;display:none}
+.out.on{display:block}
+.result{background:#101018;border:1px solid var(--line);border-radius:14px;padding:16px;white-space:pre-wrap;line-height:1.55;font-size:15px;max-height:none;overflow:auto}
+.result h4{margin:14px 0 6px;color:#FF8A99}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.actions button{flex:1 1 auto;min-width:96px;background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:11px 12px;cursor:pointer;font-weight:600;font-size:14px;min-height:44px}
+.spin{width:20px;height:20px;border:3px solid rgba(0,0,0,.25);border-top-color:#111;border-radius:50%;animation:sp 0.8s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+nav{position:fixed;left:0;right:0;bottom:0;background:rgba(15,15,23,.96);backdrop-filter:blur(12px);border-top:1px solid var(--line);display:flex;justify-content:space-around;padding:8px 6px calc(8px + env(safe-area-inset-bottom));z-index:10}
+nav button{background:none;border:0;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:11px;color:var(--mut);cursor:pointer;min-width:64px;min-height:52px;justify-content:center}
+nav button svg{width:24px;height:24px;stroke:currentColor}
+nav button.on{color:var(--acc)}
+.chat{display:flex;flex-direction:column;gap:10px;margin-bottom:12px}
+.msg{max-width:88%;padding:12px 14px;border-radius:16px;line-height:1.5;white-space:pre-wrap;font-size:15px}
+.msg.u{align-self:flex-end;background:var(--grad);color:#111;border-bottom-right-radius:4px}
+.msg.a{align-self:flex-start;background:var(--card);border:1px solid var(--line);border-bottom-left-radius:4px}
+.chatbar{display:flex;gap:8px;position:sticky;bottom:calc(84px + env(safe-area-inset-bottom))}
+.chatbar textarea{min-height:52px;height:52px}
+.chatbar button{width:56px;flex:0 0 56px;margin:0;border-radius:14px}
+.lib-item{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:10px}
+.lib-item .meta{font-size:12px;color:var(--mut);margin-bottom:6px;display:flex;gap:8px;align-items:center}
+.lib-item .tag{background:var(--card2);border:1px solid var(--line);padding:2px 8px;border-radius:99px}
+.lib-item .prev{font-size:14px;line-height:1.45;color:#ddd;max-height:4.4em;overflow:hidden}
+.empty{color:var(--mut);text-align:center;padding:40px 10px}
+.toast{position:fixed;left:50%;bottom:110px;transform:translateX(-50%) translateY(20px);background:#fff;color:#111;padding:12px 18px;border-radius:12px;font-weight:700;opacity:0;transition:.25s;z-index:50;pointer-events:none;max-width:90%;text-align:center}
+.toast.on{opacity:1;transform:translateX(-50%)}
+.badge{display:inline-flex;align-items:center;gap:6px;font-size:12px;padding:5px 10px;border-radius:99px;background:rgba(43,212,138,.12);color:var(--ok);border:1px solid rgba(43,212,138,.35);font-weight:700}
+.badge.warn{background:rgba(255,68,88,.12);color:#FF8A99;border-color:rgba(255,68,88,.35)}
+.steps{margin:0;padding-left:20px;line-height:1.6;color:#ddd}
+.feat{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid var(--line)}
+.feat:last-child{border:0}
+.feat i{font-style:normal;color:var(--ok);font-weight:900}
+.switch{display:flex;justify-content:space-between;align-items:center;padding:10px 0}
+.small{font-size:12px;color:var(--mut);line-height:1.4}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.7);display:none;align-items:flex-end;justify-content:center;z-index:40}
+.modal.on{display:flex}
+.sheet{background:var(--card);border:1px solid var(--line);border-radius:22px 22px 0 0;padding:20px 18px calc(20px + env(safe-area-inset-bottom));width:100%;max-width:760px;max-height:88vh;overflow:auto}
+.tp{position:fixed;inset:0;background:#000;z-index:60;display:none;flex-direction:column}
+.tp.on{display:flex}
+.tp .txt{flex:1;overflow:hidden;padding:30vh 24px;font-size:34px;line-height:1.5;font-weight:700;text-align:center}
+.tp .bar{display:flex;gap:8px;padding:12px;background:#111}
+.tp .bar button{flex:1;min-height:48px;border-radius:12px;border:1px solid #333;background:#1a1a1a;font-weight:700;cursor:pointer}
+@media (min-width:640px){.grid{grid-template-columns:1fr 1fr 1fr}}
+</style>
+</head>
+<body>
+<header>
+  <img src="icon-192.png" alt="">
+  <h1>Viral AI Studio <span class="pro">PRO</span></h1>
+  <div class="sp"></div>
+  <button class="iconbtn" aria-label="Ajustes" onclick="go('settings')">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+  </button>
+</header>
+
+<main>
+<!-- HOME -->
+<section class="view on" id="v-home">
+  <div class="hero">
+    <h2>Crea videos que se vuelven virales</h2>
+    <p>Ideas, guiones, ganchos, títulos y hashtags con inteligencia artificial. Todas las funciones PRO desbloqueadas, gratis y sin anuncios.</p>
+    <div style="margin-top:12px" id="aiStatus"></div>
+  </div>
+  <div class="grid" id="toolGrid"></div>
+</section>
+
+<!-- TOOL (generic) -->
+<section class="view" id="v-tool">
+  <div class="card">
+    <h3 id="tTitle"></h3>
+    <p class="sub" id="tSub"></p>
+    <div id="tForm"></div>
+    <button class="btn" id="tGo" onclick="runTool()">Generar con IA</button>
+    <div class="out" id="tOut">
+      <div class="result" id="tRes"></div>
+      <div class="actions">
+        <button onclick="copyRes()">Copiar</button>
+        <button onclick="saveRes()">Guardar</button>
+        <button onclick="shareRes()">Compartir</button>
+        <button onclick="speakRes()" id="spkBtn">Escuchar</button>
+        <button onclick="openTP()">Teleprompter</button>
+        <button onclick="exportRes()">Exportar .txt</button>
+        <button onclick="runTool()">Otra versión</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAT -->
+<section class="view" id="v-chat">
+  <div class="card" style="margin-bottom:12px">
+    <h3>Asistente creador</h3>
+    <p class="sub" style="margin:0">Pregúntale lo que quieras sobre tu canal, tus videos o cómo crecer.</p>
+  </div>
+  <div class="chat" id="chatBox"></div>
+  <div class="chatbar">
+    <textarea id="chatIn" placeholder="Escribe tu mensaje…" aria-label="Mensaje"></textarea>
+    <button class="btn" onclick="sendChat()" aria-label="Enviar">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg>
+    </button>
+  </div>
+</section>
+
+<!-- LIBRARY -->
+<section class="view" id="v-lib">
+  <div class="card" style="display:flex;gap:10px;align-items:center">
+    <div style="flex:1"><h3>Biblioteca</h3><p class="sub" style="margin:0">Todo lo que guardaste, en tu teléfono.</p></div>
+  </div>
+  <input id="libSearch" placeholder="Buscar en tu biblioteca…" oninput="renderLib()" aria-label="Buscar" style="margin-bottom:12px">
+  <div id="libList"></div>
+</section>
+
+<!-- PRO -->
+<section class="view" id="v-pro">
+  <div class="hero">
+    <h2>Todo PRO, gratis</h2>
+    <p>No hay pagos, ni suscripciones, ni anuncios. Todas las funciones premium están activas para ti.</p>
+  </div>
+  <div class="card" id="proList"></div>
+</section>
+
+<!-- SETTINGS -->
+<section class="view" id="v-settings">
+  <div class="card">
+    <h3>Conecta la IA (gratis)</h3>
+    <p class="sub">La app usa Gemini de Google. Crear tu clave es gratis y no pide tarjeta.</p>
+    <ol class="steps">
+      <li>Entra a <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">aistudio.google.com/apikey</a></li>
+      <li>Inicia sesión con tu cuenta de Google</li>
+      <li>Toca <b>Crear clave de API</b> y cópiala</li>
+      <li>Pégala aquí abajo y toca Guardar</li>
+    </ol>
+    <label for="apiKey">Clave de API de Gemini</label>
+    <input id="apiKey" type="password" placeholder="AIza…" autocomplete="off">
+    <button class="btn" onclick="saveKey()">Guardar y probar</button>
+    <p class="small" style="margin-top:10px">Tu clave se guarda solo en este teléfono. Sin clave, la app funciona en <b>modo básico</b> con plantillas.</p>
+  </div>
+  <div class="card">
+    <h3>Preferencias</h3>
+    <label for="lang">Idioma del contenido</label>
+    <select id="lang" onchange="savePrefs()">
+      <option>Español</option><option>English</option><option>Português</option>
+    </select>
+    <label for="model">Modelo de IA</label>
+    <select id="model" onchange="savePrefs()">
+      <option value="gemini-flash-latest">Gemini Flash (recomendado)</option>
+      <option value="gemini-flash-lite-latest">Gemini Flash-Lite (más rápido)</option>
+      <option value="gemini-2.5-flash">Gemini 2.5 Flash</option>
+    </select>
+    <label for="niche">Tu nicho principal</label>
+    <input id="niche" placeholder="Ej: curiosidades, terror, motivación" onchange="savePrefs()">
+  </div>
+  <div class="card">
+    <h3>Datos</h3>
+    <button class="btn ghost" onclick="exportAll()">Exportar mi biblioteca</button>
+    <button class="btn ghost" onclick="clearAll()">Borrar todos mis datos</button>
+    <p class="small" style="margin-top:12px"><a href="privacy.html">Política de privacidad</a> · Versión 1.0.0</p>
+  </div>
+</section>
+</main>
+
+<nav>
+  <button class="on" data-v="home" onclick="go('home')"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Inicio</button>
+  <button data-v="chat" onclick="go('chat')"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Chat IA</button>
+  <button data-v="lib" onclick="go('lib')"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>Biblioteca</button>
+  <button data-v="pro" onclick="go('pro')"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 3 7h7l-5.5 4.5L18.5 21 12 16.5 5.5 21l2-7.5L2 9h7z"/></svg>PRO</button>
+</nav>
+
+<div class="modal" id="tpSet"></div>
+<div class="tp" id="tp">
+  <div class="txt" id="tpTxt"></div>
+  <div class="bar">
+    <button onclick="tpSpeed(-1)">Más lento</button>
+    <button onclick="tpToggle()" id="tpPlay">Pausa</button>
+    <button onclick="tpSpeed(1)">Más rápido</button>
+    <button onclick="closeTP()">Cerrar</button>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+// ---------- icons ----------
+const IC={
+ idea:'<path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/>',
+ script:'<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h6"/>',
+ hook:'<path d="M13 2 3 14h9l-1 8 10-12h-9z"/>',
+ title:'<path d="M4 7V4h16v3M9 20h6M12 4v16"/>',
+ tag:'<path d="M4 9h16M4 15h16M10 3 8 21M16 3l-2 18"/>',
+ img:'<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/>',
+ cal:'<rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>',
+ story:'<path d="M2 4h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 4h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>',
+ thumb:'<rect x="2" y="5" width="20" height="14" rx="2"/><path d="m10 9 5 3-5 3z"/>',
+ rewrite:'<path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/>',
+ trend:'<path d="m23 6-9.5 9.5-5-5L1 18"/><path d="M17 6h6v6"/>',
+ bio:'<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>'
+};
+const svg=k=>`<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${IC[k]}</svg>`;
+
+// ---------- state ----------
+const LS={get:(k,d)=>{try{const v=localStorage.getItem(k);return v===null?d:JSON.parse(v)}catch(e){return d}},set:(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+let prefs=LS.get('prefs',{lang:'Español',model:'gemini-flash-latest',niche:''});
+let apiKey=LS.get('apiKey','');
+let lib=LS.get('lib',[]);
+let chat=LS.get('chat',[]);
+let cur=null,lastText='';
+
+const NICHES=['Curiosidades','Terror','Motivación','Finanzas','Historia','Ciencia','Fe y reflexión','Humor','Tecnología','Salud y bienestar'];
+const TONES=['Intrigante','Épico','Divertido','Emotivo','Directo','Misterioso'];
+
+// ---------- tools ----------
+const TOOLS=[
+ {id:'ideas',ic:'idea',t:'Ideas virales',d:'Temas con potencial viral para tu nicho',
+  f:[['niche','Nicho','chips',NICHES],['n','Cantidad','select',['10','20','30']],['extra','Detalles (opcional)','text','Ej: leyendas de Latinoamérica']],
+  p:v=>`Dame ${v.n} ideas de videos cortos (YouTube Shorts/TikTok) con alto potencial viral para el nicho "${v.niche}". ${v.extra?'Enfoque: '+v.extra+'.':''} Para cada idea da: número, título llamativo y una línea explicando por qué engancha. Sin introducciones.`},
+ {id:'script',ic:'script',t:'Guion completo',d:'Guion por escenas listo para grabar',
+  f:[['topic','Tema del video','text','Ej: el lugar más misterioso del mundo'],['niche','Nicho','chips',NICHES],['dur','Duración','select',['30 segundos','45 segundos','60 segundos','90 segundos']],['tone','Tono','chips',TONES]],
+  p:v=>`Escribe un guion para un video corto vertical sobre: "${v.topic}". Nicho: ${v.niche}. Duración: ${v.dur}. Tono: ${v.tone}.
+Formato exacto:
+GANCHO (0-3s): una frase que obligue a seguir viendo.
+ESCENAS: lista numerada; cada escena con "Voz:" (narración) e "Imagen:" (prompt detallado en inglés para generar la imagen con IA, formato vertical 9:16).
+CIERRE: frase final + pregunta para comentarios.
+TÍTULO: 3 opciones de menos de 60 caracteres.
+HASHTAGS: 8 hashtags.
+Frases cortas, ritmo rápido, sin introducciones.`},
+ {id:'hooks',ic:'hook',t:'Ganchos',d:'Primeros 3 segundos que atrapan',
+  f:[['topic','Tema','text','Ej: datos del océano'],['tone','Tono','chips',TONES]],
+  p:v=>`Escribe 20 ganchos para los primeros 3 segundos de un video corto sobre "${v.topic}", tono ${v.tone}. Máximo 12 palabras cada uno. Variedad: preguntas, afirmaciones impactantes, misterio, cifras. Lista numerada, sin explicaciones.`},
+ {id:'seo',ic:'title',t:'Títulos y SEO',d:'Títulos, descripción y etiquetas',
+  f:[['topic','Tema del video','text','Ej: la verdad sobre las pirámides'],['plat','Plataforma','chips',['YouTube Shorts','TikTok','Instagram Reels']]],
+  p:v=>`Para un video de ${v.plat} sobre "${v.topic}" escribe:
+TÍTULOS: 10 opciones de menos de 60 caracteres que generen curiosidad sin clickbait falso.
+DESCRIPCIÓN: 2-3 líneas optimizadas con palabras clave.
+ETIQUETAS: 15 palabras clave separadas por comas.
+HASHTAGS: 10 hashtags.`},
+ {id:'tags',ic:'tag',t:'Hashtags',d:'Hashtags por alcance y nicho',
+  f:[['topic','Tema','text','Ej: motivación para estudiar'],['plat','Plataforma','chips',['YouTube Shorts','TikTok','Instagram Reels']]],
+  p:v=>`Dame hashtags para un video de ${v.plat} sobre "${v.topic}", agrupados en: AMPLIOS (5), DE NICHO (10), EN ESPAÑOL (5), y un BLOQUE LISTO PARA COPIAR con los 12 mejores.`},
+ {id:'prompts',ic:'img',t:'Prompts de imagen',d:'Escenas para Leonardo, Ideogram o Bing',
+  f:[['topic','Describe tu video o pega tu guion','area','Pega aquí tu guion o tema'],['style','Estilo visual','chips',['Cinematográfico','Realista','Anime','3D Pixar','Terror oscuro','Acuarela']]],
+  p:v=>`Divide este contenido en 8 escenas y escribe para cada una un prompt de imagen en inglés, muy detallado, estilo ${v.style}, formato vertical 9:16, con iluminación y encuadre. Numera las escenas y añade debajo una línea en español explicando la escena.
+Contenido: ${v.topic}`},
+ {id:'story',ic:'story',t:'Historias',d:'Historias de terror, curiosidad o fe',
+  f:[['topic','Tema o idea','text','Ej: una llamada a las 3 a.m.'],['genre','Género','chips',['Terror','Misterio','Motivación','Fe y reflexión','Curiosidad histórica']],['dur','Duración','select',['45 segundos','60 segundos','90 segundos']]],
+  p:v=>`Escribe una historia de género ${v.genre} para narrar en un video corto de ${v.dur} sobre: "${v.topic}". Empieza con un gancho fuerte, mantén tensión creciente y termina con un giro o reflexión memorable. Solo la narración, en párrafos cortos.`},
+ {id:'calendar',ic:'cal',t:'Calendario',d:'Plan de publicaciones de 7 o 30 días',
+  f:[['niche','Nicho','chips',NICHES],['days','Días','select',['7 días','14 días','30 días']],['freq','Videos por día','select',['1','2','3']]],
+  p:v=>`Crea un calendario de contenido de ${v.days} para un canal de videos cortos del nicho ${v.niche}, con ${v.freq} video(s) por día. Para cada día: Día N, título de cada video, gancho en una línea y mejor hora para publicar (hora de Latinoamérica). Varía los formatos (listas, historias, datos, preguntas).`},
+ {id:'thumb',ic:'thumb',t:'Miniaturas',d:'Ideas de portada que dan clics',
+  f:[['topic','Tema del video','text','Ej: el misterio del triángulo de las Bermudas']],
+  p:v=>`Dame 5 conceptos de miniatura/portada para un video sobre "${v.topic}". Para cada uno: TEXTO EN PANTALLA (máx. 4 palabras), ELEMENTOS VISUALES, COLORES, EMOCIÓN que transmite, y un PROMPT en inglés para generar la imagen con IA.`},
+ {id:'rewrite',ic:'rewrite',t:'Mejorar guion',d:'Haz tu texto más viral',
+  f:[['topic','Pega tu guion o texto','area','Pega aquí tu texto'],['goal','Objetivo','chips',['Más viral','Más corto','Más emotivo','Más misterioso','Más divertido']]],
+  p:v=>`Reescribe este texto para un video corto con el objetivo: ${v.goal}. Mejora el gancho inicial, usa frases cortas y termina con una pregunta para comentarios. Luego explica en 3 viñetas qué cambiaste.
+Texto: ${v.topic}`},
+ {id:'trend',ic:'trend',t:'Análisis de nicho',d:'Estrategia para crecer tu canal',
+  f:[['niche','Nicho','chips',NICHES],['goal','Meta','select',['Primeros 1.000 suscriptores','Monetizar el canal','Más vistas por video','Vender un producto digital']]],
+  p:v=>`Actúa como estratega de YouTube Shorts y TikTok. Para un canal faceless del nicho ${v.niche} cuya meta es "${v.goal}", da: 1) 5 formatos que funcionan, 2) errores a evitar, 3) frecuencia y horarios, 4) 5 ideas de series, 5) plan de 30 días en pasos concretos.`},
+ {id:'bio',ic:'bio',t:'Perfil del canal',d:'Nombre, bio y descripción',
+  f:[['niche','Nicho','chips',NICHES],['extra','Algo sobre ti o tu canal (opcional)','text','Ej: videos de IA sin mostrar la cara']],
+  p:v=>`Para un canal de videos cortos del nicho ${v.niche}${v.extra?' ('+v.extra+')':''} dame: 10 NOMBRES de canal, 3 BIOS para TikTok/Instagram (máx. 80 caracteres), una DESCRIPCIÓN para YouTube (500 caracteres) y 5 ideas para la FOTO DE PERFIL.`}
+];
+
+// ---------- UI ----------
+function go(v){
+  document.querySelectorAll('.view').forEach(e=>e.classList.remove('on'));
+  document.getElementById('v-'+v).classList.add('on');
+  document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.v===v));
+  if(v==='lib')renderLib(); if(v==='chat')renderChat(); if(v==='settings')loadSettings();
+  window.scrollTo(0,0);
+  if(v!=='tool') history.replaceState(null,'','#'+v);
+}
+function toast(t){const e=document.getElementById('toast');e.textContent=t;e.classList.add('on');clearTimeout(e._t);e._t=setTimeout(()=>e.classList.remove('on'),2200)}
+function esc(s){return s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+
+function renderHome(){
+  document.getElementById('toolGrid').innerHTML=TOOLS.map(t=>`<button class="tool" onclick="openTool('${t.id}')">${svg(t.ic)}<b>${t.t}</b><span>${t.d}</span></button>`).join('');
+  document.getElementById('aiStatus').innerHTML=apiKey?'<span class="badge">● IA conectada</span>':'<span class="badge warn" onclick="go(\'settings\')" style="cursor:pointer">● Modo básico · Toca para conectar la IA gratis</span>';
+}
+function openTool(id){
+  cur=TOOLS.find(t=>t.id===id);document.getElementById('tGo').style.display='';
+  document.getElementById('tTitle').textContent=cur.t;
+  document.getElementById('tSub').textContent=cur.d;
+  document.getElementById('tOut').classList.remove('on');
+  document.getElementById('tForm').innerHTML=cur.f.map(([k,l,type,opt])=>{
+    if(type==='chips'){const def=(k==='niche'&&prefs.niche)?prefs.niche:opt[0];
+      const list=opt.includes(def)?opt:[def,...opt];
+      return `<label>${l}</label><div class="chips" data-k="${k}">${list.map((o,i)=>`<button type="button" class="chip${o===def?' on':''}" onclick="pickChip(this)">${esc(o)}</button>`).join('')}</div>`}
+    if(type==='select')return `<label for="f_${k}">${l}</label><select id="f_${k}">${opt.map(o=>`<option>${o}</option>`).join('')}</select>`;
+    if(type==='area')return `<label for="f_${k}">${l}</label><textarea id="f_${k}" placeholder="${esc(opt)}"></textarea>`;
+    return `<label for="f_${k}">${l}</label><input id="f_${k}" placeholder="${esc(opt)}">`;
+  }).join('');
+  go('tool');
+}
+function pickChip(b){b.parentElement.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));b.classList.add('on')}
+function vals(){const v={};cur.f.forEach(([k,l,type])=>{if(type==='chips'){const c=document.querySelector(`.chips[data-k="${k}"] .chip.on`);v[k]=c?c.textContent:''}else v[k]=(document.getElementById('f_'+k).value||'').trim()});return v}
+
+async function runTool(){
+  const v=vals();
+  const need=cur.f.find(([k,l,type])=>(type==='text'||type==='area')&&k==='topic'&&!v[k]);
+  if(need){toast('Escribe el tema primero');return}
+  const b=document.getElementById('tGo');b.disabled=true;b.innerHTML='<div class="spin"></div> Creando…';
+  try{
+    const txt=await ai(cur.p(v),cur.id,v);
+    lastText=txt;
+    document.getElementById('tRes').textContent=txt;
+    document.getElementById('tOut').classList.add('on');
+    document.getElementById('tOut').scrollIntoView({behavior:'smooth',block:'start'});
+  }catch(e){toast(e.message||'Error. Revisa tu conexión.')}
+  b.disabled=false;b.textContent='Generar con IA';
+}
+
+// ---------- AI ----------
+const SYS='Eres un experto en contenido viral para YouTube Shorts, TikTok e Instagram Reels. Escribes en texto plano, sin markdown con asteriscos, con títulos de sección en MAYÚSCULAS. Respondes siempre en ';
+async function gemini(contents){
+  const models=[prefs.model,'gemini-flash-latest','gemini-flash-lite-latest','gemini-2.5-flash'].filter((m,i,a)=>a.indexOf(m)===i);
+  let lastErr;
+  for(const m of models){
+    try{
+      const r=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${m}:generateContent`,{
+        method:'POST',headers:{'Content-Type':'application/json','x-goog-api-key':apiKey},
+        body:JSON.stringify({systemInstruction:{parts:[{text:SYS+prefs.lang+'.'}]},contents})});
+      const j=await r.json();
+      if(!r.ok){lastErr=new Error(j.error&&j.error.message||('Error '+r.status));if(r.status===400&&/API key/i.test(lastErr.message))throw new Error('Tu clave de API no es válida. Revísala en Ajustes.');if(r.status===429)throw new Error('Llegaste al límite gratis por ahora. Intenta en unos minutos.');continue}
+      const t=(j.candidates&&j.candidates[0]&&j.candidates[0].content&&j.candidates[0].content.parts||[]).map(p=>p.text||'').join('').trim();
+      if(t)return t.replace(/\*\*/g,'').replace(/^#+\s*/gm,'');
+    }catch(e){lastErr=e;if(/clave|límite/.test(e.message))throw e}
+  }
+  throw lastErr||new Error('No se pudo conectar con la IA');
+}
+async function ai(prompt,id,v){
+  if(!apiKey||!navigator.onLine)return offline(id,v);
+  return gemini([{role:'user',parts:[{text:prompt}]}]);
+}
+
+// ---------- offline templates ----------
+function pick(a,n){return [...a].sort(()=>Math.random()-.5).slice(0,n)}
+function offline(id,v){
+  const T=v.topic||v.niche||'tu tema';
+  const H=[`Nadie te contó esto sobre ${T}.`,`El 99 % de las personas no sabe esto de ${T}.`,`Si ves esto, ya no verás ${T} igual.`,`Esto sobre ${T} parece falso… pero es real.`,`Te mintieron toda la vida sobre ${T}.`,`¿Qué pasaría si ${T} desapareciera mañana?`,`Hay un secreto detrás de ${T}.`,`En 60 segundos vas a entender ${T}.`,`El número 1 es el más perturbador.`,`Nunca lo habías visto así.`,`Esto cambió todo lo que sabía de ${T}.`,`Mira esto antes de que lo borren.`,`La verdad sobre ${T} es incómoda.`,`Solo el 1 % llega al final de este video.`,`Esto ocurrió de verdad.`,`Lo que descubrieron sobre ${T} es aterrador.`,`No es casualidad que estés viendo esto.`,`3 cosas de ${T} que nadie explica.`,`Guarda este video, lo vas a necesitar.`,`Si llegaste aquí, presta atención.`];
+  const note='\n\n— Modo básico (sin IA). Conecta tu clave gratis en Ajustes para resultados únicos y personalizados.';
+  const tags=['#shorts','#viral','#parati','#fyp','#curiosidades','#datoscuriosos','#sabiasque','#tiktok','#reels','#aprendeentiktok'];
+  switch(id){
+    case 'hooks':return pick(H,20).map((h,i)=>`${i+1}. ${h}`).join('\n')+note;
+    case 'ideas':{const n=+v.n||10;const f=[`3 secretos de`,`La verdad oculta de`,`Lo que nadie sabe de`,`El caso más extraño de`,`¿Qué pasaría si…? —`,`Datos imposibles de`,`La historia real detrás de`,`5 errores sobre`,`El misterio sin resolver de`,`Antes y después de`];return Array.from({length:n},(_,i)=>`${i+1}. ${f[i%f.length]} ${v.extra||v.niche}\n   Engancha porque genera curiosidad inmediata.`).join('\n')+note}
+    case 'script':return `GANCHO (0-3s): ${pick(H,1)[0]}\n\nESCENAS:\n1. Voz: Empecemos por lo más impactante.\n   Imagen: cinematic dramatic scene about ${T}, vertical 9:16\n2. Voz: Pocas personas conocen este detalle.\n   Imagen: close-up mysterious detail, moody lighting, 9:16\n3. Voz: Y aquí viene lo sorprendente.\n   Imagen: epic wide shot, golden light, 9:16\n4. Voz: Pero eso no es todo…\n   Imagen: suspenseful shadowy scene, 9:16\n\nCIERRE: ¿Lo sabías? Escríbelo en los comentarios.\n\nTÍTULO:\n- Lo que nadie te dijo sobre ${T}\n- ${T}: la verdad\n- Esto te va a sorprender\n\nHASHTAGS: ${tags.slice(0,8).join(' ')}`+note;
+    case 'tags':case 'seo':return `TÍTULOS:\n- Lo que nadie te dijo sobre ${T}\n- La verdad sobre ${T}\n- ${T} como nunca lo viste\n\nDESCRIPCIÓN:\nDescubre lo más sorprendente sobre ${T} en menos de un minuto. ¡Síguenos para más!\n\nHASHTAGS:\n${tags.join(' ')}`+note;
+    case 'calendar':{const d=parseInt(v.days)||7;return Array.from({length:d},(_,i)=>`Día ${i+1}: ${pick(['Top 3','Historia real','Dato curioso','Pregunta al público','¿Qué pasaría si…?','Mito vs. realidad'],1)[0]} de ${v.niche} · 7:00 p. m.`).join('\n')+note}
+    default:return `Para usar "${cur.t}" necesitas conectar la IA (es gratis).\n\nVe a Ajustes → pega tu clave de Gemini → Guardar.`;
+  }
+}
+
+// ---------- result actions ----------
+async function copyRes(){try{await navigator.clipboard.writeText(lastText);toast('Copiado')}catch(e){toast('No se pudo copiar')}}
+function saveRes(){lib.unshift({id:Date.now(),tool:cur.t,text:lastText,date:new Date().toLocaleDateString()});LS.set('lib',lib);toast('Guardado en tu biblioteca')}
+async function shareRes(){if(navigator.share){try{await navigator.share({title:cur.t,text:lastText})}catch(e){}}else copyRes()}
+function download(name,text){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text],{type:'text/plain'}));a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
+function exportRes(){download((cur.t||'resultado').replace(/\s+/g,'_')+'.txt',lastText)}
+let speaking=false;
+function speakRes(t){
+  t=t||lastText; const b=document.getElementById('spkBtn');
+  if(!('speechSynthesis' in window)){toast('Tu teléfono no tiene voz disponible');return}
+  if(speaking){speechSynthesis.cancel();speaking=false;b.textContent='Escuchar';return}
+  const u=new SpeechSynthesisUtterance(t.replace(/Imagen:.*$/gm,'').replace(/[A-ZÁÉÍÓÚÑ ]{4,}:/g,''));
+  u.lang=prefs.lang==='English'?'en-US':prefs.lang==='Português'?'pt-BR':'es-MX';u.rate=1;
+  u.onend=()=>{speaking=false;b.textContent='Escuchar'};speechSynthesis.speak(u);speaking=true;b.textContent='Detener';
+}
+// teleprompter
+let tpTimer=null,tpPos=0,tpV=1.2,tpOn=true;
+function openTP(){const el=document.getElementById('tpTxt');el.textContent=lastText.replace(/Imagen:.*$/gm,'');tpPos=0;el.scrollTop=0;document.getElementById('tp').classList.add('on');tpOn=true;document.getElementById('tpPlay').textContent='Pausa';clearInterval(tpTimer);tpTimer=setInterval(()=>{if(tpOn){tpPos+=tpV;el.scrollTop=tpPos}},30)}
+function tpToggle(){tpOn=!tpOn;document.getElementById('tpPlay').textContent=tpOn?'Pausa':'Seguir'}
+function tpSpeed(d){tpV=Math.max(.3,Math.min(5,tpV+d*.4));toast('Velocidad '+tpV.toFixed(1))}
+function closeTP(){clearInterval(tpTimer);document.getElementById('tp').classList.remove('on')}
+
+// ---------- library ----------
+function renderLib(){
+  const q=(document.getElementById('libSearch').value||'').toLowerCase();
+  const items=lib.filter(i=>!q||i.text.toLowerCase().includes(q)||i.tool.toLowerCase().includes(q));
+  document.getElementById('libList').innerHTML=items.length?items.map(i=>`<div class="lib-item"><div class="meta"><span class="tag">${esc(i.tool)}</span>${esc(i.date)}</div><div class="prev">${esc(i.text)}</div><div class="actions"><button onclick="libOpen(${i.id})">Ver</button><button onclick="libCopy(${i.id})">Copiar</button><button onclick="libDel(${i.id})">Borrar</button></div></div>`).join(''):'<div class="empty">Aún no guardaste nada.<br>Genera algo y toca <b>Guardar</b>.</div>';
+}
+function libFind(id){return lib.find(i=>i.id===id)}
+function libOpen(id){const i=libFind(id);cur=TOOLS.find(t=>t.t===i.tool)||{t:i.tool,f:[]};lastText=i.text;document.getElementById('tTitle').textContent=i.tool;document.getElementById('tSub').textContent='Guardado el '+i.date;document.getElementById('tForm').innerHTML='';document.getElementById('tRes').textContent=i.text;document.getElementById('tOut').classList.add('on');document.getElementById('tGo').style.display=cur.p?'':'none';go('tool')}
+async function libCopy(id){try{await navigator.clipboard.writeText(libFind(id).text);toast('Copiado')}catch(e){}}
+function libDel(id){lib=lib.filter(i=>i.id!==id);LS.set('lib',lib);renderLib();toast('Borrado')}
+
+// ---------- chat ----------
+function renderChat(){
+  const box=document.getElementById('chatBox');
+  if(!chat.length){box.innerHTML='<div class="msg a">¡Hola! Soy tu asistente creador. Puedo ayudarte con ideas, guiones, estrategia para crecer y monetizar tu canal. ¿Qué quieres crear hoy?</div>';return}
+  box.innerHTML=chat.map(m=>`<div class="msg ${m.r==='user'?'u':'a'}">${esc(m.t)}</div>`).join('');
+  window.scrollTo(0,document.body.scrollHeight);
+}
+async function sendChat(){
+  const inp=document.getElementById('chatIn');const t=inp.value.trim();if(!t)return;
+  inp.value='';chat.push({r:'user',t});renderChat();
+  const box=document.getElementById('chatBox');const w=document.createElement('div');w.className='msg a';w.textContent='Escribiendo…';box.appendChild(w);window.scrollTo(0,document.body.scrollHeight);
+  try{
+    let ans;
+    if(!apiKey)ans='Para chatear conmigo necesitas conectar la IA gratis. Ve a Ajustes (arriba a la derecha) y pega tu clave de Gemini.';
+    else ans=await gemini(chat.slice(-16).map(m=>({role:m.r==='user'?'user':'model',parts:[{text:m.t}]})));
+    chat.push({r:'model',t:ans});
+  }catch(e){chat.push({r:'model',t:'⚠️ '+(e.message||'Error de conexión')})}
+  LS.set('chat',chat.slice(-60));renderChat();
+}
+document.getElementById('chatIn').addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendChat()}});
+
+// ---------- settings ----------
+function loadSettings(){document.getElementById('apiKey').value=apiKey;document.getElementById('lang').value=prefs.lang;document.getElementById('model').value=prefs.model;document.getElementById('niche').value=prefs.niche||''}
+function savePrefs(){prefs={lang:document.getElementById('lang').value,model:document.getElementById('model').value,niche:document.getElementById('niche').value.trim()};LS.set('prefs',prefs);toast('Preferencias guardadas')}
+async function saveKey(){
+  apiKey=document.getElementById('apiKey').value.trim();LS.set('apiKey',apiKey);renderHome();
+  if(!apiKey){toast('Clave eliminada. Modo básico activo.');return}
+  toast('Probando conexión…');
+  try{await gemini([{role:'user',parts:[{text:'Responde solo: OK'}]}]);toast('¡IA conectada! Ya tienes todo PRO activo.')}
+  catch(e){toast(e.message)}
+}
+function exportAll(){download('biblioteca_viral_ai_studio.txt',lib.map(i=>`[${i.tool} · ${i.date}]\n${i.text}`).join('\n\n-----\n\n')||'Biblioteca vacía')}
+function clearAll(){if(confirm('¿Borrar biblioteca, chat y clave de este teléfono?')){localStorage.clear();lib=[];chat=[];apiKey='';prefs={lang:'Español',model:'gemini-flash-latest',niche:''};renderHome();loadSettings();toast('Datos borrados')}}
+
+// ---------- PRO page ----------
+document.getElementById('proList').innerHTML=['12 herramientas de IA para creadores','Guiones por escenas con prompts de imagen','Chat con asistente experto en contenido viral','Voz que lee tus guiones en voz alta','Teleprompter para grabar','Biblioteca ilimitada con búsqueda','Exportar y compartir en 1 toque','Calendario de contenido de hasta 30 días','Modo básico sin internet','Sin anuncios y sin pagos'].map(f=>`<div class="feat"><i>✓</i><div>${f}</div></div>`).join('');
+
+// ---------- init ----------
+renderHome();
+const h=location.hash.slice(1);if(['chat','lib','pro','settings'].includes(h))go(h);
+if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}))}
+</script>
+</body>
+</html>
