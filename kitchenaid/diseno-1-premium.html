@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TecniHogar · Servicio técnico KitchenAid — Diseño 1 Premium</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1b1916;--ink2:#26231f;--cream:#f4efe6;--muted:#b9b0a2;--cu:#c0814a;--cu2:#e0a874}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;background:var(--ink);color:var(--cream);line-height:1.6}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+nav{position:sticky;top:0;z-index:20;background:rgba(27,25,22,.92);backdrop-filter:blur(8px);border-bottom:1px solid #3a352e}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:'Playfair Display',serif;font-size:1.45rem;letter-spacing:.5px}
+.logo span{color:var(--cu)}
+.links{display:flex;gap:28px;font-size:.92rem;color:var(--muted)}
+.links a:hover{color:var(--cream)}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--cu);color:#1b1916;font-weight:600;padding:14px 26px;border-radius:2px;transition:.2s}
+.btn:hover{background:var(--cu2)}
+.btn.ghost{background:transparent;color:var(--cream);border:1px solid #5a5248}
+.btn.ghost:hover{border-color:var(--cu)}
+.hero{padding-top:96px;padding-bottom:80px;display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.eyebrow{color:var(--cu);text-transform:uppercase;letter-spacing:3px;font-size:.75rem;font-weight:600}
+h1{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(2.3rem,5vw,3.9rem);line-height:1.08;margin:18px 0 22px}
+h1 em{color:var(--cu2);font-style:italic}
+.lead{color:var(--muted);font-size:1.08rem;max-width:520px;margin-bottom:34px}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.hero-art{position:relative;aspect-ratio:4/5;background:linear-gradient(160deg,#2e2a24,#1f1c18);border:1px solid #3a352e;display:flex;align-items:center;justify-content:center}
+.hero-art svg{width:62%}
+.badge{position:absolute;bottom:-22px;left:-22px;background:var(--cream);color:var(--ink);padding:18px 22px;font-size:.85rem;max-width:210px}
+.badge b{font-family:'Playfair Display',serif;font-size:1.4rem;display:block}
+section{padding:90px 0}
+h2{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(1.9rem,3.5vw,2.7rem);line-height:1.15;margin:12px 0 18px}
+.sub{color:var(--muted);max-width:560px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#3a352e;border:1px solid #3a352e;margin-top:50px}
+.card{background:var(--ink);padding:40px 32px}
+.card svg{width:54px;height:54px;margin-bottom:24px}
+.card h3{font-family:'Playfair Display',serif;font-weight:500;font-size:1.45rem;margin-bottom:12px}
+.card p{color:var(--muted);font-size:.95rem;margin-bottom:18px}
+.card ul{list-style:none;font-size:.9rem}
+.card li{padding:7px 0;border-top:1px solid #2f2b26}
+.card li::before{content:"— ";color:var(--cu)}
+.light{background:var(--cream);color:var(--ink)}
+.light .sub{color:#6b6357}
+.why{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.feat{display:grid;grid-template-columns:repeat(2,1fr);gap:34px}
+.feat div{border-top:2px solid var(--cu);padding-top:16px}
+.feat h4{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:500;margin-bottom:6px}
+.feat p{font-size:.92rem;color:#6b6357}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:50px}
+.step .n{font-family:'Playfair Display',serif;font-size:3rem;color:var(--cu);line-height:1}
+.step h4{margin:10px 0 6px;font-weight:600}
+.step p{color:var(--muted);font-size:.92rem}
+.contact{background:var(--ink2);border:1px solid #3a352e;padding:50px;display:grid;grid-template-columns:1fr 1fr;gap:44px}
+form{display:grid;gap:14px}
+label{font-size:.8rem;color:var(--muted);letter-spacing:1px;text-transform:uppercase}
+input,select,textarea{width:100%;background:var(--ink);border:1px solid #4a443b;color:var(--cream);padding:13px 14px;font:inherit;margin-top:6px}
+textarea{min-height:90px;resize:vertical}
+.info p{margin:10px 0;color:var(--muted)}
+.info b{color:var(--cream)}
+footer{padding:36px 0;border-top:1px solid #3a352e;color:#8a8275;font-size:.82rem;text-align:center}
+.wa{position:fixed;right:20px;bottom:20px;z-index:30;width:58px;height:58px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+.wa svg{width:30px;fill:#fff}
+@media(max-width:860px){
+ .links{display:none}
+ .hero,.why,.contact{grid-template-columns:1fr}
+ .hero{padding-top:56px;padding-bottom:70px}
+ .hero-art{max-width:360px;aspect-ratio:1}
+ .grid3{grid-template-columns:1fr}
+ .steps{grid-template-columns:1fr 1fr}
+ .contact{padding:28px}
+ section{padding:64px 0}
+}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+ <a href="#" class="logo">Tecni<span>Hogar</span></a>
+ <div class="links"><a href="#servicios">Servicios</a><a href="#por-que">Por qué nosotros</a><a href="#proceso">Proceso</a><a href="#contacto">Contacto</a></div>
+ <a class="btn" href="https://wa.me/573000000000?text=Hola%2C%20necesito%20servicio%20t%C3%A9cnico%20KitchenAid">Agendar</a>
+</div></nav>
+
+<header class="wrap hero">
+ <div>
+  <div class="eyebrow">Especialistas en línea KitchenAid</div>
+  <h1>Tu cocina KitchenAid, <em>funcionando como el primer día.</em></h1>
+  <p class="lead">Reparación y mantenimiento de nevecones, hornos y estufas KitchenAid a domicilio. Diagnóstico claro, técnicos certificados y garantía por escrito.</p>
+  <div class="cta">
+   <a class="btn" href="https://wa.me/573000000000?text=Hola%2C%20necesito%20servicio%20t%C3%A9cnico%20KitchenAid">Escríbenos por WhatsApp</a>
+   <a class="btn ghost" href="#servicios">Ver servicios</a>
+  </div>
+ </div>
+ <div class="hero-art">
+  <svg viewBox="0 0 120 200" fill="none" stroke="#c0814a" stroke-width="2.2"><rect x="10" y="6" width="100" height="186" rx="6"/><line x1="60" y1="6" x2="60" y2="192"/><line x1="52" y1="50" x2="52" y2="110"/><line x1="68" y1="50" x2="68" y2="110"/><rect x="20" y="26" width="28" height="18" rx="2" stroke-width="1.5"/><line x1="10" y1="186" x2="110" y2="186" stroke-width="1.5"/></svg>
+  <div class="badge"><b>Garantía</b>por escrito en cada reparación</div>
+ </div>
+</header>
+
+<section id="servicios"><div class="wrap">
+ <div class="eyebrow">Servicios</div>
+ <h2>Atendemos toda tu línea de cocina</h2>
+ <p class="sub">Trabajamos los equipos KitchenAid de gama alta: los conocemos por dentro y sabemos cuidarlos.</p>
+ <div class="grid3">
+  <div class="card">
+   <svg viewBox="0 0 54 54" fill="none" stroke="#c0814a" stroke-width="2"><rect x="9" y="3" width="36" height="48" rx="3"/><line x1="27" y1="3" x2="27" y2="51"/><line x1="23" y1="16" x2="23" y2="28"/><line x1="31" y1="16" x2="31" y2="28"/></svg>
+   <h3>Nevecones</h3><p>Side by side, French door y empotrables.</p>
+   <ul><li>No enfría o enfría poco</li><li>Fugas de agua y hielo</li><li>Dispensador y fábrica de hielo</li><li>Carga de gas y tarjetas</li></ul>
+  </div>
+  <div class="card">
+   <svg viewBox="0 0 54 54" fill="none" stroke="#c0814a" stroke-width="2"><rect x="5" y="5" width="44" height="44" rx="3"/><line x1="5" y1="15" x2="49" y2="15"/><rect x="12" y="22" width="30" height="20" rx="2"/><circle cx="13" cy="10" r="1.6"/><circle cx="21" cy="10" r="1.6"/></svg>
+   <h3>Hornos</h3><p>Hornos de pared, dobles y de convección.</p>
+   <ul><li>No calienta o temperatura irregular</li><li>Resistencias y termostatos</li><li>Ventilador de convección</li><li>Panel y tarjeta electrónica</li></ul>
+  </div>
+  <div class="card">
+   <svg viewBox="0 0 54 54" fill="none" stroke="#c0814a" stroke-width="2"><rect x="4" y="12" width="46" height="30" rx="3"/><circle cx="17" cy="22" r="5"/><circle cx="37" cy="22" r="5"/><circle cx="17" cy="34" r="3.5"/><circle cx="37" cy="34" r="3.5"/></svg>
+   <h3>Estufas</h3><p>Gas, eléctricas, de inducción y ranges.</p>
+   <ul><li>Quemadores que no encienden</li><li>Chispero y válvulas</li><li>Inducción sin respuesta</li><li>Fugas y ajuste de llama</li></ul>
+  </div>
+ </div>
+</div></section>
+
+<section class="light" id="por-que"><div class="wrap why">
+ <div>
+  <div class="eyebrow">Por qué TecniHogar</div>
+  <h2>Un servicio a la altura de tus equipos</h2>
+  <p class="sub">Tus electrodomésticos son una inversión. Los tratamos con el cuidado, el orden y la limpieza que merecen.</p>
+ </div>
+ <div class="feat">
+  <div><h4>Técnicos especializados</h4><p>Formados en la línea KitchenAid y Whirlpool.</p></div>
+  <div><h4>Repuestos originales</h4><p>Piezas de calidad para que la falla no regrese.</p></div>
+  <div><h4>Precio antes de reparar</h4><p>Te decimos el costo y tú decides. Sin sorpresas.</p></div>
+  <div><h4>Garantía escrita</h4><p>Respaldamos cada trabajo que hacemos.</p></div>
+ </div>
+</div></section>
+
+<section id="proceso"><div class="wrap">
+ <div class="eyebrow">Cómo trabajamos</div>
+ <h2>Simple, de principio a fin</h2>
+ <div class="steps">
+  <div class="step"><div class="n">01</div><h4>Escríbenos</h4><p>Cuéntanos el equipo y la falla por WhatsApp.</p></div>
+  <div class="step"><div class="n">02</div><h4>Visita</h4><p>Agendamos a la hora que te sirva.</p></div>
+  <div class="step"><div class="n">03</div><h4>Diagnóstico</h4><p>Revisamos y te damos el precio exacto.</p></div>
+  <div class="step"><div class="n">04</div><h4>Reparación</h4><p>Arreglamos y te dejamos la garantía.</p></div>
+ </div>
+</div></section>
+
+<section id="contacto" style="padding-top:20px"><div class="wrap">
+ <div class="contact">
+  <div class="info">
+   <div class="eyebrow">Contacto</div>
+   <h2>Agenda tu visita técnica</h2>
+   <p>Llena el formulario y te llega directo a nuestro WhatsApp.</p>
+   <p><b>WhatsApp:</b> 300 000 0000</p>
+   <p><b>Horario:</b> Lunes a sábado, 7:00 a.m. – 6:00 p.m.</p>
+   <p><b>Cobertura:</b> Servicio a domicilio en toda la ciudad</p>
+  </div>
+  <form onsubmit="return false">
+   <div><label>Nombre</label><input id="n" placeholder="Tu nombre" oninput="up()"></div>
+   <div><label>Equipo</label><select id="e" onchange="up()"><option>Nevecón</option><option>Horno</option><option>Estufa</option><option>Otro</option></select></div>
+   <div><label>¿Qué le pasa?</label><textarea id="f" placeholder="Ej: no enfría la parte de abajo" oninput="up()"></textarea></div>
+   <a id="send" class="btn" style="justify-content:center" href="#">Enviar por WhatsApp</a>
+  </form>
+ </div>
+</div></section>
+
+<footer><div class="wrap">© 2026 TecniHogar · Servicio técnico independiente especializado en electrodomésticos KitchenAid. KitchenAid es una marca registrada de su respectivo titular.</div></footer>
+
+<a class="wa" href="https://wa.me/573000000000?text=Hola%2C%20necesito%20servicio%20t%C3%A9cnico%20KitchenAid" aria-label="WhatsApp"><svg viewBox="0 0 32 32"><path d="M16 3a13 13 0 0 0-11.1 19.7L3 29l6.5-1.7A13 13 0 1 0 16 3zm0 23.6c-2 0-4-.6-5.7-1.6l-.4-.2-3.9 1 1-3.8-.2-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5 2.1.9 3 1 4 .8.7-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5l-.7-.4z"/></svg></a>
+<script>
+function up(){var m="Hola, soy "+(document.getElementById('n').value||"[nombre]")+". Necesito servicio técnico para mi "+document.getElementById('e').value+" KitchenAid. Falla: "+(document.getElementById('f').value||"-");document.getElementById('send').href="https://wa.me/573000000000?text="+encodeURIComponent(m)}up();
+</script>
+</body>
+</html>
