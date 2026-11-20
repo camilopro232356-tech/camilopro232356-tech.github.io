@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prestasoluciones del Quindío | Asesoría Financiera e Inmobiliaria</title>
+<meta name="description" content="Créditos de libranza, compra de cartera, créditos hipotecarios, administración de inmuebles y asesoría empresarial en Filandia y Quimbaya.">
+<meta property="og:title" content="Prestasoluciones del Quindío">
+<meta property="og:image" content="img/tarjeta.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ivory:#faf7f0;--cream:#f2ecdf;--ink:#111;--ink2:#2a2a2a;--gold:#b8902f;--gold2:#d9b95c;--muted:#6f6a60}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Inter,sans-serif;background:var(--ivory);color:var(--ink2);line-height:1.65}
+h1,h2,h3{font-family:'Playfair Display',serif;color:var(--ink);line-height:1.12}
+a{color:inherit;text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 28px}
+em.g{font-style:italic;color:var(--gold)}
+/* TOPBAR */
+.topbar{background:var(--ink);color:#d8cfb8;font-size:.8rem;padding:9px 0}
+.topbar .container{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.topbar a{color:var(--gold2)}
+header.nav{position:sticky;top:0;z-index:40;background:rgba(250,247,240,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(184,144,47,.25)}
+header.nav .container{display:flex;align-items:center;justify-content:space-between;height:82px}
+.logo{display:flex;align-items:center;gap:14px}
+.logo .mark{height:54px;border-radius:6px}
+.logo b{font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--ink);display:block;line-height:1}
+.logo small{color:var(--gold);letter-spacing:3px;font-size:.66rem;text-transform:uppercase}
+.links{display:flex;gap:34px;font-size:.9rem;font-weight:500}
+.links a:hover{color:var(--gold)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 30px;font-weight:600;font-size:.9rem;transition:.3s;cursor:pointer;border:none;border-radius:2px;letter-spacing:.5px}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{background:var(--gold)}
+.btn-gold{background:var(--gold);color:#fff}
+.btn-gold:hover{background:var(--ink)}
+.btn-out{border:1.5px solid var(--ink);color:var(--ink)}
+.btn-out:hover{background:var(--ink);color:#fff}
+.burger{display:none;background:none;border:none;font-size:1.7rem;cursor:pointer}
+/* HERO */
+.hero{padding:80px 0 100px;position:relative;overflow:hidden}
+.hero .container{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.kicker{display:flex;align-items:center;gap:14px;color:var(--gold);font-size:.78rem;letter-spacing:4px;text-transform:uppercase;font-weight:600;margin-bottom:24px}
+.kicker::before{content:'';width:40px;height:1.5px;background:var(--gold)}
+.hero h1{font-size:clamp(2.7rem,5.5vw,4.6rem);margin-bottom:26px}
+.hero p{font-size:1.1rem;color:var(--muted);max-width:520px;margin-bottom:38px}
+.hero .actions{display:flex;gap:14px;flex-wrap:wrap}
+.collage{position:relative;height:560px}
+.collage .a{position:absolute;right:0;top:0;width:72%;height:78%;object-fit:cover;box-shadow:0 30px 60px rgba(0,0,0,.18)}
+.collage .b{position:absolute;left:0;bottom:0;width:52%;height:52%;object-fit:cover;border:10px solid var(--ivory);box-shadow:0 30px 60px rgba(0,0,0,.18)}
+.collage .badge{position:absolute;right:20px;bottom:30px;background:var(--ink);color:#fff;padding:22px 26px;max-width:220px}
+.collage .badge b{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--gold2);display:block}
+.collage .badge span{font-size:.82rem;color:#cfc7b4}
+.collage::before{content:'';position:absolute;top:-20px;right:-20px;width:60%;height:60%;border:1.5px solid var(--gold);z-index:-1}
+/* STRIP */
+.strip{background:var(--ink);color:#fff;padding:34px 0}
+.strip .container{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+.strip div{border-right:1px solid rgba(217,185,92,.25)}
+.strip div:last-child{border:none}
+.strip b{font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--gold2);display:block}
+.strip span{font-size:.82rem;color:#bdb5a2}
+/* SECTIONS */
+section{padding:110px 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:60px;flex-wrap:wrap}
+.head h2{font-size:clamp(2.2rem,4vw,3.3rem);max-width:620px}
+.head p{max-width:400px;color:var(--muted)}
+/* TABS */
+.tabs{display:flex;gap:0;border-bottom:1px solid #ddd3bd;margin-bottom:50px;overflow-x:auto}
+.tab{padding:18px 30px;cursor:pointer;font-weight:600;font-size:.95rem;color:var(--muted);border-bottom:3px solid transparent;white-space:nowrap;background:none;border-top:none;border-left:none;border-right:none;font-family:inherit}
+.tab.active{color:var(--ink);border-bottom-color:var(--gold)}
+.panel{display:none;grid-template-columns:1fr 1.1fr;gap:60px;align-items:center;animation:fade .6s}
+.panel.active{display:grid}
+@keyframes fade{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.panel img{width:100%;height:440px;object-fit:cover}
+.panel h3{font-size:2.3rem;margin-bottom:16px}
+.panel>div>p{color:var(--muted);margin-bottom:26px}
+.list{display:grid;grid-template-columns:1fr 1fr;gap:14px 28px;margin-bottom:34px}
+.list span{display:flex;gap:12px;align-items:flex-start;font-size:.95rem;padding-bottom:12px;border-bottom:1px solid #e6dcc6}
+.list span::before{content:'';width:8px;height:8px;background:var(--gold);transform:rotate(45deg);margin-top:8px;flex-shrink:0}
+/* PROCESS */
+.process{background:var(--cream)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;counter-reset:s}
+.step{background:var(--ivory);padding:40px 30px;position:relative;transition:.35s;border-top:3px solid var(--gold)}
+.step:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(0,0,0,.08)}
+.step::before{counter-increment:s;content:'0' counter(s);font-family:'Playfair Display',serif;font-size:3rem;color:var(--gold2);opacity:.6;display:block;margin-bottom:10px}
+.step h4{font-size:1.1rem;margin-bottom:8px;color:var(--ink)}
+.step p{font-size:.9rem;color:var(--muted)}
+/* QUOTE */
+.quote{background:linear-gradient(rgba(10,10,10,.82),rgba(10,10,10,.82)),url(img/casa.webp) center/cover fixed;color:#fff;text-align:center;padding:130px 0}
+.quote h2{color:#fff;font-size:clamp(2rem,4.5vw,3.6rem);font-style:italic;max-width:900px;margin:0 auto 34px;font-weight:500}
+.quote h2 span{color:var(--gold2)}
+/* FLYERS */
+.flyers{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.flyers figure{overflow:hidden;cursor:zoom-in;box-shadow:0 14px 30px rgba(0,0,0,.12)}
+.flyers img{width:100%;display:block;aspect-ratio:2/3;object-fit:cover;object-position:top;transition:.6s}
+.flyers figure:hover img{transform:scale(1.06)}
+.lb{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;place-items:center;z-index:99;padding:20px;cursor:zoom-out}
+.lb.open{display:grid}.lb img{max-width:100%;max-height:92vh}
+/* FAQ */
+.faq{max-width:860px;margin:0 auto}
+.q{border-bottom:1px solid #ddd3bd}
+.q button{width:100%;text-align:left;background:none;border:none;padding:26px 0;font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--ink);cursor:pointer;display:flex;justify-content:space-between;gap:20px}
+.q button::after{content:'+';color:var(--gold);font-size:1.6rem;line-height:1;transition:.3s}
+.q.open button::after{transform:rotate(45deg)}
+.q .ans{max-height:0;overflow:hidden;transition:max-height .4s;color:var(--muted)}
+.q.open .ans{max-height:240px}
+.q .ans p{padding-bottom:24px}
+/* CONTACT */
+.contact{background:var(--ink);color:#e7e1d3}
+.contact .container{display:grid;grid-template-columns:1fr 1fr;gap:70px}
+.contact h2{color:#fff;font-size:clamp(2.2rem,4vw,3.2rem);margin-bottom:20px}
+.contact .person{display:flex;gap:20px;align-items:center;margin:34px 0;padding:24px;border:1px solid rgba(217,185,92,.3)}
+.contact .person img{width:120px;border-radius:4px}
+.contact .person b{font-family:'Playfair Display',serif;font-size:1.35rem;color:#fff;display:block}
+.contact .person span{color:var(--gold2);font-size:.8rem;letter-spacing:2px;text-transform:uppercase}
+.cl{display:grid;gap:18px}
+.cl a,.cl p{display:flex;gap:14px;align-items:center;word-break:break-all}
+.cl i{font-style:normal;width:42px;height:42px;flex-shrink:0;border:1px solid var(--gold);display:grid;place-items:center;color:var(--gold2)}
+form{background:var(--ivory);padding:44px;color:var(--ink2)}
+form h3{font-size:1.8rem;margin-bottom:24px}
+.f{margin-bottom:18px}
+.f label{display:block;font-size:.78rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px}
+.f input,.f select,.f textarea{width:100%;padding:14px;border:1px solid #d8ccb2;background:#fff;font-family:inherit;font-size:.95rem}
+.f input:focus,.f select:focus,.f textarea:focus{outline:2px solid var(--gold);border-color:transparent}
+form .btn{width:100%;justify-content:center}
+footer{background:#0a0a0a;color:#8d877a;padding:30px 0;font-size:.85rem;text-align:center;border-top:1px solid rgba(217,185,92,.2)}
+.wa{position:fixed;right:22px;bottom:22px;width:60px;height:60px;border-radius:50%;background:#25d366;display:grid;place-items:center;z-index:50;box-shadow:0 10px 25px rgba(0,0,0,.25)}
+.wa svg{width:32px;fill:#fff}
+.rv{opacity:0;transform:translateY(30px);transition:.9s}.rv.in{opacity:1;transform:none}
+@media(max-width:960px){
+ .links{position:fixed;inset:82px 0 auto 0;background:var(--ivory);flex-direction:column;padding:30px;gap:20px;display:none;border-bottom:1px solid var(--gold)}
+ .links.open{display:flex}.burger{display:block}.nav-cta{display:none}
+ .hero .container,.panel.active,.contact .container{grid-template-columns:1fr}
+ .collage{height:420px}.strip .container{grid-template-columns:1fr 1fr}.strip div:nth-child(2){border:none}
+ .steps,.flyers{grid-template-columns:1fr 1fr}.list{grid-template-columns:1fr}
+ .panel img{height:300px}section{padding:80px 0}.logo b{font-size:1rem}
+ .quote{background-attachment:scroll}
+}
+@media(max-width:520px){.steps{grid-template-columns:1fr}.contact .person{flex-direction:column;text-align:center}form{padding:28px}}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="container">
+ <span>📍 Filandia y Quimbaya, Quindío · Atención con cita previa</span>
+ <span>WhatsApp: <a href="https://wa.me/573107049521" target="_blank">+57 310 704 9521</a></span>
+</div></div>
+<header class="nav"><div class="container">
+ <a href="#" class="logo"><img class="mark" src="img/logo.webp" alt="Logo"><div><b>Prestasoluciones</b><small>del Quindío</small></div></a>
+ <nav class="links" id="links"><a href="#servicios">Servicios</a><a href="#proceso">Cómo trabajamos</a><a href="#galeria">Galería</a><a href="#preguntas">Preguntas</a><a href="#contacto">Contacto</a></nav>
+ <a class="btn btn-dark nav-cta" href="#contacto">Agendar cita</a>
+ <button class="burger" id="burger" aria-label="Menú">☰</button>
+</div></header>
+
+<section class="hero"><div class="container">
+ <div class="rv">
+  <div class="kicker">Finanzas · Inmobiliaria · Empresa</div>
+  <h1>Tu aliado de confianza para <em class="g">crecer</em> con tranquilidad</h1>
+  <p>En Prestasoluciones del Quindío te asesoramos en créditos, inmuebles y proyectos empresariales con un trato cercano, claro y profesional.</p>
+  <div class="actions"><a class="btn btn-gold" href="#contacto">Solicitar asesoría</a><a class="btn btn-out" href="#servicios">Conocer servicios</a></div>
+ </div>
+ <div class="collage rv">
+  <img class="a" src="img/casa.webp" alt="Inmueble moderno">
+  <img class="b" src="img/pareja.webp" alt="Clientes satisfechos">
+  <div class="badge"><b>Cita previa</b><span>Atención personalizada en Filandia y Quimbaya</span></div>
+ </div>
+</div></section>
+
+<div class="strip"><div class="container">
+ <div><b>Libranza</b><span>Pensionados y funcionarios</span></div>
+ <div><b>Compra de cartera</b><span>Organiza tus deudas</span></div>
+ <div><b>Inmuebles</b><span>Captamos y administramos</span></div>
+ <div><b>Empresas</b><span>Asesoría y proyección</span></div>
+</div></div>
+
+<section id="servicios"><div class="container">
+ <div class="head rv"><h2>Servicios pensados para <em class="g">cada etapa</em> de tu vida</h2><p>Tres líneas de trabajo con un mismo compromiso: soluciones reales y acompañamiento de principio a fin.</p></div>
+ <div class="tabs rv">
+  <button class="tab active" data-t="t1">Finanzas y créditos</button>
+  <button class="tab" data-t="t2">Gestión inmobiliaria</button>
+  <button class="tab" data-t="t3">Soluciones empresariales</button>
+ </div>
+ <div class="panel active" id="t1"><img src="img/pareja.webp" alt="Créditos">
+  <div><h3>Finanzas y créditos</h3><p>Créditos de libranza para pensionados, jubilados y funcionarios públicos, con tasas competitivas, aprobación rápida y desembolso ágil.</p>
+  <div class="list"><span>Libranza</span><span>Libre inversión</span><span>Compra de cartera</span><span>Créditos hipotecarios</span><span>Negociación de obligaciones antiguas o en mora</span><span>Orientación en reportes de Datacrédito</span></div>
+  <a class="btn btn-dark" href="https://wa.me/573107049521?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20cr%C3%A9ditos" target="_blank">Consultar crédito</a></div></div>
+ <div class="panel" id="t2"><img src="img/casa.webp" alt="Inmobiliaria">
+  <div><h3>Gestión inmobiliaria</h3><p>Déjanos la gestión y tú disfruta la tranquilidad. Captamos y administramos tus inmuebles: locales, viviendas y apartamentos.</p>
+  <div class="list"><span>Compraventa</span><span>Arrendamientos</span><span>Administración</span><span>Rentas</span><span>Inversiones</span><span>Gestión de proyectos inmobiliarios</span></div>
+  <a class="btn btn-dark" href="https://wa.me/573107049521?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20administraci%C3%B3n%20inmobiliaria" target="_blank">Consultar inmuebles</a></div></div>
+ <div class="panel" id="t3"><img src="img/manos.webp" alt="Empresas">
+  <div><h3>Soluciones empresariales</h3><p>Para emprendedores, comerciantes y empresarios que quieren organizar, financiar y hacer crecer su negocio.</p>
+  <div class="list"><span>Estructuración y financiación de proyectos</span><span>Optimización de procesos y gestión administrativa</span><span>Desarrollo comercial y expansión de mercados</span><span>Creación y fortalecimiento de empresas</span><span>Alianzas y proyectos</span><span>Seguros mediante aliados</span></div>
+  <a class="btn btn-dark" href="https://wa.me/573107049521?text=Hola%2C%20quiero%20asesor%C3%ADa%20empresarial" target="_blank">Consultar asesoría</a></div></div>
+</div></section>
+
+<section class="process" id="proceso"><div class="container">
+ <div class="head rv"><h2>Así de <em class="g">sencillo</em> es trabajar con nosotros</h2><p>Un proceso claro y transparente, sin complicaciones.</p></div>
+ <div class="steps">
+  <div class="step rv"><h4>Agenda tu cita</h4><p>Escríbenos por WhatsApp y separa tu espacio en Filandia o Quimbaya.</p></div>
+  <div class="step rv"><h4>Analizamos tu caso</h4><p>Escuchamos tu necesidad y revisamos tu situación con detalle.</p></div>
+  <div class="step rv"><h4>Te presentamos opciones</h4><p>Recibes alternativas claras que se ajustan a ti.</p></div>
+  <div class="step rv"><h4>Te acompañamos</h4><p>Seguimos contigo hasta que todo quede resuelto.</p></div>
+ </div>
+</div></section>
+
+<section class="quote"><div class="container rv">
+ <h2>“Déjanos la gestión, <span>tú puedes disfrutar</span> la tranquilidad.”</h2>
+ <a class="btn btn-gold" href="https://wa.me/573107049521" target="_blank">Hablar con un asesor</a>
+</div></section>
+
+<section id="galeria"><div class="container">
+ <div class="head rv"><h2>Nuestras <em class="g">campañas</em></h2><p>Toca cualquier imagen para verla en grande.</p></div>
+ <div class="flyers">
+  <figure class="rv"><img src="img/flyer-general.webp" alt="Servicios generales"></figure>
+  <figure class="rv"><img src="img/flyer-libranza.webp" alt="Créditos de libranza"></figure>
+  <figure class="rv"><img src="img/flyer-inmobiliaria.webp" alt="Administración inmobiliaria"></figure>
+  <figure class="rv"><img src="img/flyer-empresarial.webp" alt="Soluciones empresariales"></figure>
+ </div>
+</div></section>
+
+<section id="preguntas" style="background:var(--cream)"><div class="container">
+ <div class="head rv" style="justify-content:center;text-align:center"><h2>Preguntas <em class="g">frecuentes</em></h2></div>
+ <div class="faq">
+  <div class="q rv"><button>¿Quiénes pueden acceder a un crédito de libranza?</button><div class="ans"><p>Pensionados, jubilados y funcionarios públicos. Te asesoramos para revisar tu caso y encontrar la mejor alternativa.</p></div></div>
+  <div class="q rv"><button>¿Me pueden ayudar si estoy reportado en Datacrédito?</button><div class="ans"><p>Te orientamos sobre tus reportes y consultas, y te acompañamos en la negociación de obligaciones antiguas o en mora.</p></div></div>
+  <div class="q rv"><button>¿Qué es la compra de cartera?</button><div class="ans"><p>Es unificar tus deudas en una sola obligación para organizar mejor tus pagos. Te explicamos si es conveniente para ti.</p></div></div>
+  <div class="q rv"><button>¿Administran inmuebles de otros propietarios?</button><div class="ans"><p>Sí. Captamos y administramos locales, viviendas y apartamentos para que tú no te preocupes por nada.</p></div></div>
+  <div class="q rv"><button>¿Dónde atienden?</button><div class="ans"><p>En Filandia y Quimbaya, Quindío, con atención personalizada y cita previa.</p></div></div>
+ </div>
+</div></section>
+
+<section class="contact" id="contacto"><div class="container">
+ <div class="rv">
+  <div class="kicker">Contacto</div>
+  <h2>Hablemos de tu <em class="g">próximo paso</em></h2>
+  <p style="color:#a9a291">Agenda tu cita y recibe asesoría personalizada.</p>
+  <div class="person"><img src="img/logo.webp" alt=""><div><b>Jhon Fabio Villegas Gaviria</b><span>Gerente Comercial</span></div></div>
+  <div class="cl">
+   <a href="https://wa.me/573107049521" target="_blank"><i>✆</i>+57 310 704 9521</a>
+   <a href="mailto:prestasolucionesdelquindio@gmail.com"><i>✉</i>prestasolucionesdelquindio@gmail.com</a>
+   <p><i>⌖</i>Filandia y Quimbaya, Quindío</p>
+  </div>
+ </div>
+ <form class="rv" id="form">
+  <h3>Agenda tu cita</h3>
+  <div class="f"><label>Nombre completo</label><input id="n" required></div>
+  <div class="f"><label>Teléfono</label><input id="t" required inputmode="tel"></div>
+  <div class="f"><label>¿En qué te podemos ayudar?</label><select id="s"><option>Crédito de libranza</option><option>Libre inversión</option><option>Compra de cartera</option><option>Crédito hipotecario</option><option>Negociación de deudas / Datacrédito</option><option>Administración de mi inmueble</option><option>Comprar / vender / arrendar</option><option>Asesoría empresarial</option><option>Seguros</option></select></div>
+  <div class="f"><label>Sede preferida</label><select id="m"><option>Filandia</option><option>Quimbaya</option></select></div>
+  <div class="f"><label>Comentarios</label><textarea id="c" rows="3"></textarea></div>
+  <button class="btn btn-gold" type="submit">Enviar por WhatsApp</button>
+ </form>
+</div></section>
+
+<footer>© <span id="y"></span> Prestasoluciones del Quindío · Finanzas • Inmobiliaria • Soluciones empresariales</footer>
+<a class="wa" href="https://wa.me/573107049521?text=Hola%2C%20vengo%20de%20su%20p%C3%A1gina%20web" target="_blank" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm5.2 14c-.2.6-1.3 1.2-1.8 1.2s-1 .3-3.4-.7a11.7 11.7 0 01-4.6-4.1 5.2 5.2 0 01-1.1-2.8 3 3 0 011-2.2 1 1 0 01.7-.3h.5c.2 0 .4 0 .6.5l.8 2a.6.6 0 010 .5 2 2 0 01-.3.5l-.4.5c-.2.1-.3.3-.1.6a8.8 8.8 0 001.6 2 7.9 7.9 0 002.3 1.4c.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3a2.3 2.3 0 01-.1 1.4z"/></svg></a>
+<div class="lb" id="lb"><img id="lbi" alt=""></div>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+const L=document.getElementById('links');document.getElementById('burger').onclick=()=>L.classList.toggle('open');L.querySelectorAll('a').forEach(a=>a.onclick=()=>L.classList.remove('open'));
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.panel').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById(b.dataset.t).classList.add('active')});
+document.querySelectorAll('.q button').forEach(b=>b.onclick=()=>b.parentElement.classList.toggle('open'));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});document.querySelectorAll('.rv').forEach(e=>io.observe(e));
+const lb=document.getElementById('lb'),lbi=document.getElementById('lbi');document.querySelectorAll('.flyers img').forEach(i=>i.onclick=()=>{lbi.src=i.src;lb.classList.add('open')});lb.onclick=()=>lb.classList.remove('open');
+document.getElementById('form').onsubmit=e=>{e.preventDefault();const v=id=>document.getElementById(id).value.trim();
+const t=`Hola, quiero agendar una cita.\nNombre: ${v('n')}\nTeléfono: ${v('t')}\nServicio: ${v('s')}\nSede: ${v('m')}\n${v('c')}`;window.open('https://wa.me/573107049521?text='+encodeURIComponent(t),'_blank')};
+</script>
+</body>
+</html>

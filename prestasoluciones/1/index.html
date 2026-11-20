@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prestasoluciones del Quindío | Créditos, Inmobiliaria y Soluciones Empresariales</title>
+<meta name="description" content="Créditos de libranza, libre inversión, compra de cartera, administración inmobiliaria y asesoría empresarial en Filandia y Quimbaya, Quindío.">
+<meta property="og:title" content="Prestasoluciones del Quindío">
+<meta property="og:description" content="Finanzas • Inmobiliaria • Soluciones empresariales. Atención personalizada en Filandia y Quimbaya.">
+<meta property="og:image" content="img/tarjeta.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#d4af37;--gold2:#f5d77a;--gold3:#a8801f;--black:#0a0a0a;--black2:#141414;--text:#e9e4d8;--muted:#a59f92}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Montserrat,sans-serif;background:var(--black);color:var(--text);line-height:1.6;overflow-x:hidden}
+h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:600;line-height:1.1}
+a{color:inherit;text-decoration:none}
+.gold-text{background:linear-gradient(135deg,var(--gold2),var(--gold) 45%,var(--gold3) 70%,var(--gold2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.container{max-width:1180px;margin:0 auto;padding:0 24px}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:.4s;padding:18px 0}
+nav.scrolled{background:rgba(10,10,10,.92);backdrop-filter:blur(10px);padding:10px 0;border-bottom:1px solid rgba(212,175,55,.25)}
+nav .container{display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{height:46px;border-radius:4px}
+.brand span{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:700;letter-spacing:.5px}
+.menu{display:flex;gap:30px;font-size:.82rem;letter-spacing:1.5px;text-transform:uppercase}
+.menu a{position:relative;padding:4px 0}
+.menu a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--gold);transition:.3s}
+.menu a:hover::after{width:100%}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 30px;border-radius:50px;font-weight:600;font-size:.88rem;letter-spacing:1px;text-transform:uppercase;transition:.3s;cursor:pointer;border:none}
+.btn-gold{background:linear-gradient(135deg,var(--gold2),var(--gold) 50%,var(--gold3));color:#111;box-shadow:0 8px 30px rgba(212,175,55,.35)}
+.btn-gold:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(212,175,55,.5)}
+.btn-line{border:1px solid var(--gold);color:var(--gold2);background:transparent}
+.btn-line:hover{background:rgba(212,175,55,.1)}
+.burger{display:none;background:none;border:none;color:var(--gold);font-size:1.8rem;cursor:pointer}
+/* HERO */
+.hero{min-height:100vh;position:relative;display:flex;align-items:center;padding:120px 0 80px;
+ background:radial-gradient(ellipse at 75% 30%,rgba(212,175,55,.18),transparent 55%),linear-gradient(180deg,#0a0a0a,#111 60%,#0a0a0a)}
+.hero::before{content:'';position:absolute;inset:0;background:url(img/casa.webp) right center/cover no-repeat;opacity:.38;mask-image:linear-gradient(90deg,transparent 25%,#000 75%);-webkit-mask-image:linear-gradient(90deg,transparent 25%,#000 75%)}
+.hero .container{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center}
+.eyebrow{display:inline-block;font-size:.75rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);border:1px solid rgba(212,175,55,.4);padding:8px 18px;border-radius:30px;margin-bottom:26px}
+.hero h1{font-size:clamp(2.8rem,6vw,5rem);margin-bottom:22px}
+.hero p.lead{font-size:1.1rem;color:var(--muted);max-width:540px;margin-bottom:36px;font-weight:300}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap}
+.hero-card{background:linear-gradient(160deg,rgba(255,255,255,.06),rgba(255,255,255,.01));border:1px solid rgba(212,175,55,.35);border-radius:20px;padding:14px;box-shadow:0 30px 80px rgba(0,0,0,.6);transform:rotate(2deg);transition:.5s}
+.hero-card:hover{transform:rotate(0) scale(1.02)}
+.hero-card img{width:100%;border-radius:12px;display:block}
+.stats{display:flex;gap:40px;margin-top:50px;padding-top:30px;border-top:1px solid rgba(212,175,55,.2)}
+.stats div strong{display:block;font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gold2)}
+.stats div span{font-size:.78rem;color:var(--muted);letter-spacing:1px;text-transform:uppercase}
+/* SECTIONS */
+section{padding:110px 0;position:relative}
+.sec-head{text-align:center;max-width:700px;margin:0 auto 70px}
+.sec-head .tag{color:var(--gold);font-size:.78rem;letter-spacing:4px;text-transform:uppercase}
+.sec-head h2{font-size:clamp(2.2rem,4.5vw,3.4rem);margin:12px 0 18px}
+.sec-head p{color:var(--muted);font-weight:300}
+.divider{width:90px;height:2px;margin:0 auto;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+/* SERVICES */
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.svc{background:linear-gradient(180deg,#151515,#0d0d0d);border:1px solid rgba(212,175,55,.18);border-radius:22px;overflow:hidden;transition:.45s;position:relative}
+.svc:hover{transform:translateY(-10px);border-color:var(--gold);box-shadow:0 25px 60px rgba(212,175,55,.15)}
+.svc .ph{height:210px;background-size:cover;background-position:center;position:relative}
+.svc .ph::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,#151515)}
+.svc .icon{width:66px;height:66px;border-radius:50%;border:2px solid var(--gold);display:grid;place-items:center;background:#0d0d0d;position:absolute;top:175px;left:28px;z-index:2;color:var(--gold2)}
+.svc .icon svg{width:30px;height:30px}
+.svc .body{padding:50px 30px 34px}
+.svc h3{font-size:1.75rem;margin-bottom:16px;color:var(--gold2)}
+.svc ul{list-style:none}
+.svc li{padding:8px 0;border-bottom:1px dashed rgba(255,255,255,.08);font-size:.92rem;display:flex;gap:10px;align-items:flex-start}
+.svc li::before{content:'◆';color:var(--gold);font-size:.6rem;margin-top:6px}
+/* FEATURE LIBRANZA */
+.feature{background:linear-gradient(135deg,#121212,#0a0a0a);border-top:1px solid rgba(212,175,55,.15);border-bottom:1px solid rgba(212,175,55,.15)}
+.feature .container{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.feature-img{position:relative}
+.feature-img img{width:100%;border-radius:20px;display:block}
+.feature-img::before{content:'';position:absolute;inset:-18px 18px 18px -18px;border:1px solid var(--gold);border-radius:20px;z-index:-1}
+.feature h2{font-size:clamp(2.2rem,4vw,3.2rem);margin:12px 0 20px}
+.chips{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:30px 0 36px}
+.chip{text-align:center;padding:20px 10px;border:1px solid rgba(212,175,55,.3);border-radius:16px;background:rgba(212,175,55,.04)}
+.chip b{display:block;font-size:1.6rem;color:var(--gold2);font-family:'Cormorant Garamond',serif}
+.chip span{font-size:.78rem;color:var(--muted)}
+/* WHY */
+.why{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.why div{text-align:center;padding:34px 20px;border-radius:18px;border:1px solid rgba(255,255,255,.06);background:#0f0f0f;transition:.3s}
+.why div:hover{border-color:rgba(212,175,55,.5)}
+.why .n{font-family:'Cormorant Garamond',serif;font-size:2.8rem;color:var(--gold)}
+.why h4{margin:6px 0 8px;font-size:1rem;font-weight:600}
+.why p{font-size:.86rem;color:var(--muted)}
+/* GALLERY */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.gallery img{width:100%;border-radius:14px;cursor:zoom-in;transition:.4s;border:1px solid rgba(212,175,55,.2);aspect-ratio:2/3;object-fit:cover;object-position:top}
+.gallery img:hover{transform:scale(1.03);border-color:var(--gold)}
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.94);display:none;align-items:center;justify-content:center;z-index:100;padding:20px;cursor:zoom-out}
+.lightbox.open{display:flex}
+.lightbox img{max-width:100%;max-height:92vh;border-radius:10px}
+/* CONTACT */
+.contact .container{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px}
+.manager{background:linear-gradient(160deg,#171717,#0c0c0c);border:1px solid rgba(212,175,55,.3);border-radius:22px;padding:40px}
+.manager .role{display:inline-block;background:linear-gradient(135deg,var(--gold2),var(--gold3));color:#111;padding:6px 18px;border-radius:6px;font-weight:600;font-size:.8rem;letter-spacing:1px;margin:10px 0 26px}
+.manager h3{font-size:2rem}
+.cinfo{display:flex;gap:16px;align-items:center;padding:16px 0;border-top:1px solid rgba(255,255,255,.07)}
+.cinfo .ci{width:46px;height:46px;flex-shrink:0;border-radius:50%;border:1px solid var(--gold);display:grid;place-items:center;color:var(--gold2)}
+.cinfo .ci svg{width:20px;height:20px}
+.cinfo small{display:block;color:var(--muted);font-size:.75rem;letter-spacing:1px;text-transform:uppercase}
+.cinfo a,.cinfo p{font-size:.95rem;word-break:break-all}
+form{background:#0f0f0f;border:1px solid rgba(212,175,55,.2);border-radius:22px;padding:40px}
+form h3{font-size:1.9rem;margin-bottom:6px}
+form>p{color:var(--muted);font-size:.9rem;margin-bottom:24px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{display:block;font-size:.75rem;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin:14px 0 6px}
+input,select,textarea{width:100%;background:#161616;border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:14px;color:var(--text);font-family:inherit;font-size:.95rem}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold)}
+form .btn{width:100%;justify-content:center;margin-top:24px}
+/* FOOTER */
+footer{border-top:1px solid rgba(212,175,55,.2);padding:40px 0;text-align:center;color:var(--muted);font-size:.85rem}
+footer img{height:60px;margin-bottom:14px;border-radius:4px}
+.wa-float{position:fixed;right:22px;bottom:22px;z-index:60;width:62px;height:62px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 30px rgba(37,211,102,.45);animation:pulse 2s infinite}
+.wa-float svg{width:34px;height:34px;fill:#fff}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.6)}70%{box-shadow:0 0 0 18px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+.reveal{opacity:0;transform:translateY(40px);transition:1s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:960px){
+ .menu{position:fixed;top:0;right:-100%;height:100vh;width:75%;background:#0b0b0b;flex-direction:column;padding:100px 40px;transition:.4s;border-left:1px solid var(--gold)}
+ .menu.open{right:0}.burger{display:block;z-index:60}
+ .hero .container,.feature .container,.contact .container{grid-template-columns:1fr}
+ .hero-card{max-width:420px;margin:0 auto}
+ .services{grid-template-columns:1fr}.why{grid-template-columns:1fr 1fr}.gallery{grid-template-columns:1fr 1fr}
+ .stats{gap:24px;flex-wrap:wrap}.row{grid-template-columns:1fr}.brand span{display:none}
+ section{padding:80px 0}
+}
+</style>
+</head>
+<body>
+<nav id="nav"><div class="container">
+ <a href="#inicio" class="brand"><img src="img/logo.webp" alt="Logo Prestasoluciones del Quindío"><span class="gold-text">Prestasoluciones</span></a>
+ <div class="menu" id="menu">
+  <a href="#servicios">Servicios</a><a href="#libranza">Libranza</a><a href="#nosotros">Nosotros</a><a href="#galeria">Galería</a><a href="#contacto">Contacto</a>
+ </div>
+ <button class="burger" id="burger" aria-label="Menú">☰</button>
+</div></nav>
+
+<header class="hero" id="inicio"><div class="container">
+ <div class="reveal">
+  <span class="eyebrow">Filandia · Quimbaya · Quindío</span>
+  <h1>Soluciones financieras <span class="gold-text">con respaldo y confianza</span></h1>
+  <p class="lead">Créditos, gestión inmobiliaria y asesoría empresarial con atención personalizada. Te acompañamos en cada paso para que tomes las mejores decisiones.</p>
+  <div class="hero-actions">
+   <a class="btn btn-gold" href="https://wa.me/573107049521?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios" target="_blank">Agendar asesoría</a>
+   <a class="btn btn-line" href="#servicios">Ver servicios</a>
+  </div>
+  <div class="stats">
+   <div><strong>3</strong><span>Líneas de servicio</span></div>
+   <div><strong>2</strong><span>Sedes de atención</span></div>
+   <div><strong>100%</strong><span>Atención personalizada</span></div>
+  </div>
+ </div>
+ <div class="hero-card reveal"><img src="img/tarjeta.webp" alt="Tarjeta de presentación Prestasoluciones del Quindío"></div>
+</div></header>
+
+<section id="servicios"><div class="container">
+ <div class="sec-head reveal"><span class="tag">Nuestros servicios</span><h2>Todo lo que necesitas, <span class="gold-text">en un solo lugar</span></h2><div class="divider"></div></div>
+ <div class="services">
+  <div class="svc reveal"><div class="ph" style="background-image:url(img/pareja.webp)"></div>
+   <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div>
+   <div class="body"><h3>Finanzas y créditos</h3><ul>
+    <li>Libranza</li><li>Libre inversión</li><li>Compra de cartera</li><li>Créditos hipotecarios</li><li>Negociación de obligaciones antiguas o en mora</li><li>Orientación sobre reportes y consultas en Datacrédito</li></ul></div></div>
+  <div class="svc reveal"><div class="ph" style="background-image:url(img/casa.webp)"></div>
+   <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg></div>
+   <div class="body"><h3>Gestión inmobiliaria</h3><ul>
+    <li>Compraventa</li><li>Arrendamientos</li><li>Administración</li><li>Rentas de locales, viviendas y apartamentos</li><li>Inversiones</li><li>Gestión de proyectos inmobiliarios</li></ul></div></div>
+  <div class="svc reveal"><div class="ph" style="background-image:url(img/manos.webp)"></div>
+   <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 21V8l8-5 8 5v13"/><path d="M9 21v-6h6v6"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></svg></div>
+   <div class="body"><h3>Soluciones empresariales</h3><ul>
+    <li>Asesoría empresarial</li><li>Estructuración y financiación de proyectos</li><li>Optimización de procesos y gestión administrativa</li><li>Desarrollo comercial y expansión de mercados</li><li>Creación y fortalecimiento de empresas</li><li>Seguros mediante aliados</li></ul></div></div>
+ </div>
+</div></section>
+
+<section class="feature" id="libranza"><div class="container">
+ <div class="feature-img reveal"><img src="img/pareja.webp" alt="Créditos de libranza para pensionados"></div>
+ <div class="reveal">
+  <span class="tag" style="color:var(--gold);font-size:.78rem;letter-spacing:4px;text-transform:uppercase">Servicio destacado</span>
+  <h2>Créditos de <span class="gold-text">Libranza</span></h2>
+  <p style="color:var(--muted)">Diseñados para <strong style="color:var(--text)">pensionados, jubilados y funcionarios públicos</strong>. Te asesoramos para encontrar la opción que mejor se ajusta a tus necesidades.</p>
+  <div class="chips">
+   <div class="chip"><b>%</b><span>Tasas competitivas</span></div>
+   <div class="chip"><b>⚡</b><span>Aprobación rápida</span></div>
+   <div class="chip"><b>$</b><span>Desembolso ágil</span></div>
+  </div>
+  <a class="btn btn-gold" href="https://wa.me/573107049521?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20cr%C3%A9ditos%20de%20libranza" target="_blank">Solicitar información</a>
+ </div>
+</div></section>
+
+<section id="nosotros"><div class="container">
+ <div class="sec-head reveal"><span class="tag">¿Por qué elegirnos?</span><h2>Déjanos la gestión, <span class="gold-text">tú disfruta la tranquilidad</span></h2><div class="divider"></div></div>
+ <div class="why">
+  <div class="reveal"><div class="n">01</div><h4>Atención personalizada</h4><p>Cada cliente es único. Te atendemos con cita previa y dedicación total.</p></div>
+  <div class="reveal"><div class="n">02</div><h4>Asesoría integral</h4><p>Finanzas, inmuebles y empresa: una sola persona de confianza.</p></div>
+  <div class="reveal"><div class="n">03</div><h4>Presencia local</h4><p>Atención en Filandia y Quimbaya, conocemos la región.</p></div>
+  <div class="reveal"><div class="n">04</div><h4>Aliados sólidos</h4><p>Trabajamos con aliados para ofrecerte más alternativas.</p></div>
+ </div>
+</div></section>
+
+<section id="galeria" style="background:#0d0d0d"><div class="container">
+ <div class="sec-head reveal"><span class="tag">Galería</span><h2>Conoce nuestras <span class="gold-text">líneas de servicio</span></h2><div class="divider"></div></div>
+ <div class="gallery">
+  <img class="reveal" src="img/flyer-general.webp" alt="Servicios Prestasoluciones">
+  <img class="reveal" src="img/flyer-libranza.webp" alt="Créditos de libranza">
+  <img class="reveal" src="img/flyer-inmobiliaria.webp" alt="Administración inmobiliaria">
+  <img class="reveal" src="img/flyer-empresarial.webp" alt="Soluciones empresariales">
+ </div>
+</div></section>
+
+<section class="contact" id="contacto"><div class="container">
+ <div class="manager reveal">
+  <img src="img/logo.webp" alt="" style="width:200px;border-radius:6px;margin-bottom:20px">
+  <h3>Jhon Fabio Villegas Gaviria</h3>
+  <span class="role">GERENTE COMERCIAL</span>
+  <div class="cinfo"><div class="ci"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm5.2 14c-.2.6-1.3 1.2-1.8 1.2s-1 .3-3.4-.7a11.7 11.7 0 01-4.6-4.1 5.2 5.2 0 01-1.1-2.8 3 3 0 011-2.2 1 1 0 01.7-.3h.5c.2 0 .4 0 .6.5l.8 2a.6.6 0 010 .5 2 2 0 01-.3.5l-.4.5c-.2.1-.3.3-.1.6a8.8 8.8 0 001.6 2 7.9 7.9 0 002.3 1.4c.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3a2.3 2.3 0 01-.1 1.4z"/></svg></div><div><small>WhatsApp</small><a href="https://wa.me/573107049521" target="_blank">+57 310 704 9521</a></div></div>
+  <div class="cinfo"><div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div><div><small>Correo</small><a href="mailto:prestasolucionesdelquindio@gmail.com">prestasolucionesdelquindio@gmail.com</a></div></div>
+  <div class="cinfo"><div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div><div><small>Atención</small><p>Filandia y Quimbaya · Con cita previa</p></div></div>
+ </div>
+ <form class="reveal" id="form">
+  <h3 class="gold-text">Solicita tu asesoría</h3>
+  <p>Completa tus datos y te contactamos por WhatsApp.</p>
+  <div class="row"><div><label>Nombre</label><input id="f-nombre" required placeholder="Tu nombre"></div>
+  <div><label>Teléfono</label><input id="f-tel" required placeholder="300 000 0000" inputmode="tel"></div></div>
+  <div class="row"><div><label>Servicio</label><select id="f-serv">
+   <option>Crédito de libranza</option><option>Libre inversión</option><option>Compra de cartera</option><option>Crédito hipotecario</option><option>Negociación de deudas / Datacrédito</option><option>Administración inmobiliaria</option><option>Compraventa / arriendo</option><option>Asesoría empresarial</option><option>Seguros</option></select></div>
+  <div><label>Municipio</label><select id="f-mun"><option>Filandia</option><option>Quimbaya</option><option>Otro</option></select></div></div>
+  <label>Mensaje</label><textarea id="f-msg" rows="3" placeholder="Cuéntanos brevemente qué necesitas"></textarea>
+  <button class="btn btn-gold" type="submit">Enviar por WhatsApp</button>
+ </form>
+</div></section>
+
+<footer><div class="container">
+ <img src="img/logo.webp" alt="Prestasoluciones del Quindío">
+ <p>Finanzas • Inmobiliaria • Soluciones empresariales</p>
+ <p style="margin-top:8px">© <span id="y"></span> Prestasoluciones del Quindío. Todos los derechos reservados.</p>
+</div></footer>
+
+<a class="wa-float" href="https://wa.me/573107049521?text=Hola%2C%20vengo%20de%20su%20p%C3%A1gina%20web" target="_blank" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm5.2 14c-.2.6-1.3 1.2-1.8 1.2s-1 .3-3.4-.7a11.7 11.7 0 01-4.6-4.1 5.2 5.2 0 01-1.1-2.8 3 3 0 011-2.2 1 1 0 01.7-.3h.5c.2 0 .4 0 .6.5l.8 2a.6.6 0 010 .5 2 2 0 01-.3.5l-.4.5c-.2.1-.3.3-.1.6a8.8 8.8 0 001.6 2 7.9 7.9 0 002.3 1.4c.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3a2.3 2.3 0 01-.1 1.4z"/></svg></a>
+<div class="lightbox" id="lb"><img id="lbimg" alt=""></div>
+
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+const nav=document.getElementById('nav');addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40));
+const menu=document.getElementById('menu');document.getElementById('burger').onclick=()=>menu.classList.toggle('open');
+menu.querySelectorAll('a').forEach(a=>a.onclick=()=>menu.classList.remove('open'));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const lb=document.getElementById('lb'),lbi=document.getElementById('lbimg');
+document.querySelectorAll('.gallery img').forEach(i=>i.onclick=()=>{lbi.src=i.src;lb.classList.add('open')});lb.onclick=()=>lb.classList.remove('open');
+document.getElementById('form').onsubmit=e=>{e.preventDefault();const v=id=>document.getElementById(id).value.trim();
+ const t=`Hola, soy ${v('f-nombre')}.\nTeléfono: ${v('f-tel')}\nServicio: ${v('f-serv')}\nMunicipio: ${v('f-mun')}\n${v('f-msg')}`;
+ window.open('https://wa.me/573107049521?text='+encodeURIComponent(t),'_blank')};
+</script>
+</body>
+</html>
