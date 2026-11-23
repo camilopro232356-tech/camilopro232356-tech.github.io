@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prestasoluciones del Quindío · Inmuebles en Filandia y Quimbaya</title>
+<meta name="description" content="Casas, fincas, lotes, apartamentos y locales en venta y arriendo en Filandia y Quimbaya. Créditos y asesoría con Prestasoluciones del Quindío.">
+<meta name="theme-color" content="#0b2545">
+<link rel="icon" href="../shared/img/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* Diseño 1 · Buscador (inspirado en Zillow): la búsqueda es la protagonista. */
+:root{--navy:#0b2545;--blue:#1d5fd1;--gold:#c99a2e;--bg:#fff;--soft:#f3f6fb;--ink:#14213d;--mute:#5b6478;--line:#e2e7f0}
+*{box-sizing:border-box;min-width:0}html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 "Plus Jakarta Sans",system-ui,sans-serif;overflow-x:clip}
+img{display:block;max-width:100%}a{color:inherit}
+h1,h2,h3{margin:0;line-height:1.1;letter-spacing:-.02em;text-wrap:balance}
+.wrap{max-width:1200px;margin:0 auto;padding:0 max(4vw,16px)}
+nav{position:sticky;top:0;z-index:30;background:#fff;border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:68px}
+.logo img{height:52px;width:auto}
+.links{display:flex;gap:26px;font-weight:600;font-size:15px}.links a{text-decoration:none}.links a:hover{color:var(--blue)}
+.cta{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:10px;background:var(--blue);color:#fff;font-weight:700;text-decoration:none;border:0;cursor:pointer;font-size:15px}
+.cta.alt{background:#fff;color:var(--navy);border:1.5px solid var(--line)}
+.menu-t{display:none;width:44px;height:44px;border-radius:10px;border:1px solid var(--line);background:#fff;font-size:20px}
+.hero{position:relative;min-height:560px;display:grid;place-items:center;text-align:center;color:#fff;padding:80px 16px 120px;background:var(--navy)}
+.hero .bg{position:absolute;inset:0;background:url(../shared/img/casa.jpg) center 40%/cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,37,69,.55),rgba(11,37,69,.75))}
+.hero>div{position:relative;z-index:1;max-width:860px}
+.hero h1{font-size:clamp(36px,6vw,62px);font-weight:800}
+.hero p{font-size:18px;opacity:.92;margin:14px 0 30px}
+.search{background:#fff;border-radius:16px;padding:10px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) 1.3fr auto;gap:8px;box-shadow:0 20px 50px rgba(0,0,0,.3);text-align:left;color:var(--ink)}
+.search label{display:grid;gap:2px;font-size:12px;font-weight:700;color:var(--mute);padding:6px 10px;border-right:1px solid var(--line)}
+.search select,.search input{border:0;font:600 16px "Plus Jakarta Sans";color:var(--ink);background:none;min-height:30px;outline:none;width:100%}
+.search .cta{min-height:56px;padding:0 26px;font-size:16px}
+.quick{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+.quick button{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.4);color:#fff;border-radius:999px;padding:8px 16px;font:600 14px "Plus Jakarta Sans";cursor:pointer;min-height:40px}
+.trust{margin-top:-56px;position:relative;z-index:2}
+.trust .wrap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.trust div{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:0 12px 30px rgba(11,37,69,.08);display:flex;gap:14px;align-items:center}
+.trust i{flex:none;width:46px;height:46px;border-radius:12px;background:var(--soft);display:grid;place-items:center;color:var(--blue)}
+.trust b{display:block;font-size:16px}.trust span{font-size:14px;color:var(--mute)}
+section{padding:80px 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:26px;flex-wrap:wrap}
+.head h2{font-size:clamp(28px,3.6vw,40px);font-weight:800}.head p{color:var(--mute);margin:6px 0 0}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.card{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff;transition:.25s;display:flex;flex-direction:column}
+.card:hover{box-shadow:0 18px 40px rgba(11,37,69,.12);transform:translateY(-3px)}
+.card .pic{position:relative;aspect-ratio:400/260;background:var(--soft)}
+.card .pic svg{width:100%;height:100%;display:block}
+.badge{position:absolute;top:12px;left:12px;background:#fff;color:var(--navy);font-weight:800;font-size:12px;padding:5px 10px;border-radius:999px}
+.badge.op{left:auto;right:12px;background:var(--navy);color:#fff}
+.card .b{padding:16px 18px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
+.price{font-size:24px;font-weight:800;color:var(--navy)}
+.meta{display:flex;gap:14px;color:var(--mute);font-size:14px;flex-wrap:wrap}.meta span{display:flex;gap:5px;align-items:center}
+.card h3{font-size:16px;font-weight:700}
+.loc{color:var(--mute);font-size:14px;display:flex;gap:4px;align-items:center}
+.card .cta{margin-top:auto;justify-content:center}
+.vacio{grid-column:1/-1;text-align:center;color:var(--mute);padding:30px}
+.nota{font-size:13px;color:var(--mute);margin-top:16px}
+.serv{background:var(--soft)}
+.sgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.s{background:#fff;border-radius:16px;padding:26px;border:1px solid var(--line)}
+.s i{width:48px;height:48px;border-radius:12px;background:var(--navy);color:var(--gold);display:grid;place-items:center;margin-bottom:14px}
+.s h3{font-size:20px;margin-bottom:10px}.s ul{margin:0;padding:0;list-style:none;color:var(--mute);font-size:15px}.s li{padding:5px 0;display:flex;gap:8px}.s li svg{color:var(--blue);flex:none;margin-top:3px}
+.simw{display:grid;grid-template-columns:1fr 1.2fr;gap:40px;align-items:center}
+.simw h2{font-size:clamp(28px,3.6vw,40px);font-weight:800}.simw p{color:var(--mute)}
+#sim{display:grid;grid-template-columns:1.2fr 1fr;border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.sim-in{padding:22px;display:grid;gap:16px}
+.sim-in label{display:grid;gap:6px;font-weight:700;font-size:14px}
+.sim-in output{font-weight:800;color:var(--blue)}
+input[type=range]{width:100%;accent-color:var(--blue)}
+.sim-in select{min-height:44px;border:1px solid var(--line);border-radius:10px;padding:0 10px;font:600 16px "Plus Jakarta Sans"}
+.sim-out{background:var(--navy);color:#fff;padding:22px;display:flex;flex-direction:column;gap:8px;justify-content:center}
+.sim-out b{font-size:34px;color:var(--gold)}.sim-out small{opacity:.75;font-size:13px}
+.sim-btn{margin-top:8px;display:inline-flex;justify-content:center;align-items:center;min-height:46px;border-radius:10px;background:var(--gold);color:var(--navy);font-weight:800;text-decoration:none}
+.contact{background:var(--navy);color:#fff}
+.cgrid{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:start}
+.cgrid h2{font-size:clamp(28px,3.6vw,40px);font-weight:800}
+.person{display:flex;gap:16px;align-items:center;margin:22px 0;background:rgba(255,255,255,.06);border-radius:16px;padding:16px}
+.person img{width:64px;height:64px;border-radius:50%;object-fit:cover}
+.clist{display:grid;gap:10px;color:#d6deeb}.clist a,.clist span{display:flex;gap:10px;align-items:center;text-decoration:none}
+form{display:grid;grid-template-columns:1fr 1fr;gap:12px;background:#fff;color:var(--ink);border-radius:18px;padding:24px}
+form label{display:grid;gap:5px;font-weight:700;font-size:14px}.full{grid-column:1/-1}
+form input,form select,form textarea{font:500 16px "Plus Jakarta Sans";border:1px solid var(--line);border-radius:10px;padding:12px;min-height:48px;width:100%}
+form button{min-height:50px;border:0;border-radius:10px;background:var(--blue);color:#fff;font:800 16px "Plus Jakarta Sans";cursor:pointer}
+.fmsg{margin:0;font-size:14px;color:var(--blue);min-height:1em}
+input:focus-visible,select:focus-visible,textarea:focus-visible,button:focus-visible,a:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+footer{background:#081a31;color:#9fb0c8;padding:30px 0 90px;font-size:14px}footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center}footer img{height:34px}
+.rv{opacity:0;transform:translateY(20px);transition:.8s}.rv.in{opacity:1;transform:none}
+@media(max-width:960px){.links{display:none;position:absolute;top:68px;left:0;right:0;background:#fff;flex-direction:column;gap:0;border-bottom:1px solid var(--line)}.links.open{display:flex}.links a{padding:14px max(4vw,16px)}.menu-t{display:block}nav .cta{display:none}
+.search{grid-template-columns:1fr 1fr}.search label{border:0}.search .cta{grid-column:1/-1}.grid,.sgrid{grid-template-columns:1fr 1fr}.simw,.cgrid{grid-template-columns:1fr}.trust .wrap{grid-template-columns:1fr}.trust{margin-top:-40px}}
+@media(max-width:600px){.grid,.sgrid{grid-template-columns:1fr}#sim{grid-template-columns:1fr}form{grid-template-columns:1fr}.hero{min-height:0;padding-bottom:90px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><a class="logo" href="#"><img src="../shared/img/logo-dark.png" alt="Prestasoluciones del Quindío"></a>
+<div class="links"><a href="#inmuebles">Inmuebles</a><a href="#servicios">Servicios</a><a href="#credito">Simulador</a><a href="#contacto">Contacto</a></div>
+<a class="cta" data-wa="Hola Prestasoluciones del Quindío, quiero agendar una asesoría.">Agendar asesoría</a><button class="menu-t" aria-label="Menú" aria-expanded="false">☰</button></div></nav>
+
+<header class="hero"><div class="bg"></div><div>
+<h1>Encuentra tu lugar en el Quindío</h1>
+<p>Casas, fincas, lotes y locales en Filandia y Quimbaya, con asesoría personal y opciones de crédito.</p>
+<form class="search" id="buscar" onsubmit="event.preventDefault();document.getElementById('inmuebles').scrollIntoView()">
+<label>Operación<select id="s-op"><option>Todos</option><option>Venta</option><option>Arriendo</option></select></label>
+<label>Tipo<select id="s-tipo"><option>Todos</option><option>Casa</option><option>Apartamento</option><option>Finca</option><option>Lote</option><option>Local</option></select></label>
+<label>Municipio<select id="s-ciudad"><option>Todas</option><option>Filandia</option><option>Quimbaya</option></select></label>
+<label>Palabra clave<input id="s-q" type="search" placeholder="Balcones, piscina, vista…"></label>
+<button class="cta" type="submit">Buscar</button></form>
+<div class="quick"><button onclick="qs('tipo','Finca')">Fincas cafeteras</button><button onclick="qs('op','Arriendo')">En arriendo</button><button onclick="qs('tipo','Lote')">Lotes</button><button onclick="qs('tipo','Local')">Locales comerciales</button></div>
+</div></header>
+
+<div class="trust"><div class="wrap">
+</div></div>
+
+<section id="inmuebles"><div class="wrap">
+<div class="head rv"><div><h2>Inmuebles disponibles</h2><p>Toca uno para pedir información o agendar una visita.</p></div><a class="cta alt" data-wa="Hola Prestasoluciones del Quindío, quiero vender o arrendar mi inmueble.">Publicar mi inmueble</a></div>
+<div class="grid" id="grid"></div>
+<p class="nota">Inmuebles de ejemplo para el diseño; se reemplazan por el portafolio real.</p>
+</div></section>
+
+<section class="serv" id="servicios"><div class="wrap">
+<div class="head rv"><div><h2>Todo en un solo lugar</h2><p>Inmuebles, créditos y soluciones para tu empresa, con una sola persona de confianza.</p></div></div>
+<div class="sgrid" id="sgrid"></div></div></section>
+
+<section id="credito"><div class="wrap simw">
+<div class="rv"><h2>Calcula tu crédito en segundos</h2><p>Libranza, libre inversión, compra de cartera o crédito hipotecario para comprar tu inmueble. Mueve los valores y te mostramos una cuota aproximada.</p></div>
+<div id="sim" class="rv"></div></div></section>
+
+<section class="contact" id="contacto"><div class="wrap cgrid">
+<div class="rv"><h2>Hablemos de tu próximo paso</h2>
+<div class="person"><img src="../shared/img/manos.jpg" alt=""><div><b>Jhon Fabio Villegas Gaviria</b><br><span style="opacity:.8">Gerente comercial</span></div></div>
+<div class="clist"><a data-wa><span>WhatsApp <b class="wanum"></b></span></a><a href="mailto:prestasolucionesdelquindio@gmail.com">prestasolucionesdelquindio@gmail.com</a><span>Filandia y Quimbaya · Atención con cita previa</span></div></div>
+<form id="form" class="rv" novalidate></form></div></section>
+
+<footer><div class="wrap"><img src="../shared/img/logo.png" alt="Prestasoluciones del Quindío"><span>Finanzas · Inmobiliaria · Soluciones empresariales · © <span class="yr"></span></span></div></footer>
+
+<script src="../shared/app.js"></script>
+<script>
+{
+document.querySelector('.trust .wrap').innerHTML=[['casa','Inmuebles verificados','Visitas con cita previa'],['moneda','Crédito para comprar','Libranza, hipotecario y más'],['pin','Conocemos la región','Sedes en Filandia y Quimbaya']].map(([i,b,s])=>`<div><i>${ico(i,24)}</i><div><b>${b}</b><span>${s}</span></div></div>`).join('');
+document.querySelector('.clist a[data-wa]').insertAdjacentHTML('afterbegin',ico('wa'));
+document.querySelector('.clist a[href^=mailto]').insertAdjacentHTML('afterbegin',ico('mail'));
+document.querySelector('.clist span:last-child').insertAdjacentHTML('afterbegin',ico('pin'));
+mountProps({grid:'#grid',card:(p,svg)=>`<article class="card rv in"><div class="pic">${svg}${p.tag?`<span class="badge">${p.tag}</span>`:''}<span class="badge op">${p.op}</span></div><div class="b"><div class="price">${precioTxt(p)}</div><div class="meta">${p.hab?`<span>${ico('cama',16)}${p.hab} hab</span>`:''}${p.ban?`<span>${ico('bano',16)}${p.ban} baños</span>`:''}<span>${ico('area',16)}${p.area}</span></div><h3>${p.t}</h3><div class="loc">${ico('pin',15)}${p.zona}, ${p.ciudad}</div><a class="cta" href="${waProp(p)}" target="_blank" rel="noopener">Me interesa</a></div></article>`});
+const sync=()=>{['op','tipo','ciudad'].forEach(k=>setFiltro(k,document.getElementById('s-'+k).value));setFiltro('q',document.getElementById('s-q').value.trim().toLowerCase())};
+document.getElementById('buscar').addEventListener('input',sync);
+window.qs=(k,v)=>{document.getElementById('s-'+k).value=v;sync();document.getElementById('inmuebles').scrollIntoView()};
+document.getElementById('sgrid').innerHTML=SERV.map(s=>`<div class="s rv"><i>${ico(s.ic,24)}</i><h3>${s.k}</h3><ul>${s.items.map(x=>`<li>${ico('check',16)}${x}</li>`).join('')}</ul></div>`).join('');
+mountSim('#sim');document.getElementById('form').innerHTML=FORM_HTML;mountForm('#form');commonBoot();waFloat();
+}
+</script>
+</body>
+</html>

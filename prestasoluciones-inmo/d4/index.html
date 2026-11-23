@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prestasoluciones del Quindío · Compra tu inmueble con crédito</title>
+<meta name="description" content="Simula tu crédito y encuentra tu inmueble en Filandia y Quimbaya. Libranza, hipotecario, compra de cartera y libre inversión.">
+<meta name="theme-color" content="#1b1b1f">
+<link rel="icon" href="../shared/img/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,800&display=swap" rel="stylesheet">
+<style>
+/* Diseño 4 · Herramientas primero (inspirado en Redfin): el simulador de crédito abre la página. */
+:root{--dark:#1b1b1f;--red:#c8102e;--gold:#e0b53a;--bg:#f7f5f1;--card:#fff;--ink:#1b1b1f;--mute:#5e5e66;--line:#e4e0d8}
+*{box-sizing:border-box;min-width:0}html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 "DM Sans",system-ui,sans-serif;overflow-x:clip}
+img{display:block;max-width:100%}a{color:inherit}
+h1,h2,h3{margin:0;line-height:1.08;letter-spacing:-.02em;text-wrap:balance}
+.wrap{max-width:1200px;margin:0 auto;padding:0 max(4vw,16px)}
+nav{position:sticky;top:0;z-index:30;background:var(--dark);color:#fff}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+nav img{height:52px}
+.links{display:flex;gap:26px;font-weight:500;font-size:15px}.links a{text-decoration:none;opacity:.9}.links a:hover{color:var(--gold)}
+.bt{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 20px;border-radius:8px;background:var(--red);color:#fff;text-decoration:none;font:700 15px "DM Sans";border:0;cursor:pointer}
+.bt.g{background:var(--gold);color:var(--dark)}.bt.o{background:none;border:1.5px solid var(--ink);color:var(--ink)}
+.menu-t{display:none;width:44px;height:44px;border-radius:8px;border:1px solid #444;background:none;color:#fff;font-size:20px}
+.hero{background:var(--dark);color:#fff;padding:60px 0 70px}
+.hgrid{display:grid;grid-template-columns:1fr 1.1fr;gap:50px;align-items:center}
+.hero h1{font-size:clamp(36px,5.4vw,60px);font-weight:800}
+.hero h1 span{color:var(--gold)}
+.hero p{color:#c9c9d1;font-size:18px;margin:16px 0 24px}
+.steps{display:grid;gap:12px;margin:0;padding:0;list-style:none}
+.steps li{display:flex;gap:12px;align-items:center;color:#e6e6ea}
+.steps b{flex:none;width:30px;height:30px;border-radius:50%;background:var(--red);display:grid;place-items:center;font-size:14px}
+#sim{background:#fff;color:var(--ink);border-radius:18px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.35)}
+#sim::before{content:"Simulador de crédito";display:block;background:var(--red);color:#fff;font-weight:800;padding:14px 22px;font-size:15px}
+.sim-in{padding:22px;display:grid;gap:16px}.sim-in label{display:grid;gap:6px;font-weight:700;font-size:14px}
+.sim-in output{color:var(--red);font-weight:800;font-size:18px}
+input[type=range]{accent-color:var(--red);width:100%}
+.sim-in select{min-height:46px;border:1px solid var(--line);border-radius:8px;padding:0 10px;font:500 16px "DM Sans"}
+.sim-out{background:#fbf3df;padding:20px 22px;display:grid;gap:6px}
+.sim-out span{font-weight:700;color:var(--mute);font-size:14px}.sim-out b{font-size:38px;font-weight:800}.sim-out small{color:var(--mute);font-size:13px}
+.sim-btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;border-radius:8px;background:var(--dark);color:#fff;font-weight:800;text-decoration:none;margin-top:6px}
+section{padding:80px 0}
+.sh{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:24px}
+.sh h2{font-size:clamp(28px,3.8vw,42px);font-weight:800}.sh p{color:var(--mute);margin:6px 0 0}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.chips button{min-height:42px;padding:0 16px;border-radius:999px;border:1.5px solid var(--line);background:#fff;font:700 14px "DM Sans";cursor:pointer}
+.chips button[aria-pressed=true]{background:var(--dark);border-color:var(--dark);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.card{background:var(--card);border-radius:14px;overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column}
+.card .pic{position:relative;aspect-ratio:400/260}.card .pic svg{width:100%;height:100%}
+.card .lbl{position:absolute;left:12px;top:12px;background:var(--red);color:#fff;font-weight:800;font-size:12px;padding:4px 10px;border-radius:6px}
+.card .b{padding:16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card .pr{display:flex;justify-content:space-between;align-items:baseline;gap:8px}.card .pr b{font-size:22px;font-weight:800}
+.card .cuota{font-size:13px;color:var(--mute)}.card .cuota em{font-style:normal;color:var(--red);font-weight:800}
+.card h3{font-size:16px;font-weight:700}.card .m{color:var(--mute);font-size:14px}
+.card .acts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:auto;padding-top:10px}
+.card .acts a{min-height:42px;font-size:14px;padding:0 10px}
+.vacio{grid-column:1/-1;color:var(--mute);text-align:center}
+.nota{font-size:13px;color:var(--mute);margin-top:16px}
+.why{background:#fff;border-block:1px solid var(--line)}
+.wgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.w{padding:22px;border-radius:14px;background:var(--bg)}.w b{display:block;font-size:18px;margin:10px 0 6px}.w span{color:var(--mute);font-size:15px}.w i{color:var(--red)}
+.sgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.s{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px}
+.s h3{font-size:20px;margin:10px 0}.s i{color:var(--red)}.s ul{margin:0;padding-left:18px;color:var(--mute)}.s li{padding:3px 0}
+.cta-band{background:var(--red);color:#fff;border-radius:18px;padding:36px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+.cta-band h2{font-size:clamp(26px,3.4vw,38px);font-weight:800}.cta-band p{margin:6px 0 0;opacity:.9}
+.cgrid{display:grid;grid-template-columns:1fr 1.1fr;gap:40px}
+.cgrid h2{font-size:clamp(28px,3.8vw,42px);font-weight:800}
+.cinfo{display:grid;gap:10px;margin-top:18px;color:var(--mute)}.cinfo b{color:var(--ink)}
+form{display:grid;grid-template-columns:1fr 1fr;gap:12px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px}
+form label{display:grid;gap:5px;font-weight:700;font-size:14px}.full{grid-column:1/-1}
+form input,form select,form textarea{font:500 16px "DM Sans";border:1px solid var(--line);border-radius:8px;padding:12px;min-height:48px;width:100%}
+form button{min-height:50px;border:0;border-radius:8px;background:var(--red);color:#fff;font:800 16px "DM Sans";cursor:pointer}
+.fmsg{margin:0;font-size:14px;color:var(--red);min-height:1em}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+footer{background:var(--dark);color:#a5a5ae;padding:28px 0 90px;font-size:14px}footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center}footer img{height:34px}
+.rv{opacity:0;transform:translateY(20px);transition:.8s}.rv.in{opacity:1;transform:none}
+@media(max-width:960px){.links{display:none;position:absolute;top:68px;left:0;right:0;background:var(--dark);flex-direction:column;gap:0}.links.open{display:flex}.links a{padding:14px max(4vw,16px)}.menu-t{display:block}nav .bt{display:none}
+.hgrid,.cgrid{grid-template-columns:1fr}.grid,.sgrid{grid-template-columns:1fr 1fr}.wgrid{grid-template-columns:1fr 1fr}.cta-band{grid-template-columns:1fr}}
+@media(max-width:600px){.grid,.sgrid,.wgrid{grid-template-columns:1fr}form{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><a href="#"><img src="../shared/img/logo.png" alt="Prestasoluciones del Quindío"></a>
+<div class="links"><a href="#inmuebles">Inmuebles</a><a href="#por-que">Por qué nosotros</a><a href="#servicios">Servicios</a><a href="#contacto">Contacto</a></div>
+<a class="bt" data-wa="Hola Prestasoluciones del Quindío, quiero agendar una asesoría.">Agendar asesoría</a><button class="menu-t" aria-label="Menú" aria-expanded="false">☰</button></div></nav>
+
+<header class="hero"><div class="wrap hgrid">
+<div class="rv"><h1>Primero calcula tu crédito, <span>luego elige tu inmueble</span></h1>
+<p>Sabemos cuánto pesa una cuota. Por eso te mostramos los números claros antes de buscar casa, finca o local en Filandia y Quimbaya.</p>
+<ol class="steps"><li><b>1</b>Simula tu cuota aproximada</li><li><b>2</b>Escoge el inmueble que te sirve</li><li><b>3</b>Te acompañamos con el crédito y la firma</li></ol></div>
+<div id="sim" class="rv"></div></div></header>
+
+<section id="inmuebles"><div class="wrap">
+<div class="sh rv"><div><h2>Inmuebles con cuota estimada</h2><p>Para compras, calculamos una cuota de referencia con crédito hipotecario a 15 años financiando el 70 %.</p></div><a class="bt o" data-wa="Hola Prestasoluciones del Quindío, quiero publicar mi inmueble con ustedes.">Publicar mi inmueble</a></div>
+<div class="chips" id="chips"></div>
+<div class="grid" id="grid"></div>
+<p class="nota">Inmuebles y valores de ejemplo para el diseño; se reemplazan por el portafolio real.</p>
+</div></section>
+
+<section class="why" id="por-que"><div class="wrap">
+<div class="sh rv"><h2>Por qué elegirnos</h2></div>
+<div class="wgrid" id="wgrid"></div></div></section>
+
+<section id="servicios"><div class="wrap">
+<div class="sh rv"><h2>Nuestros servicios</h2></div>
+<div class="sgrid" id="sgrid"></div>
+<div class="cta-band rv" style="margin-top:40px"><div><h2>¿Tienes un inmueble para vender o arrendar?</h2><p>Lo administramos por ti: captamos inquilinos, cobramos y te mantenemos al día.</p></div><a class="bt g" data-wa="Hola Prestasoluciones del Quindío, quiero que administren mi inmueble.">Quiero que lo administren</a></div>
+</div></section>
+
+<section id="contacto" style="padding-top:20px"><div class="wrap cgrid">
+<div class="rv"><h2>Agenda tu asesoría</h2><p style="color:var(--mute)">Te atendemos con cita previa en Filandia y Quimbaya.</p>
+<div class="cinfo"><div><b>Jhon Fabio Villegas Gaviria</b> · Gerente comercial</div><div>WhatsApp <a data-wa class="wanum"></a></div><div><a href="mailto:prestasolucionesdelquindio@gmail.com">prestasolucionesdelquindio@gmail.com</a></div></div></div>
+<form id="form" class="rv" novalidate></form></div></section>
+
+<footer><div class="wrap"><img src="../shared/img/logo.png" alt="Prestasoluciones del Quindío"><span>© <span class="yr"></span> · Finanzas · Inmobiliaria · Soluciones empresariales</span></div></footer>
+<script src="../shared/app.js"></script>
+<script>
+{
+const cuota=p=>{if(p.op!=='Venta')return '';const P=p.precio*.7,r=.011,n=180;return fmt(P*r/(1-Math.pow(1+r,-n)))};
+mountProps({grid:'#grid',card:(p,svg)=>`<article class="card rv in"><div class="pic">${svg}<span class="lbl">${p.op}</span></div><div class="b"><div class="pr"><b>${precioTxt(p)}</b><span class="m">${p.tipo}</span></div>${p.op==='Venta'?`<div class="cuota">Cuota estimada <em>${cuota(p)}/mes</em></div>`:`<div class="cuota">Arriendo mensual</div>`}<h3>${p.t}</h3><div class="m">${p.zona}, ${p.ciudad} · ${p.hab?p.hab+' hab · ':''}${p.area}</div><div class="acts"><a class="bt" href="${waProp(p)}" target="_blank" rel="noopener">Agendar visita</a><a class="bt o" href="#sim" onclick="document.getElementById('sim').scrollIntoView()">Simular</a></div></div></article>`});
+const ch=document.getElementById('chips'),opts=[['Todos','tipo','Todos'],['Casas','tipo','Casa'],['Fincas','tipo','Finca'],['Apartamentos','tipo','Apartamento'],['Lotes','tipo','Lote'],['Locales','tipo','Local']];
+ch.innerHTML=opts.map(([l,k,v],i)=>`<button aria-pressed="${!i}" data-k="${k}" data-v="${v}">${l}</button>`).join('');
+ch.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;ch.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b));setFiltro(b.dataset.k,b.dataset.v)});
+document.getElementById('wgrid').innerHTML=[['check','Atención personalizada','Cada cliente es único: te atendemos con cita y dedicación total.'],['moneda','Crédito y compra juntos','Un solo asesor para el inmueble y la financiación.'],['pin','Presencia local','Sedes en Filandia y Quimbaya; conocemos cada vereda.'],['grafica','Aliados sólidos','Trabajamos con aliados para darte más alternativas.']].map(([i,b,s])=>`<div class="w rv"><i>${ico(i,28)}</i><b>${b}</b><span>${s}</span></div>`).join('');
+document.getElementById('sgrid').innerHTML=SERV.map(s=>`<div class="s rv"><i>${ico(s.ic,28)}</i><h3>${s.k}</h3><ul>${s.items.map(x=>`<li>${x}</li>`).join('')}</ul></div>`).join('');
+mountSim('#sim');document.getElementById('form').innerHTML=FORM_HTML;mountForm('#form');commonBoot();waFloat();
+}
+</script>
+</body>
+</html>

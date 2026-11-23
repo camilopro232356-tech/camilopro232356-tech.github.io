@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Forno Rosso · Pizzería artesanal</title>
+<meta name="description" content="Pizza artesanal al horno, combos y domicilios. Arma tu pizza y pide por WhatsApp.">
+<meta name="theme-color" content="#c62828">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rubik:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+/* Referencia 2 · Pizzería: rojo tomate, crema y negro, ilustraciones nítidas, arma tu pizza. */
+:root{--red:#c62828;--red2:#9c1b1b;--cream:#fff4e0;--ink:#1d1611;--mute:#6b5a4c;--yel:#ffc13b;--green:#2e7d32;--line:#f0dcc0}
+*{box-sizing:border-box;min-width:0}html{scroll-behavior:smooth;scroll-padding-top:74px}
+body{margin:0;background:var(--cream);color:var(--ink);font:400 16px/1.6 Rubik,system-ui,sans-serif;overflow-x:clip}
+img{display:block;max-width:100%}a{color:inherit}
+h1,h2,h3{font-family:"Bebas Neue",Impact,sans-serif;font-weight:400;letter-spacing:.01em;margin:0;line-height:.95;text-wrap:balance}
+.wrap{max-width:1200px;margin:0 auto;padding:0 max(4vw,16px)}
+nav{position:sticky;top:0;z-index:30;background:var(--ink);color:#fff}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px;gap:14px}
+.brand{font:400 34px "Bebas Neue";text-decoration:none;color:#fff}.brand i{font-style:normal;color:var(--yel)}
+.links{display:flex;gap:24px;font-weight:700}.links a{text-decoration:none}.links a:hover{color:var(--yel)}
+.bt{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 22px;border-radius:14px;background:var(--red);color:#fff;text-decoration:none;font:800 15px Rubik;border:0;cursor:pointer;box-shadow:0 4px 0 var(--red2)}
+.bt:active{transform:translateY(2px);box-shadow:0 2px 0 var(--red2)}
+.bt.y{background:var(--yel);color:var(--ink);box-shadow:0 4px 0 #c78f12}.bt.k{background:#fff;color:var(--ink);box-shadow:0 4px 0 #ccb89a}
+.cartb{position:relative}.cartb span{position:absolute;top:-8px;right:-8px;background:var(--yel);color:var(--ink);border-radius:999px;font-size:12px;min-width:22px;height:22px;display:grid;place-items:center}
+.menu-t{display:none;width:46px;height:46px;border-radius:12px;border:1px solid #444;background:none;color:#fff;font-size:20px}
+.hero{background:var(--red);color:#fff;overflow:hidden;position:relative}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 20%,rgba(255,255,255,.12) 0 2px,transparent 3px) 0 0/34px 34px}
+.hgrid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;min-height:620px;position:relative}
+.hero h1{font-size:clamp(60px,8.5vw,118px)}.hero h1 span{color:var(--yel);display:block}
+.hero p{font-size:20px;max-width:40ch;margin:12px 0 26px;opacity:.95}
+.hero .btns{display:flex;gap:12px;flex-wrap:wrap}
+.pz{width:min(100%,560px);margin:0 auto;animation:spin 60s linear infinite;filter:drop-shadow(0 30px 40px rgba(0,0,0,.35))}
+@keyframes spin{to{transform:rotate(360deg)}}
+.strip{background:var(--yel);font:400 26px "Bebas Neue";white-space:nowrap;overflow:hidden;padding:10px 0;border-block:3px solid var(--ink)}
+.strip div{display:inline-block;animation:mq 30s linear infinite}@keyframes mq{to{transform:translateX(-50%)}}
+section{padding:90px 0}
+.t{text-align:center;margin-bottom:38px}.t h2{font-size:clamp(52px,8vw,96px)}.t p{color:var(--mute);max-width:560px;margin:8px auto 0;font-size:18px}
+.mgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.pcard{background:#fff;border-radius:26px;padding:20px;border:3px solid var(--ink);box-shadow:8px 8px 0 var(--ink);display:flex;flex-direction:column;gap:8px}
+.pcard svg{width:70%;margin:0 auto;display:block}
+.pcard h3{font-size:36px}.pcard p{color:var(--mute);margin:0;font-size:15px}
+.sizes{display:flex;gap:6px;margin-top:6px}.sizes button{flex:1;min-height:42px;border-radius:10px;border:2px solid var(--line);background:var(--cream);font:700 13px Rubik;cursor:pointer}
+.sizes button[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.pcard .row{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:8px}.pcard .row b{font-size:24px}
+.tag{align-self:flex-start;background:var(--yel);font-weight:800;font-size:12px;padding:4px 10px;border-radius:999px}
+.builder{background:var(--ink);color:#fff}
+.bgrid{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:center}
+.bgrid h2{font-size:clamp(52px,8vw,96px);color:var(--yel)}
+#mypz{width:min(100%,460px);margin:0 auto;display:block}
+.opts{display:grid;gap:18px}.opts h3{font-size:28px;color:var(--yel)}
+.chips{display:flex;gap:8px;flex-wrap:wrap}.chips label{cursor:pointer}
+.chips input{position:absolute;opacity:0}.chips span{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;border:2px solid #555;font-weight:700;font-size:15px}
+.chips input:checked+span{background:var(--yel);color:var(--ink);border-color:var(--yel)}
+.chips input:focus-visible+span{outline:3px solid #fff;outline-offset:2px}
+.bsum{display:flex;justify-content:space-between;align-items:center;gap:16px;background:#2c241d;border-radius:18px;padding:16px 20px;flex-wrap:wrap}.bsum b{font:400 44px "Bebas Neue";color:var(--yel)}
+.combos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.combo{border-radius:26px;padding:26px;color:#fff;display:flex;flex-direction:column;gap:8px;min-height:260px}
+.combo h3{font-size:44px}.combo .pr{font:400 52px "Bebas Neue";margin-top:auto}
+.cele{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;background:#fff;border:3px solid var(--ink);border-radius:30px;padding:clamp(26px,5vw,56px);box-shadow:10px 10px 0 var(--red)}
+.cele h2{font-size:clamp(46px,6vw,76px)}.cele ul{margin:14px 0 22px;padding:0;list-style:none;display:grid;gap:8px}.cele li::before{content:"🍕 "}
+.info{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.ib{background:#fff;border-radius:22px;padding:24px;border:3px solid var(--ink)}.ib h3{font-size:34px;color:var(--red)}
+.hrs{display:grid;grid-template-columns:1fr auto;gap:4px 12px}.hrs span:nth-child(even){font-weight:700;white-space:nowrap}
+[data-cart]{position:fixed;right:0;top:0;bottom:0;width:min(420px,100%);background:#fff;z-index:50;box-shadow:-20px 0 50px rgba(0,0,0,.25);transform:translateX(105%);transition:.35s;display:flex;flex-direction:column;padding:22px}
+[data-cart].open{transform:none}[data-cart] .hd{display:flex;justify-content:space-between;align-items:center}[data-cart] h3{font-size:38px}
+[data-cart] .x{width:44px;height:44px;border-radius:50%;border:2px solid var(--ink);background:none;font-size:20px;cursor:pointer}
+.cl{flex:1;overflow:auto;margin:14px 0}.ci{display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
+.qq{display:flex;gap:8px;align-items:center}.qq button{width:32px;height:32px;border-radius:50%;border:2px solid var(--ink);background:#fff;cursor:pointer}
+.ce{color:var(--mute)}.tot{display:flex;justify-content:space-between;font-size:22px;font-weight:800;margin-bottom:10px}
+[data-cart] input{min-height:48px;border:2px solid var(--line);border-radius:12px;padding:0 12px;font:500 16px Rubik;margin-bottom:10px;width:100%}
+.cs[disabled]{opacity:.5}
+.nota{text-align:center;color:var(--mute);font-size:13px;margin-top:20px}
+footer{background:var(--ink);color:#bba898;padding:36px 0 90px}footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+:focus-visible{outline:3px solid var(--yel);outline-offset:2px}
+.rv{opacity:0;transform:translateY(24px);transition:.8s}.rv.in{opacity:1;transform:none}
+@media(max-width:960px){.links{display:none;position:absolute;top:70px;left:0;right:0;background:var(--ink);flex-direction:column;gap:0}.links.open{display:flex}.links a{padding:14px max(4vw,16px)}.menu-t{display:block}
+.hgrid,.bgrid,.cele{grid-template-columns:1fr}.hgrid{min-height:0;padding:40px 0 60px}.pz{width:min(80%,420px)}.mgrid,.combos,.info{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.mgrid,.combos,.info{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><a class="brand" href="#">Forno <i>Rosso</i></a>
+<div class="links"><a href="#menu">Menú</a><a href="#arma">Arma tu pizza</a><a href="#combos">Combos</a><a href="#info">Domicilios</a></div>
+<div style="display:flex;gap:8px"><button class="bt cartb" onclick="openCart(true)">Pedido<span data-cart-count>0</span></button><button class="menu-t" aria-label="Menú" aria-expanded="false">☰</button></div></div></nav>
+
+<header class="hero"><div class="wrap hgrid">
+<div class="rv"><h1>Pizza al horno <span>hecha a mano</span></h1>
+<p>Masa madurada 48 horas, salsa de tomate de la casa y queso que se estira. Para recoger o a domicilio.</p>
+<div class="btns"><a class="bt y" href="#menu">Pedir ahora</a><a class="bt k" href="#arma">Arma tu pizza</a></div></div>
+<div id="heropz"></div></div></header>
+<div class="strip"><div>🍕 Domicilios gratis en el centro · Combo familiar · Martes de 2x1 · Masa madre 48 h · Horno de piedra · 🍕 Domicilios gratis en el centro · Combo familiar · Martes de 2x1 · Masa madre 48 h · Horno de piedra ·&nbsp;</div></div>
+
+<section id="menu"><div class="wrap">
+<div class="t rv"><h2>Nuestras pizzas</h2><p>Escoge el tamaño y agrégala a tu pedido.</p></div>
+<div class="mgrid" id="mgrid"></div><p class="nota">Productos y precios de ejemplo para el diseño.</p></div></section>
+
+<section class="builder" id="arma"><div class="wrap bgrid">
+<div class="rv"><svg id="mypz" viewBox="0 0 300 300" aria-label="Tu pizza"></svg></div>
+<div class="opts rv"><h2>Arma tu pizza</h2>
+<div><h3>Tamaño</h3><div class="chips" id="b-size"></div></div>
+<div><h3>Ingredientes</h3><div class="chips" id="b-ing"></div></div>
+<div class="bsum"><div>Tu pizza<br><b id="b-tot">$0</b></div><button class="bt y" id="b-add">Agregar al pedido</button></div></div></div></section>
+
+<section id="combos"><div class="wrap">
+<div class="t rv"><h2>Combos</h2></div><div class="combos" id="cgrid"></div></div></section>
+
+<section style="padding-top:0"><div class="wrap"><div class="cele rv">
+<div><h2>¿Cumpleaños o reunión? Nosotros ponemos la fiesta</h2><p>Reserva anticipada para grupos: decoramos tu mesa, preparamos la torta y las velitas, y tenemos combos para todos.</p>
+<ul><li>Mesa decorada a tu gusto</li><li>Combos para grupos con bebida incluida</li><li>Reserva anticipada: nos ajustamos a lo que necesitas</li></ul>
+<a class="bt" data-wa="Hola Forno Rosso, quiero reservar para una celebración. Fecha: ___ · Personas: ___">Reservar mi celebración</a></div>
+<div id="celepz"></div></div></div></section>
+
+<section id="info" style="padding-top:0"><div class="wrap"><div class="info">
+<div class="ib rv"><h3>Horario</h3><div class="hrs"><span>Viernes a miércoles</span><span>12:00 m. – 9:00 p. m.</span><span>Viernes y sábado</span><span>hasta 9:30 p. m.</span><span>Jueves</span><span style="color:var(--red)">Cerrado</span></div></div>
+<div class="ib rv"><h3>Domicilios</h3><p style="margin:0">Gratis en el centro. Barrios cercanos desde $3.000. Escríbenos tu dirección y te confirmamos el tiempo de entrega.</p></div>
+<div class="ib rv"><h3>Ubicación</h3><p style="margin:0 0 12px">Calle principal # 00-00, frente al parque.</p><a class="bt" href="https://www.google.com/maps" target="_blank" rel="noopener">Cómo llegar</a></div>
+</div></div></section>
+
+<aside data-cart aria-label="Tu pedido"><div class="hd"><h3>Tu pedido</h3><button class="x" onclick="openCart(false)" aria-label="Cerrar">✕</button></div>
+<div class="cl"></div><div class="tot"><span>Total</span><span class="ct">$0</span></div>
+<input name="dir" placeholder="Dirección de domicilio o “para recoger”"><button class="bt cs" onclick="Cart.send()">Enviar pedido por WhatsApp</button></aside>
+
+<footer><div class="wrap"><div style="font:400 34px 'Bebas Neue';color:#fff">Forno Rosso</div><div>Contenido de ejemplo para mostrar el diseño.</div></div></footer>
+<script src="../shared/ref.js"></script>
+<script>
+{
+Cart.neg='Forno Rosso';
+const T={pep:['#b3261e',10],jam:['#f3a6a6',8],cham:['#d9c8ad',8],pina:['#ffd54f',8],ace:['#2b2b2b',10],alb:['#3c8d40',14],tom:['#e53935',8],mai:['#ffca28',14],pol:['#e8c49a',8]};
+function pizza(top,seed=1,size=300){let r=seed;const rnd=()=>(r=(r*9301+49297)%233280)/233280;
+ let s=`<defs><radialGradient id="cr${seed}" cx=".5" cy=".5" r=".5"><stop offset=".82" stop-color="#e8a54b"/><stop offset="1" stop-color="#b8731f"/></radialGradient><radialGradient id="ch${seed}" cx=".45" cy=".4" r=".6"><stop offset="0" stop-color="#ffe9a8"/><stop offset="1" stop-color="#f6c95c"/></radialGradient></defs><circle cx="150" cy="150" r="146" fill="url(#cr${seed})"/><circle cx="150" cy="150" r="124" fill="#d84315"/><path d="M150 32 C215 30 270 85 268 150 C270 215 210 270 150 268 C85 270 30 215 32 150 C30 88 88 32 150 32Z" fill="url(#ch${seed})"/>`;
+ for(let i=0;i<14;i++){const a=rnd()*6.28,d=rnd()*95;s+=`<ellipse cx="${150+Math.cos(a)*d}" cy="${150+Math.sin(a)*d}" rx="${8+rnd()*10}" ry="${5+rnd()*6}" fill="#fff3c4" opacity=".6"/>`}
+ top.forEach(k=>{const [c,n]=T[k];for(let i=0;i<n;i++){const a=rnd()*6.28,d=15+rnd()*90,x=150+Math.cos(a)*d,y=150+Math.sin(a)*d;
+  s+=k==='pep'?`<circle cx="${x}" cy="${y}" r="13" fill="${c}"/><circle cx="${x-3}" cy="${y-3}" r="3" fill="#e57373"/>`:k==='alb'?`<path d="M${x} ${y} q8 -10 16 0 q-8 6 -16 0z" fill="${c}"/>`:k==='ace'?`<circle cx="${x}" cy="${y}" r="6" fill="none" stroke="${c}" stroke-width="4"/>`:k==='mai'?`<circle cx="${x}" cy="${y}" r="4" fill="${c}"/>`:k==='tom'?`<circle cx="${x}" cy="${y}" r="10" fill="${c}"/><circle cx="${x}" cy="${y}" r="5" fill="#ff8a80"/>`:`<rect x="${x-9}" y="${y-6}" width="18" height="12" rx="3" fill="${c}" transform="rotate(${rnd()*90} ${x} ${y})"/>`}});
+ for(let i=1;i<4;i++){const a=i*Math.PI/3;s+=`<line x1="${150-Math.cos(a)*146}" y1="${150-Math.sin(a)*146}" x2="${150+Math.cos(a)*146}" y2="${150+Math.sin(a)*146}" stroke="#b8731f" stroke-width="2" opacity=".5"/>`}
+ return s}
+const svgP=(top,seed,cls='')=>`<svg viewBox="0 0 300 300" class="${cls}" aria-hidden="true">${pizza(top,seed)}</svg>`;
+document.getElementById('heropz').innerHTML=svgP(['pep','alb','ace'],7,'pz');
+document.getElementById('celepz').innerHTML=svgP(['jam','pina'],11);
+const P=[['Margarita','Tomate, mozzarella y albahaca fresca.',['tom','alb'],[22000,34000,46000],'Clásica'],['Pepperoni','Doble pepperoni y mozzarella.',['pep'],[26000,38000,52000],'La más pedida'],['Hawaiana','Jamón, piña y mozzarella.',['jam','pina'],[25000,37000,50000]],['Pollo y champiñones','Pollo desmechado, champiñones y orégano.',['pol','cham'],[27000,40000,54000]],['Mexicana','Pepperoni, maíz, aceituna y jalapeño.',['pep','mai','ace'],[28000,41000,55000],'Picante'],['Vegetariana','Champiñón, tomate, aceituna y albahaca.',['cham','tom','ace','alb'],[25000,37000,50000]]];
+const SZ=['Personal','Mediana','Familiar'];
+document.getElementById('mgrid').innerHTML=P.map(([n,d,t,pr,tag],i)=>`<article class="pcard rv">${tag?`<span class="tag">${tag}</span>`:''}${svgP(t,i+2)}<h3>${n}</h3><p>${d}</p><div class="sizes" data-i="${i}">${SZ.map((s,k)=>`<button aria-pressed="${k===1}" data-k="${k}">${s}</button>`).join('')}</div><div class="row"><b data-pr="${i}">${fmt(pr[1])}</b><button class="bt" data-add="${i}">Agregar</button></div></article>`).join('');
+const sel={};document.getElementById('mgrid').addEventListener('click',e=>{const s=e.target.closest('.sizes button');if(s){const i=+s.parentNode.dataset.i,k=+s.dataset.k;sel[i]=k;s.parentNode.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',b===s));document.querySelector(`[data-pr="${i}"]`).textContent=fmt(P[i][3][k])}
+ const a=e.target.closest('[data-add]');if(a){const i=+a.dataset.add,k=sel[i]??1;Cart.add('p'+i+k,`${P[i][0]} ${SZ[k]}`,P[i][3][k]);a.textContent='Agregada ✓';setTimeout(()=>a.textContent='Agregar',1200)}});
+const ING=[['pep','Pepperoni',4000],['jam','Jamón',3500],['pol','Pollo',4500],['cham','Champiñones',3500],['pina','Piña',3000],['ace','Aceitunas',3000],['tom','Tomate',2500],['mai','Maíz',2500],['alb','Albahaca',2000]];
+const BS=[['Personal',16000],['Mediana',26000],['Familiar',36000]];
+document.getElementById('b-size').innerHTML=BS.map(([n,p],i)=>`<label><input type="radio" name="bs" value="${i}" ${i===1?'checked':''}><span>${n} · ${fmt(p)}</span></label>`).join('');
+document.getElementById('b-ing').innerHTML=ING.map(([k,n,p])=>`<label><input type="checkbox" value="${k}"><span>${n} +${fmt(p)}</span></label>`).join('');
+const bt=()=>{const s=+document.querySelector('[name=bs]:checked').value,ing=[...document.querySelectorAll('#b-ing input:checked')].map(i=>i.value);const tot=BS[s][1]+ing.reduce((a,k)=>a+ING.find(x=>x[0]===k)[2],0);document.getElementById('mypz').innerHTML=pizza(ing,3);document.getElementById('b-tot').textContent=fmt(tot);return{s,ing,tot}};
+document.getElementById('arma').addEventListener('change',bt);bt();
+document.getElementById('b-add').onclick=()=>{const{s,ing,tot}=bt();const n=`Pizza armada ${BS[s][0]}${ing.length?' ('+ing.map(k=>ING.find(x=>x[0]===k)[1]).join(', ')+')':' (solo queso)'}`;Cart.add('arm'+s+ing.join(''),n,tot);openCart(true)};
+const C=[['Combo pareja','2 pizzas personales + 2 gaseosas',42000,'#c62828'],['Combo familiar','1 pizza familiar + 1 mediana + gaseosa 1,5 L',79000,'#1d1611'],['Combo fiesta','3 pizzas familiares + 2 gaseosas 1,5 L',129000,'#2e7d32']];
+document.getElementById('cgrid').innerHTML=C.map(([n,d,p,c],i)=>`<div class="combo rv" style="background:${c}"><h3>${n}</h3><p style="margin:0;opacity:.9">${d}</p><div class="pr">${fmt(p)}</div><button class="bt y" onclick="Cart.add('c${i}','${n}',${p});openCart(true)">Agregar combo</button></div>`).join('');
+boot();
+}
+</script>
+</body>
+</html>

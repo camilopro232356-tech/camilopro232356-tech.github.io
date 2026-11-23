@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prestasoluciones del Quindío · Propiedades exclusivas</title>
+<meta name="description" content="Propiedades exclusivas, fincas cafeteras y casas campestres en Filandia y Quimbaya. Asesoría personalizada y crédito.">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="icon" href="../shared/img/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Diseño 3 · Lujo (inspirado en Sotheby's International Realty): negro y oro, la marca del cliente. */
+:root{--bg:#0a0a0a;--bg2:#141210;--gold:#d4af37;--gold2:#f0d98a;--ink:#f3eee4;--mute:#a9a191;--line:rgba(212,175,55,.28)}
+*{box-sizing:border-box;min-width:0}html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--bg);color:var(--ink);font:300 16px/1.7 Montserrat,system-ui,sans-serif;overflow-x:clip}
+img{display:block;max-width:100%}a{color:inherit}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:400;margin:0;line-height:1.05;text-wrap:balance}
+.wrap{max-width:1200px;margin:0 auto;padding:0 max(4vw,16px)}
+nav{position:fixed;inset:0 0 auto;z-index:30;transition:.3s}
+nav.on{background:rgba(10,10,10,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:78px;gap:16px}
+nav img{height:52px}
+.links{display:flex;gap:30px;font-size:13px;letter-spacing:.14em;text-transform:uppercase}.links a{text-decoration:none}.links a:hover{color:var(--gold)}
+.bt{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 26px;border:1px solid var(--gold);color:var(--gold2);text-decoration:none;font:500 13px Montserrat;letter-spacing:.14em;text-transform:uppercase;background:none;cursor:pointer;transition:.3s}
+.bt:hover,.bt.s{background:var(--gold);color:#0a0a0a}
+.menu-t{display:none;width:46px;height:46px;border:1px solid var(--line);background:none;color:var(--gold);font-size:20px}
+.hero{position:relative;min-height:100svh;display:grid;align-items:end;padding:140px 0 80px;overflow:hidden}
+.hero .bg{position:absolute;inset:0;background:url(../shared/img/casa.jpg) center/cover;transform:scale(1.04)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.35) 0,rgba(10,10,10,.2) 40%,rgba(10,10,10,.95) 100%)}
+.hero .wrap{position:relative;z-index:1}
+.eyebrow{font:italic 22px "Cormorant Garamond",serif;color:var(--gold2)}
+.hero h1{font-size:clamp(48px,8vw,104px);max-width:13ch;margin:10px 0 18px}
+.hero p{max-width:560px;color:#d8d0c0;font-size:17px;margin:0 0 30px}
+.hero .btns{display:flex;gap:12px;flex-wrap:wrap}
+.line{display:flex;align-items:center;gap:16px;color:var(--gold);justify-content:center;margin:16px 0 0}
+.line::before,.line::after{content:"";height:1px;width:80px;background:linear-gradient(90deg,transparent,var(--gold))}.line::after{transform:scaleX(-1)}
+section{padding:110px 0}
+.t{text-align:center;margin-bottom:50px}.t h2{font-size:clamp(38px,5vw,62px)}.t p{color:var(--mute);max-width:560px;margin:12px auto 0}
+.tabs{display:flex;justify-content:center;gap:8px;margin-bottom:40px;flex-wrap:wrap}
+.tabs button{min-height:44px;padding:0 22px;background:none;border:1px solid var(--line);color:var(--mute);font:500 12px Montserrat;letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
+.tabs button[aria-pressed=true]{background:var(--gold);border-color:var(--gold);color:#0a0a0a}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px}
+.card{background:var(--bg2);border:1px solid var(--line);display:flex;flex-direction:column}
+.card .pic{position:relative;aspect-ratio:16/10;overflow:hidden}
+.card .pic svg{width:100%;height:100%;filter:sepia(.25) saturate(.9)}
+.card .tag{position:absolute;top:16px;left:16px;font:500 11px Montserrat;letter-spacing:.16em;text-transform:uppercase;background:rgba(10,10,10,.75);color:var(--gold2);padding:6px 12px;border:1px solid var(--line)}
+.card .b{padding:26px 28px 30px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card h3{font-size:30px}.card .loc{color:var(--mute);font-size:14px;letter-spacing:.06em}
+.card .price{font:500 24px "Cormorant Garamond",serif;color:var(--gold2)}
+.card .meta{display:flex;gap:20px;font-size:13px;color:var(--mute);border-top:1px solid var(--line);padding-top:14px;flex-wrap:wrap}
+.card p{color:#cfc6b5;font-size:15px;margin:0}
+.card .bt{margin-top:auto;align-self:flex-start}
+.vacio{grid-column:1/-1;text-align:center;color:var(--mute)}
+.nota{text-align:center;font-size:13px;color:var(--mute);margin-top:30px}
+.quote{background:var(--bg2);border-block:1px solid var(--line);text-align:center}
+.quote h2{font-size:clamp(32px,4.4vw,54px);max-width:22ch;margin:0 auto;font-style:italic}
+.quote .who{margin-top:24px;color:var(--gold);letter-spacing:.14em;text-transform:uppercase;font-size:13px}
+.sgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border:1px solid var(--line)}
+.s{padding:40px 32px;border-right:1px solid var(--line)}.s:last-child{border:0}
+.s i{color:var(--gold);display:block;margin-bottom:18px}.s h3{font-size:30px;margin-bottom:14px}
+.s ul{margin:0;padding:0;list-style:none;color:var(--mute);font-size:15px}.s li{padding:6px 0;border-bottom:1px solid rgba(212,175,55,.12)}
+#sim{display:grid;grid-template-columns:1.2fr 1fr;border:1px solid var(--line);max-width:900px;margin:0 auto}
+.sim-in{padding:30px;display:grid;gap:18px}.sim-in label{display:grid;gap:6px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+.sim-in output{color:var(--gold2);font:500 22px "Cormorant Garamond",serif;text-transform:none;letter-spacing:0}
+input[type=range]{accent-color:var(--gold);width:100%}
+.sim-in select{min-height:46px;background:var(--bg);color:var(--ink);border:1px solid var(--line);padding:0 10px;font:400 16px Montserrat}
+.sim-out{background:var(--bg2);padding:30px;display:flex;flex-direction:column;gap:8px;justify-content:center;border-left:1px solid var(--line)}
+.sim-out span{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+.sim-out b{font:500 44px "Cormorant Garamond",serif;color:var(--gold2)}.sim-out small{color:var(--mute)}
+.sim-btn{margin-top:10px;display:inline-flex;align-items:center;justify-content:center;min-height:48px;background:var(--gold);color:#0a0a0a;text-decoration:none;font:600 12px Montserrat;letter-spacing:.14em;text-transform:uppercase}
+.cgrid{display:grid;grid-template-columns:1fr 1.1fr;gap:60px;align-items:center}
+.cgrid h2{font-size:clamp(38px,5vw,62px)}
+.cgrid .photo{aspect-ratio:4/5;overflow:hidden;border:1px solid var(--line);position:relative}
+.cgrid .photo img{width:100%;height:100%;object-fit:cover}
+.cinfo{margin:24px 0;display:grid;gap:10px;color:#d8d0c0}.cinfo b{color:var(--gold2);font:500 24px "Cormorant Garamond",serif;display:block}
+form{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
+form label{display:grid;gap:6px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}.full{grid-column:1/-1}
+form input,form select,form textarea{font:400 16px Montserrat;background:var(--bg2);color:var(--ink);border:1px solid var(--line);padding:12px;min-height:48px;width:100%;border-radius:0}
+form button{min-height:52px;border:0;background:var(--gold);color:#0a0a0a;font:600 13px Montserrat;letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
+.fmsg{margin:0;font-size:14px;color:var(--gold2);min-height:1em}
+:focus-visible{outline:2px solid var(--gold2);outline-offset:3px}
+footer{border-top:1px solid var(--line);padding:40px 0 90px;text-align:center;color:var(--mute);font-size:13px}footer img{height:60px;margin:0 auto 14px}
+.rv{opacity:0;transform:translateY(24px);transition:1s}.rv.in{opacity:1;transform:none}
+@media(max-width:960px){.links{display:none;position:absolute;top:78px;left:0;right:0;background:#0a0a0a;flex-direction:column;gap:0;border-bottom:1px solid var(--line)}.links.open{display:flex}.links a{padding:16px max(4vw,16px)}.menu-t{display:block}nav .bt{display:none}
+.grid{grid-template-columns:1fr}.sgrid{grid-template-columns:1fr}.s{border-right:0;border-bottom:1px solid var(--line)}.cgrid{grid-template-columns:1fr}.cgrid .photo{display:none}}
+@media(max-width:600px){#sim{grid-template-columns:1fr}.sim-out{border-left:0;border-top:1px solid var(--line)}form{grid-template-columns:1fr}.card h3{font-size:26px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<nav id="nav"><div class="wrap"><a href="#"><img src="../shared/img/logo.png" alt="Prestasoluciones del Quindío"></a>
+<div class="links"><a href="#coleccion">Colección</a><a href="#servicios">Servicios</a><a href="#credito">Financiación</a><a href="#contacto">Contacto</a></div>
+<a class="bt" data-wa="Hola Prestasoluciones del Quindío, quiero agendar una asesoría privada.">Asesoría privada</a><button class="menu-t" aria-label="Menú" aria-expanded="false">☰</button></div></nav>
+
+<header class="hero"><div class="bg"></div><div class="wrap">
+<div class="eyebrow">Filandia · Quimbaya · Quindío</div>
+<h1>Propiedades que cuentan una historia</h1>
+<p>Fincas cafeteras, casas coloniales y residencias campestres seleccionadas una a una, con la discreción y el acompañamiento que mereces.</p>
+<div class="btns"><a class="bt s" href="#coleccion">Ver la colección</a><a class="bt" data-wa="Hola Prestasoluciones del Quindío, quiero vender mi propiedad con ustedes.">Vender mi propiedad</a></div>
+</div></header>
+
+<section id="coleccion"><div class="wrap">
+<div class="t rv"><h2>La colección</h2><div class="line">◆</div><p>Propiedades disponibles en venta y arriendo. Cada visita se agenda en privado.</p></div>
+<div class="tabs" id="tabs"><button aria-pressed="true" data-v="Todos">Todas</button><button aria-pressed="false" data-v="Venta">En venta</button><button aria-pressed="false" data-v="Arriendo">En arriendo</button></div>
+<div class="grid" id="grid"></div>
+<p class="nota">Propiedades de ejemplo para el diseño; se reemplazan por el portafolio real.</p>
+</div></section>
+
+<section class="quote"><div class="wrap rv"><h2>“Déjanos la gestión, tú disfruta la tranquilidad.”</h2><div class="who">Prestasoluciones del Quindío</div></div></section>
+
+<section id="servicios"><div class="wrap">
+<div class="t rv"><h2>Servicios</h2><div class="line">◆</div></div>
+<div class="sgrid rv" id="sgrid"></div></div></section>
+
+<section id="credito" style="background:var(--bg2);border-top:1px solid var(--line)"><div class="wrap">
+<div class="t rv"><h2>Financiación a tu medida</h2><div class="line">◆</div><p>Calcula una cuota aproximada; te asesoramos para encontrar la mejor alternativa con nuestros aliados.</p></div>
+<div id="sim" class="rv"></div></div></section>
+
+<section id="contacto"><div class="wrap cgrid">
+<div class="photo rv"><img src="../shared/img/manos.jpg" alt="Apretón de manos al cerrar un negocio"></div>
+<div class="rv"><h2>Una conversación privada</h2>
+<div class="cinfo"><div><b>Jhon Fabio Villegas Gaviria</b>Gerente comercial</div><div>WhatsApp <a data-wa class="wanum"></a> · <a href="mailto:prestasolucionesdelquindio@gmail.com">prestasolucionesdelquindio@gmail.com</a></div><div>Filandia y Quimbaya · Atención con cita previa</div></div>
+<form id="form" novalidate></form></div></div></section>
+
+<footer><img src="../shared/img/logo.png" alt=""><div>Finanzas · Inmobiliaria · Soluciones empresariales · © <span class="yr"></span></div></footer>
+<script src="../shared/app.js"></script>
+<script>
+{
+const pal={sky1:'#3a2f20',sky2:'#8a6d3b',hill:'#3c4a2c',hill2:'#27321d',wall:'#efe6d2',roof:'#5a3a22',trim:'#1d1a14',acc:'#d4af37'};
+mountProps({grid:'#grid',pal,card:(p,svg)=>`<article class="card rv in"><div class="pic">${svg}${p.tag?`<span class="tag">${p.tag}</span>`:''}</div><div class="b"><span class="loc">${p.zona.toUpperCase()} · ${p.ciudad.toUpperCase()}</span><h3>${p.t}</h3><span class="price">${precioTxt(p)} · ${p.op}</span><p>${p.d}</p><div class="meta">${p.hab?`<span>${p.hab} habitaciones</span>`:''}${p.ban?`<span>${p.ban} baños</span>`:''}<span>${p.area}</span></div><a class="bt" href="${waProp(p)}" target="_blank" rel="noopener">Solicitar visita privada</a></div></article>`});
+const tabs=document.getElementById('tabs');tabs.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;tabs.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b));setFiltro('op',b.dataset.v)});
+document.getElementById('sgrid').innerHTML=SERV.map(s=>`<div class="s"><i>${ico(s.ic,30)}</i><h3>${s.k}</h3><ul>${s.items.map(x=>`<li>${x}</li>`).join('')}</ul></div>`).join('');
+mountSim('#sim');document.getElementById('form').innerHTML=FORM_HTML;mountForm('#form');commonBoot();waFloat();
+const nav=document.getElementById('nav'),on=()=>nav.classList.toggle('on',scrollY>40);addEventListener('scroll',on,{passive:true});on();
+}
+</script>
+</body>
+</html>

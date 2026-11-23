@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Casa Aroma · Café y restaurante</title>
+<meta name="description" content="Café de especialidad, cocina de la casa y celebraciones con reserva anticipada.">
+<meta name="theme-color" content="#3a2418">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* Referencia 1 · Restaurante y café: cálido, crema y terracota, fotos grandes y pedido por WhatsApp. */
+:root{--bg:#fbf5ec;--cream:#f3e6d3;--ink:#2d1d14;--mute:#6d5a4b;--terra:#b5532f;--terra2:#8f3d20;--green:#4d6b3c;--line:#e6d6c0}
+*{box-sizing:border-box;min-width:0}html{scroll-behavior:smooth;scroll-padding-top:74px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 Karla,system-ui,sans-serif;overflow-x:clip}
+img{display:block;max-width:100%}a{color:inherit}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;margin:0;line-height:1.05;text-wrap:balance}
+.wrap{max-width:1200px;margin:0 auto;padding:0 max(4vw,16px)}
+nav{position:sticky;top:0;z-index:30;background:rgba(251,245,236,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px;gap:14px}
+.brand{font:600 26px Fraunces,serif;text-decoration:none}.brand i{color:var(--terra)}
+.links{display:flex;gap:24px;font-weight:700;font-size:15px}.links a{text-decoration:none}.links a:hover{color:var(--terra)}
+.bt{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 22px;border-radius:999px;background:var(--terra);color:#fff;text-decoration:none;font:700 15px Karla;border:0;cursor:pointer}
+.bt:hover{background:var(--terra2)}.bt.o{background:none;border:2px solid var(--ink);color:var(--ink)}.bt.w{background:#fff;color:var(--ink)}
+.cartb{position:relative;background:var(--ink)}.cartb span{position:absolute;top:-6px;right:-6px;background:var(--terra);border-radius:999px;font-size:12px;min-width:22px;height:22px;display:grid;place-items:center}
+.menu-t{display:none;width:46px;height:46px;border-radius:12px;border:1px solid var(--line);background:none;font-size:20px}
+.hero{display:grid;grid-template-columns:1fr 1.1fr;min-height:calc(100svh - 70px)}
+.hero .txt{padding:clamp(40px,7vw,90px) max(4vw,16px);display:flex;flex-direction:column;justify-content:center;gap:18px;background:var(--cream)}
+.hero h1{font-size:clamp(44px,6.6vw,88px)}.hero h1 i{color:var(--terra);font-weight:400}
+.hero p{font-size:19px;color:var(--mute);max-width:44ch;margin:0}
+.hero .btns{display:flex;gap:10px;flex-wrap:wrap}
+.hero .pic{position:relative;overflow:hidden;min-height:420px}
+.hero .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.badge{position:absolute;left:24px;bottom:24px;background:#fff;border-radius:18px;padding:14px 18px;box-shadow:0 14px 30px rgba(0,0,0,.18);font-weight:700}.badge small{display:block;color:var(--mute);font-weight:500}
+.info{background:var(--ink);color:#f3e6d3}.info .wrap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.info div>div{padding:20px 16px;border-right:1px solid rgba(255,255,255,.12)}.info div>div:last-child{border:0}
+.info small{display:block;color:#e7a27f;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase}.info b{font:600 20px Fraunces,serif}
+section{padding:96px 0}
+.t{text-align:center;margin-bottom:40px}.t .k{color:var(--terra);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:13px}.t h2{font-size:clamp(34px,5vw,58px);margin-top:8px}.t p{color:var(--mute);max-width:600px;margin:12px auto 0}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.collage{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.collage img{width:100%;height:100%;object-fit:cover;border-radius:22px;aspect-ratio:3/4}.collage img:nth-child(2){margin-top:50px}
+.story h2{font-size:clamp(32px,4.4vw,52px);margin-bottom:16px}.story p{color:var(--mute)}
+.cele{background:var(--terra);color:#fff;border-radius:32px;margin:0 max(4vw,16px);padding:clamp(36px,6vw,70px);display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
+.cele h2{font-size:clamp(34px,5vw,60px)}.cele p{font-size:19px;opacity:.95}
+.cele ul{list-style:none;margin:20px 0 26px;padding:0;display:grid;gap:10px}.cele li{display:flex;gap:10px;align-items:start;font-weight:500}.cele li::before{content:"✦";color:#ffd9b8}
+.cele .pic{border-radius:24px;overflow:hidden;aspect-ratio:4/5}.cele .pic img{width:100%;height:100%;object-fit:cover}
+.tabs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:30px}
+.tabs button{min-height:46px;padding:0 20px;border-radius:999px;border:2px solid var(--line);background:#fff;font:700 15px Karla;cursor:pointer}
+.tabs button[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:#fff}
+.mgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.dish{background:#fff;border-radius:22px;overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column}
+.dish img{width:100%;aspect-ratio:4/3;object-fit:cover;cursor:zoom-in}
+.dish .b{padding:16px 18px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
+.dish h3{font-size:22px}.dish p{color:var(--mute);font-size:15px;margin:0}
+.dish .row{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:8px}.dish .row b{font-size:19px}
+.dish .row button{min-height:44px;padding:0 16px;border-radius:999px;border:0;background:var(--terra);color:#fff;font:700 14px Karla;cursor:pointer}
+.nota{text-align:center;color:var(--mute);font-size:13px;margin-top:20px}
+.gal{columns:4 220px;column-gap:14px}.gal img{width:100%;margin-bottom:14px;border-radius:16px;break-inside:avoid;cursor:zoom-in}
+.sedes{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.sede{background:#fff;border:1px solid var(--line);border-radius:24px;padding:28px}.sede h3{font-size:28px}.sede .a{color:var(--mute);margin:6px 0 14px}
+.hrs{display:grid;grid-template-columns:1fr auto;gap:6px 16px;margin-bottom:18px}.hrs span:nth-child(even){font-weight:700;white-space:nowrap}.hrs .off{color:var(--terra)}
+[data-cart]{position:fixed;right:0;top:0;bottom:0;width:min(420px,100%);background:#fff;z-index:50;box-shadow:-20px 0 50px rgba(0,0,0,.2);transform:translateX(105%);transition:.35s;display:flex;flex-direction:column;padding:22px}
+[data-cart].open{transform:none}
+[data-cart] .hd{display:flex;justify-content:space-between;align-items:center}[data-cart] h3{font-size:26px}
+[data-cart] .x{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:none;font-size:20px;cursor:pointer}
+.cl{flex:1;overflow:auto;margin:16px 0}.ci{display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
+.qq{display:flex;gap:8px;align-items:center}.qq button{width:32px;height:32px;border-radius:50%;border:1px solid var(--line);background:#fff;cursor:pointer;font-size:16px}
+.ce{color:var(--mute)}.tot{display:flex;justify-content:space-between;font-size:20px;font-weight:700;margin-bottom:10px}
+[data-cart] input{min-height:48px;border:1px solid var(--line);border-radius:12px;padding:0 12px;font:500 16px Karla;margin-bottom:10px;width:100%}
+.cs[disabled]{opacity:.5;cursor:not-allowed}
+footer{background:var(--ink);color:#cdb9a6;padding:40px 0 90px;font-size:15px}footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}footer b{color:#fff;font:600 24px Fraunces,serif}
+:focus-visible{outline:3px solid var(--green);outline-offset:2px}
+.rv{opacity:0;transform:translateY(24px);transition:.9s}.rv.in{opacity:1;transform:none}
+@media(max-width:960px){.links{display:none;position:absolute;top:70px;left:0;right:0;background:var(--bg);flex-direction:column;gap:0;border-bottom:1px solid var(--line)}.links.open{display:flex}.links a{padding:14px max(4vw,16px)}.menu-t{display:block}
+.hero,.story,.cele{grid-template-columns:1fr}.hero .pic{min-height:320px;order:-1}.mgrid{grid-template-columns:1fr 1fr}.sedes{grid-template-columns:1fr}.info .wrap{grid-template-columns:1fr}.info div>div{border-right:0;border-bottom:1px solid rgba(255,255,255,.12)}}
+@media(max-width:600px){.mgrid{grid-template-columns:1fr}nav .bt.o{display:none}.cele{margin:0;border-radius:0}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><a class="brand" href="#">Casa <i>Aroma</i></a>
+<div class="links"><a href="#historia">Historia</a><a href="#celebra">Celebraciones</a><a href="#carta">Carta</a><a href="#sedes">Sedes</a></div>
+<div style="display:flex;gap:8px"><a class="bt o" data-wa="Hola Casa Aroma, quiero reservar una mesa.">Reservar</a><button class="bt cartb" onclick="openCart(true)" aria-label="Ver pedido">Pedido<span data-cart-count>0</span></button><button class="menu-t" aria-label="Menú" aria-expanded="false">☰</button></div></div></nav>
+
+<header class="hero">
+<div class="txt rv"><h1>Café de origen y cocina <i>de la casa</i></h1>
+<p>Granos de la región, recetas de toda la vida y un rincón tranquilo para quedarse. Pide para recoger o reserva tu mesa.</p>
+<div class="btns"><a class="bt" href="#carta">Ver la carta y pedir</a><a class="bt o" data-wa="Hola Casa Aroma, quiero reservar una mesa.">Reservar mesa</a></div></div>
+<div class="pic"><img src="img/latte_pink.jpg" alt="Latte con arte en taza floral"><div class="badge">Café de especialidad<small>Tostado en la región</small></div></div>
+</header>
+
+<div class="info"><div class="wrap">
+<div><small>Sede Centro</small><b>7:30 a. m. – 5:00 p. m.</b></div>
+<div><small>Sede Plaza</small><b>12:00 m. – 9:00 p. m.</b></div>
+<div><small>Descanso</small><b>Jueves cerrado</b></div></div></div>
+
+<section id="historia"><div class="wrap story">
+<div class="collage rv"><img src="img/bar_turq.jpg" alt="Barra del café" data-zoom><img src="img/crepe_tall.jpg" alt="Crepe con fresas" data-zoom></div>
+<div class="rv"><span class="k" style="color:var(--terra);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:13px">Nuestra historia</span><h2>Una casa donde el café se toma con calma</h2><p>Abrimos las puertas para recibir a viajeros y vecinos como en casa. Cada taza nace de granos cultivados en estas montañas y cada plato de ingredientes frescos de la región.</p><p>Aquí no hay afán: hay sobremesa, buena conversación y ese postre que siempre se pide “para compartir”.</p></div>
+</div></section>
+
+<div id="celebra" class="cele rv">
+<div><h2>Cumpleaños, aniversarios y reuniones que nadie olvida</h2>
+<p>Celebra con nosotros: te ayudamos a organizar tu mesa, la torta y las velitas para que ese momento sea inolvidable.</p>
+<ul><li>Decoramos tu mesa a tu gusto, con el estilo que imaginas</li><li>Torta y velitas listas justo a la hora de la sorpresa</li><li>Mesa preparada para todo tu grupo, sin afanes</li><li>Reserva anticipada: nos ajustamos a lo que necesitas</li></ul>
+<a class="bt w" data-wa="Hola Casa Aroma, quiero reservar y decorar una mesa para una celebración. Fecha: ___ · Personas: ___ · Sede: ___">Planear mi celebración</a></div>
+<div class="pic"><img src="img/dessert.jpg" alt="Postre con café" data-zoom></div></div>
+
+<section id="carta"><div class="wrap">
+<div class="t rv"><span class="k">La carta</span><h2>Del fogón a tu mesa</h2><p>Agrega productos y envía tu pedido por WhatsApp para recoger o domicilio.</p></div>
+<div class="tabs" id="tabs"></div><div class="mgrid" id="mgrid"></div>
+<p class="nota">Productos y precios de ejemplo para el diseño.</p></div></section>
+
+<section style="padding-top:0"><div class="wrap"><div class="t rv"><span class="k">Galería</span><h2>Así se vive</h2></div><div class="gal" id="gal"></div></div></section>
+
+<section id="sedes" style="background:var(--cream)"><div class="wrap">
+<div class="t rv"><span class="k">Visítanos</span><h2>Dos sedes, el mismo sabor</h2><p>Jueves cerrado por descanso en ambas sedes.</p></div>
+<div class="sedes" id="sedesg"></div></div></section>
+
+<aside data-cart aria-label="Tu pedido"><div class="hd"><h3>Tu pedido</h3><button class="x" onclick="openCart(false)" aria-label="Cerrar">✕</button></div>
+<div class="cl"></div><div class="tot"><span>Total</span><span class="ct">$0</span></div>
+<input name="dir" placeholder="¿Para recoger o dirección de domicilio?"><button class="bt cs" onclick="Cart.send()">Enviar pedido por WhatsApp</button></aside>
+
+<footer><div class="wrap"><div><b>Casa Aroma</b><br>Café · Restaurante · Celebraciones</div><div>Contenido de ejemplo para mostrar el diseño.</div></div></footer>
+<script src="../shared/ref.js"></script>
+<script>
+{
+Cart.neg='Casa Aroma';
+const M={'Cafés':[['Latte de la casa','Espresso y leche texturizada con arte latte.',9000,'latte_pink'],['Cappuccino','Cremoso, en porcelana pintada a mano.',8500,'latte_red'],['Tinto de origen','Café de la región, filtrado al momento.',4500,'tinto'],['Mocaccino','Espresso, chocolate y leche espumada.',10000,'latte_orange']],
+'Brunch':[['Waffle de frutos rojos','Fresas, banano, arándanos y chantilly.',22000,'waffle'],['Crepe de la casa','Fruta fresca, menta y salsa dulce.',20000,'crepe_tall'],['Desayuno completo','Huevos, arepa, pan y bebida caliente.',18000,'latte_paper']],
+'Antojos y postres':[['Empanadas de la casa','Crocantes, con ají de la casa.',9000,'empanadas'],['Postre del día','Pregunta por la vitrina.',12000,'dessert'],['Cappuccino y torta','La pausa perfecta de la tarde.',19000,'latte_red_tall']]};
+const tabs=document.getElementById('tabs'),mg=document.getElementById('mgrid');
+const show=c=>{tabs.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.c===c));mg.innerHTML=M[c].map(([n,d,p,i],k)=>`<article class="dish"><img loading="lazy" src="img/${i}.jpg" alt="${n}" data-zoom><div class="b"><h3>${n}</h3><p>${d}</p><div class="row"><b>${fmt(p)}</b><button onclick="Cart.add('${c}${k}','${n}',${p});this.textContent='Agregado ✓';setTimeout(()=>this.textContent='Agregar',1200)">Agregar</button></div></div></article>`).join('')};
+tabs.innerHTML=Object.keys(M).map(c=>`<button data-c="${c}">${c}</button>`).join('');tabs.onclick=e=>{const b=e.target.closest('button');if(b)show(b.dataset.c)};show('Cafés');
+document.getElementById('gal').innerHTML=['int_turq','latte_blue','waffle','bar_chand','latte_orange','empanadas','int_tv','tinto'].map(k=>`<img loading="lazy" src="img/${k}.jpg" alt="Casa Aroma" data-zoom>`).join('');
+document.getElementById('sedesg').innerHTML=[['Sede Centro','Calle principal # 00-00, a dos cuadras del parque',[['Viernes a miércoles','7:30 a. m. – 5:00 p. m.'],['Jueves','Cerrado']]],['Sede Plaza','Centro Comercial Plaza, local 8',[['Lunes a miércoles','12:00 m. – 9:00 p. m.'],['Viernes y sábado','12:00 m. – 9:30 p. m.'],['Domingo antes de festivo','Hasta 9:30 p. m.'],['Jueves','Cerrado']]]].map(([n,a,h])=>`<div class="sede rv"><h3>${n}</h3><p class="a">${a}</p><div class="hrs">${h.map(([d,x])=>`<span>${d}</span><span class="${x==='Cerrado'?'off':''}">${x}</span>`).join('')}</div><a class="bt" href="https://www.google.com/maps" target="_blank" rel="noopener">Cómo llegar</a> <a class="bt o" data-wa="Hola Casa Aroma, quiero reservar en la ${n}.">Reservar aquí</a></div>`).join('');
+boot();
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prestasoluciones del Quindío · Propiedades</title>
+<meta name="description" content="Propiedades seleccionadas en Filandia y Quimbaya. Compraventa, arriendos, administración y créditos.">
+<meta name="theme-color" content="#111111">
+<link rel="icon" href="../shared/img/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Diseño 2 · Editorial (inspirado en Compass): blanco y negro, mucho aire, tipografía grande. */
+:root{--ink:#111;--mute:#6b6b6b;--line:#e6e6e6;--bg:#fff;--gold:#b8922e}
+*{box-sizing:border-box;min-width:0}html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 "Inter Tight",system-ui,sans-serif;overflow-x:clip}
+img{display:block;max-width:100%}a{color:inherit}
+h1,h2,h3{margin:0;font-weight:500;letter-spacing:-.03em;line-height:1.02;text-wrap:balance}
+.wrap{max-width:1280px;margin:0 auto;padding:0 max(4vw,16px)}
+nav{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.brand{font-weight:600;letter-spacing:.02em;text-decoration:none;font-size:17px}.brand small{color:var(--mute);font-weight:400}
+.links{display:flex;gap:30px;font-size:15px}.links a{text-decoration:none}.links a:hover{text-decoration:underline;text-underline-offset:5px}
+.bt{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 22px;border:1px solid var(--ink);background:var(--ink);color:#fff;text-decoration:none;font:500 15px "Inter Tight";cursor:pointer;transition:.2s}
+.bt:hover{background:#fff;color:var(--ink)}.bt.o{background:#fff;color:var(--ink)}.bt.o:hover{background:var(--ink);color:#fff}
+.menu-t{display:none;width:44px;height:44px;border:1px solid var(--line);background:#fff;font-size:20px}
+.hero{padding:70px 0 40px}
+.hero h1{font-size:clamp(46px,9vw,132px);font-weight:400}
+.hero h1 em{font-style:normal;color:var(--mute)}
+.hrow{display:grid;grid-template-columns:1.6fr 1fr;gap:40px;align-items:end;margin-top:34px}
+.hrow p{font-size:19px;color:var(--mute);margin:0}
+.hrow .btns{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+.big{margin-top:46px;aspect-ratio:21/9;overflow:hidden;background:#eee}
+.big img{width:100%;height:100%;object-fit:cover;object-position:center 45%}
+.num{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--ink);margin-top:0}
+.num div{padding:22px 0;border-right:1px solid var(--line);padding-right:18px}.num div:last-child{border:0}
+.num b{display:block;font-size:30px;font-weight:500}.num span{color:var(--mute);font-size:14px}
+section{padding:96px 0}
+.sh{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:end;margin-bottom:34px}
+.sh h2{font-size:clamp(34px,5vw,64px)}.sh p{color:var(--mute);margin:0;max-width:46ch;justify-self:end}
+.filters{display:flex;gap:0;border:1px solid var(--ink);margin-bottom:34px;flex-wrap:wrap}
+.filters label{flex:1;min-width:150px;display:grid;padding:10px 14px;font-size:12px;color:var(--mute);border-right:1px solid var(--line)}
+.filters label:last-child{border:0}
+.filters select,.filters input{border:0;font:500 16px "Inter Tight";color:var(--ink);background:none;min-height:30px;outline:none}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px 28px}
+.card{text-decoration:none;display:block}
+.card .pic{aspect-ratio:4/3;overflow:hidden;background:#f2f2f2}
+.card .pic svg{width:100%;height:100%;transition:transform .8s}
+.card:hover .pic svg{transform:scale(1.04)}
+.card .r{display:flex;justify-content:space-between;gap:10px;margin-top:14px;align-items:baseline}
+.card h3{font-size:20px}.card .p{font-weight:600;white-space:nowrap}
+.card .s{color:var(--mute);font-size:14px;margin-top:4px}
+.card .op{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.vacio{grid-column:1/-1;color:var(--mute)}
+.nota{font-size:13px;color:var(--mute);margin-top:30px}
+.black{background:#111;color:#fff}
+.slist{border-top:1px solid #333}
+.srow{display:grid;grid-template-columns:80px 1fr 2fr;gap:24px;padding:30px 0;border-bottom:1px solid #333;align-items:start}
+.srow .i{font-size:14px;color:#888}.srow h3{font-size:clamp(24px,3vw,36px)}
+.srow ul{margin:0;padding:0;list-style:none;columns:2;column-gap:30px;color:#bbb}.srow li{padding:4px 0;break-inside:avoid}
+.simw{display:grid;grid-template-columns:1fr 1.3fr;gap:50px}
+.simw h2{font-size:clamp(34px,5vw,60px)}.simw p{color:var(--mute)}
+#sim{border:1px solid var(--ink);display:grid;grid-template-columns:1.2fr 1fr}
+.sim-in{padding:26px;display:grid;gap:18px}.sim-in label{display:grid;gap:6px;font-size:14px;color:var(--mute)}
+.sim-in output{color:var(--ink);font-weight:600;font-size:18px}
+input[type=range]{accent-color:#111;width:100%}
+.sim-in select{min-height:44px;border:1px solid var(--line);padding:0 10px;font:500 16px "Inter Tight";background:#fff}
+.sim-out{background:#111;color:#fff;padding:26px;display:flex;flex-direction:column;gap:8px;justify-content:center}
+.sim-out b{font-size:40px;font-weight:500}.sim-out small{color:#aaa}
+.sim-btn{margin-top:10px;display:inline-flex;align-items:center;justify-content:center;min-height:46px;background:#fff;color:#111;text-decoration:none;font-weight:500}
+.cgrid{display:grid;grid-template-columns:1fr 1.2fr;gap:60px}
+.cgrid h2{font-size:clamp(34px,5vw,64px)}
+.cinfo{margin-top:30px;display:grid;gap:16px;font-size:17px}.cinfo span{color:var(--mute);font-size:13px;display:block}
+form{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+form label{display:grid;gap:6px;font-size:13px;color:var(--mute)}.full{grid-column:1/-1}
+form input,form select,form textarea{font:400 17px "Inter Tight";border:0;border-bottom:1px solid var(--ink);padding:10px 0;min-height:46px;background:none;width:100%;border-radius:0}
+form button{min-height:52px;border:0;background:#111;color:#fff;font:500 16px "Inter Tight";cursor:pointer}
+.fmsg{margin:0;font-size:14px;min-height:1em}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+footer{border-top:1px solid var(--line);padding:30px 0 90px;font-size:14px;color:var(--mute)}footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.rv{opacity:0;transform:translateY(24px);transition:1s}.rv.in{opacity:1;transform:none}
+@media(max-width:960px){.links{display:none;position:absolute;top:64px;left:0;right:0;background:#fff;flex-direction:column;gap:0;border-bottom:1px solid var(--line)}.links.open{display:flex}.links a{padding:14px max(4vw,16px)}.menu-t{display:block}nav .bt{display:none}
+.hrow,.sh,.simw,.cgrid{grid-template-columns:1fr}.sh p{justify-self:start}.hrow .btns{justify-content:flex-start}.grid{grid-template-columns:1fr 1fr}.num{grid-template-columns:1fr 1fr}.srow{grid-template-columns:1fr}.srow .i{display:none}}
+@media(max-width:600px){.grid{grid-template-columns:1fr}#sim{grid-template-columns:1fr}form{grid-template-columns:1fr}.srow ul{columns:1}.big{aspect-ratio:4/3}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><a class="brand" href="#">Prestasoluciones <small>del Quindío</small></a>
+<div class="links"><a href="#propiedades">Propiedades</a><a href="#servicios">Servicios</a><a href="#credito">Crédito</a><a href="#contacto">Contacto</a></div>
+<a class="bt" data-wa="Hola Prestasoluciones del Quindío, quiero agendar una asesoría.">Agendar cita</a><button class="menu-t" aria-label="Menú" aria-expanded="false">☰</button></div></nav>
+
+<header class="hero"><div class="wrap">
+<h1 class="rv">Propiedades con <em>historia</em> en el corazón del Quindío.</h1>
+<div class="hrow rv"><p>Compraventa, arriendos y administración en Filandia y Quimbaya. Te acompañamos desde la primera visita hasta la firma, con crédito si lo necesitas.</p>
+<div class="btns"><a class="bt" href="#propiedades">Ver propiedades</a><a class="bt o" data-wa="Hola Prestasoluciones del Quindío, quiero vender mi inmueble.">Vender mi inmueble</a></div></div>
+<div class="big rv"><img src="../shared/img/casa.jpg" alt="Casa moderna iluminada al atardecer"></div>
+<div class="num"><div><b>2</b><span>Sedes: Filandia y Quimbaya</span></div><div><b>3</b><span>Líneas de servicio</span></div><div><b>1 a 1</b><span>Atención con cita previa</span></div><div><b>100%</b><span>Acompañamiento local</span></div></div>
+</div></header>
+
+<section id="propiedades"><div class="wrap">
+<div class="sh rv"><h2>Selección del mes</h2><p>Cada inmueble lo visitamos y verificamos antes de mostrarlo. Escríbenos y agendamos la visita.</p></div>
+<div class="filters" id="filters"></div>
+<div class="grid" id="grid"></div>
+<p class="nota">Inmuebles de ejemplo para el diseño; se reemplazan por el portafolio real.</p>
+</div></section>
+
+<section class="black" id="servicios"><div class="wrap">
+<div class="sh rv"><h2>Lo que hacemos</h2><p style="color:#aaa">Una sola persona de confianza para tu inmueble, tu crédito y tu empresa.</p></div>
+<div class="slist" id="slist"></div></div></section>
+
+<section id="credito"><div class="wrap simw">
+<div class="rv"><h2>Tu crédito, claro desde el inicio.</h2><p>Simula una cuota aproximada para libranza, libre inversión, compra de cartera o crédito hipotecario.</p></div>
+<div id="sim" class="rv"></div></div></section>
+
+<section id="contacto" style="border-top:1px solid var(--line)"><div class="wrap cgrid">
+<div class="rv"><h2>Conversemos.</h2>
+<div class="cinfo"><div><span>Gerente comercial</span>Jhon Fabio Villegas Gaviria</div><div><span>WhatsApp</span><a data-wa class="wanum"></a></div><div><span>Correo</span><a href="mailto:prestasolucionesdelquindio@gmail.com">prestasolucionesdelquindio@gmail.com</a></div><div><span>Sedes</span>Filandia · Quimbaya · con cita previa</div></div></div>
+<form id="form" class="rv" novalidate></form></div></section>
+
+<footer><div class="wrap"><span>Prestasoluciones del Quindío · Finanzas · Inmobiliaria · Soluciones empresariales</span><span>© <span class="yr"></span></span></div></footer>
+<script src="../shared/app.js"></script>
+<script>
+{
+const pal={sky1:'#e9e9e9',sky2:'#f7f7f7',hill:'#9a9a9a',hill2:'#6f6f6f',wall:'#fafafa',roof:'#2b2b2b',trim:'#111',acc:'#b8922e'};
+mountProps({grid:'#grid',filters:'#filters',pal,card:(p,svg)=>`<a class="card rv in" href="${waProp(p)}" target="_blank" rel="noopener"><div class="pic">${svg}</div><div class="r"><span class="op">${p.op} · ${p.tipo}</span><span class="p">${precioTxt(p)}</span></div><h3>${p.t}</h3><div class="s">${p.zona}, ${p.ciudad} · ${p.hab?p.hab+' hab · ':''}${p.area}</div></a>`});
+document.getElementById('slist').innerHTML=SERV.map((s,i)=>`<div class="srow rv"><span class="i">0${i+1}</span><h3>${s.k}</h3><ul>${s.items.map(x=>`<li>${x}</li>`).join('')}</ul></div>`).join('');
+mountSim('#sim');document.getElementById('form').innerHTML=FORM_HTML;mountForm('#form');commonBoot();waFloat();
+}
+</script>
+</body>
+</html>
