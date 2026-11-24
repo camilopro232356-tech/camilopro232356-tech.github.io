@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cafe Coqui Taino · Resumen del proyecto</title>
+<meta name="description" content="Resumen del sistema digital de Cafe Coqui Taino: página web, reservas en línea y panel de administración.">
+<meta name="theme-color" content="#120c08">
+<meta property="og:title" content="Cafe Coqui Taino · Resumen del proyecto"><meta property="og:description" content="Página web, reservas en línea de mesas y habitaciones, y panel de administración."><meta property="og:image" content="https://cafecoquitaino.vercel.app/img/og.jpg">
+<link rel="icon" href="../img/panel-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#120c08;--bg2:#1c140d;--gold:#c9a35a;--gold2:#e7cf98;--ink:#f3e9d6;--mute:#b9a88c;--line:rgba(201,163,90,.25)}
+*{box-sizing:border-box;min-width:0}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:300 17px/1.65 Jost,system-ui,sans-serif;overflow-x:clip}
+img{display:block;max-width:100%}a{color:inherit}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;margin:0;line-height:1.08;text-wrap:balance}
+.wrap{max-width:1080px;margin:0 auto;padding:0 max(5vw,18px)}
+header{text-align:center;padding:clamp(56px,9vw,110px) 0 50px;background:radial-gradient(ellipse at 50% 0%,#2e2014,var(--bg) 70%)}
+.k{font:italic 21px "Cormorant Garamond",serif;color:var(--gold)}
+header h1{font-size:clamp(46px,8vw,92px);color:var(--gold2);font-weight:400;margin:8px 0}
+header p{color:var(--mute);max-width:620px;margin:10px auto 0}
+.orn{display:flex;align-items:center;justify-content:center;gap:14px;color:var(--gold);margin:20px 0 0}
+.orn::before,.orn::after{content:"";height:1px;width:70px;background:linear-gradient(90deg,transparent,var(--gold))}.orn::after{transform:scaleX(-1)}
+.estado{display:inline-flex;gap:8px;align-items:center;margin-top:22px;border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:15px}
+.estado b{width:9px;height:9px;border-radius:50%;background:#4ade80}
+section{padding:60px 0;border-top:1px solid var(--line)}
+section h2{font-size:clamp(32px,4.4vw,48px);color:var(--gold2);margin-bottom:8px}
+section>.wrap>p{color:var(--mute);margin:0 0 28px;max-width:62ch}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.card{background:var(--bg2);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+.card .shot{background:#0b0705;display:flex;justify-content:center;gap:10px;padding:18px 18px 0;height:300px;overflow:hidden}
+.card .shot img{width:46%;max-width:200px;border-radius:18px 18px 0 0;border:5px solid #2a2118;border-bottom:0;object-fit:cover;object-position:top}
+.card .shot img.w{width:100%;max-width:none;border-radius:10px 10px 0 0;border-width:3px}
+.card .b{padding:22px 24px 26px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card h3{font-size:30px;color:var(--ink)}.card p{color:var(--mute);margin:0}
+.card ul{margin:4px 0 14px;padding:0;list-style:none;display:grid;gap:6px;font-size:15.5px}
+.card li{display:flex;gap:10px}.card li::before{content:"◆";color:var(--gold);font-size:9px;margin-top:8px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border:1px solid var(--gold);color:var(--gold2);text-decoration:none;font-size:15px;align-self:flex-start;margin-top:auto}
+.btn:hover,.btn.s{background:var(--gold);color:var(--bg)}
+.url{font-size:14px;color:var(--mute);word-break:break-all}
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;counter-reset:n}
+.st{background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:20px;position:relative}
+.st::before{counter-increment:n;content:counter(n);font:500 40px "Cormorant Garamond",serif;color:var(--gold);display:block;line-height:1;margin-bottom:8px}
+.st b{display:block;font-weight:500;margin-bottom:4px}.st span{color:var(--mute);font-size:15px}
+.pend{display:grid;gap:10px}
+.pend div{display:flex;gap:14px;align-items:flex-start;background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.pend i{flex:none;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--gold);display:grid;place-items:center;font-style:normal;color:var(--gold);font-size:14px}
+.pend b{font-weight:500}.pend span{display:block;color:var(--mute);font-size:15px}
+footer{text-align:center;color:var(--mute);font-size:14px;padding:40px 0 60px;border-top:1px solid var(--line)}
+:focus-visible{outline:2px solid var(--gold2);outline-offset:3px}
+@media(max-width:860px){.cards{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.steps{grid-template-columns:1fr}.card .shot{height:250px}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<span class="k">Resumen del proyecto</span>
+<h1>Cafe Coqui Taino</h1>
+<p>Café, restaurante y Hotel Cafe Coqui Taino · Centro Comercial Coqui Taino, parque principal de Filandia, Quindío.</p>
+<div class="orn">◆</div>
+<div class="estado"><b></b>Sistema publicado y funcionando</div>
+</div></header>
+
+<section><div class="wrap">
+<h2>Lo que incluye tu sistema digital</h2>
+<p>Cuatro piezas que trabajan juntas: los clientes te encuentran, reservan solos y tú lo manejas todo desde el celular.</p>
+<div class="cards">
+<article class="card"><div class="shot"><img class="w" src="../img/coqui/web.jpg" alt="Página web de Cafe Coqui Taino"></div><div class="b">
+<h3>Página web oficial</h3><p>Tres diseños para escoger, con el café, el restaurante y el hotel.</p>
+<ul><li>Carta con fotos en alta calidad y galería con zoom</li><li>Hotel con habitaciones y comodidades</li><li>Ubicación en Google Maps y vista previa en WhatsApp</li></ul>
+<span class="url">cafecoquitaino.vercel.app</span><a class="btn s" href="/">Ver los 3 diseños</a></div></article>
+<article class="card"><div class="shot"><img src="../img/coqui/m-reserva.jpg" alt="Reserva de mesa"><img src="../img/coqui/m-reserva-hotel.jpg" alt="Reserva de habitación"></div><div class="b">
+<h3>Reservas en línea</h3><p>Abiertas las 24 horas desde cualquiera de los 3 diseños.</p>
+<ul><li>Mesas: fecha, hora, personas y ocasión</li><li>Hotel: llegada, salida, huéspedes y habitación</li><li>Respeta el horario de 7:00 a. m. a 9:00 p. m.</li></ul>
+<a class="btn" href="/imperial/#reservas">Hacer una reserva de prueba</a></div></article>
+<article class="card"><div class="shot"><img src="../img/coqui/m-panel.jpg" alt="Panel con reservas del día"><img src="../img/coqui/m-hotel.jpg" alt="Ocupación del hotel"></div><div class="b">
+<h3>Panel de administración</h3><p>Desde el celular, con clave privada.</p>
+<ul><li>Reservas de hoy, próximas e historial</li><li>Confirmar con un toque y avisar por WhatsApp</li><li>Ocupación del hotel, llegadas y salidas</li><li>Alerta sonora con cada reserva nueva</li></ul>
+<span class="url">cafecoquitaino.vercel.app/panel</span><a class="btn" href="/panel/">Entrar al panel</a></div></article>
+<article class="card"><div class="shot" style="align-items:center;padding:18px"><img src="../img/panel-icon.png" alt="Ícono de la app del panel" style="width:150px;border-radius:32px;border:0"></div><div class="b">
+<h3>Como una app en tu celular</h3><p>El panel se instala en la pantalla de inicio, sin descargar nada de tiendas.</p>
+<ul><li>Android: abre el panel en Chrome, toca ⋮ y elige “Agregar a la pantalla de inicio”</li><li>iPhone: abre el panel en Safari, toca Compartir y elige “Agregar a inicio”</li></ul></div></article>
+</div></div></section>
+
+<section><div class="wrap">
+<h2>Así funciona una reserva</h2>
+<p>De la página del cliente a tu panel en segundos.</p>
+<div class="steps"><div class="st"><b>El cliente reserva</b><span>Escoge mesa o habitación en la página y deja su celular.</span></div><div class="st"><b>Te llega al panel</b><span>Aparece al instante con una alerta sonora.</span></div><div class="st"><b>La confirmas</b><span>Un toque en “Confirmar” y otro en “Avisar al cliente”.</span></div><div class="st"><b>El cliente llega</b><span>Marcas “Ya llegó” o registras la llegada y la salida del hotel.</span></div></div>
+</div></section>
+
+<section><div class="wrap">
+<h2>Para dejarla 100 % lista</h2>
+<p>Cuando escojas tu diseño favorito, solo necesitamos estos datos:</p>
+<div class="pend">
+<div><i>1</i><p style="margin:0"><b>WhatsApp del negocio</b><span>Lo puedes poner tú mismo en el panel, en Ajustes.</span></p></div>
+<div><i>2</i><p style="margin:0"><b>Horarios y días de descanso</b><span>Del café y de la recepción del hotel.</span></p></div>
+<div><i>3</i><p style="margin:0"><b>Habitaciones y precios</b><span>Nombre, capacidad y lo que incluye cada habitación.</span></p></div>
+<div><i>4</i><p style="margin:0"><b>Fotos originales</b><span>Del café, los platos y el hotel, enviadas por WhatsApp como documento para que queden en máxima calidad.</span></p></div>
+</div></div></section>
+
+<footer>Cafe Coqui Taino · Café · Restaurante · Hotel · Filandia, Quindío</footer>
+</body>
+</html>

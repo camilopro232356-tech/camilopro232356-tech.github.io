@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Panel · Cafe Coqui Taino</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#120c08">
+<link rel="icon" href="../img/panel-icon.png"><link rel="apple-touch-icon" href="../img/panel-icon.png">
+<link rel="manifest" href="manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#120c08;--card:#1f160f;--card2:#291d14;--ink:#f3e9d6;--ink2:#c3b092;--oro:#c9a35a;--oro2:#e7cf98;--verde:#3f9d5a;--rojo:#c0503a;--azul:#4a8bc9;--tq:#4dbdb3;--linea:#36281b}
+*{box-sizing:border-box;margin:0;padding:0;min-width:0}
+body{font-family:Manrope,system-ui,sans-serif;background:var(--bg);color:var(--ink);min-height:100vh;-webkit-tap-highlight-color:transparent;padding-bottom:env(safe-area-inset-bottom)}
+h1,h2,.serif{font-family:"Cormorant Garamond",Georgia,serif}
+button,input,select,textarea{font-family:inherit;font-size:16px}
+.wrap{max-width:920px;margin:0 auto;padding:0 16px}
+.login{min-height:100vh;display:grid;place-items:center;padding:24px;background:radial-gradient(ellipse at 50% 0%,#2e2014,var(--bg) 70%)}
+.login .caja{width:100%;max-width:380px;background:var(--card);border:1px solid var(--linea);border-radius:18px;padding:34px 26px;text-align:center}
+.login .logo{font:600 34px "Cormorant Garamond",serif;color:var(--oro2);line-height:1}
+.login .logo i{color:var(--oro)}
+.login small{display:block;letter-spacing:.3em;font-size:11px;color:var(--ink2);margin:8px 0 22px}
+.login input{width:100%;padding:14px;border-radius:12px;border:1px solid var(--linea);background:#0d0805;color:var(--ink);margin-bottom:12px;text-align:center;letter-spacing:2px}
+.btn{border:0;border-radius:11px;padding:12px 16px;font-weight:800;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;text-decoration:none;min-height:44px}
+.btn-oro{background:linear-gradient(135deg,#d9b56c,#a87f3a);color:#120c08;width:100%}
+.err{color:#ff9d8a;font-size:14px;min-height:1.2em;margin-top:8px}
+header{position:sticky;top:0;z-index:20;background:rgba(18,12,8,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--linea);padding-top:env(safe-area-inset-top)}
+header .wrap{display:flex;align-items:center;gap:10px;height:64px}
+header .t{flex:1;line-height:1.1}header .t b{font:600 22px "Cormorant Garamond",serif;color:var(--oro2)}
+header .t small{display:block;color:var(--oro);font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:800}
+.ico{background:var(--card);border:1px solid var(--linea);color:var(--ink);width:44px;height:44px;border-radius:12px;cursor:pointer;font-size:18px}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:14px 0}
+.stat{background:var(--card);border:1px solid var(--linea);border-radius:14px;padding:12px 8px;text-align:center}
+.stat b{display:block;font:700 32px "Cormorant Garamond",serif;color:var(--oro2);line-height:1}
+.stat span{font-size:11px;color:var(--ink2);text-transform:uppercase;letter-spacing:.06em;font-weight:700}
+.tabs{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none}
+.tabs button{flex:0 0 auto;background:var(--card);border:1px solid var(--linea);color:var(--ink2);border-radius:999px;padding:0 16px;min-height:42px;font-weight:700;font-size:14px;cursor:pointer}
+.tabs button.on{background:var(--oro);color:#120c08;border-color:var(--oro)}
+.tabs .n{background:var(--rojo);color:#fff;border-radius:999px;padding:0 6px;font-size:12px;margin-left:5px}
+.filtro{display:flex;gap:8px;margin:12px 0}
+.filtro button{flex:1;min-height:42px;border-radius:10px;border:1px solid var(--linea);background:var(--card);color:var(--ink2);font-weight:700;cursor:pointer}
+.filtro button.on{border-color:var(--oro);color:var(--oro2)}
+.dia{font:600 22px "Cormorant Garamond",serif;color:var(--oro);margin:18px 0 8px}
+.item{background:var(--card);border:1px solid var(--linea);border-left:4px solid var(--oro);border-radius:14px;padding:14px;margin-bottom:10px}
+.item.confirmada,.item.checkin{border-left-color:var(--verde)}.item.cancelada{border-left-color:var(--rojo);opacity:.6}.item.llego,.item.checkout{border-left-color:var(--azul)}
+.fila{display:flex;align-items:flex-start;gap:12px}
+.hora{font:700 28px "Cormorant Garamond",serif;line-height:1;min-width:66px}
+.hora small{display:block;font:700 11px Manrope;color:var(--ink2);margin-top:4px}
+.hora.h{font-size:22px;color:var(--tq)}
+.info{flex:1}.info b{font-size:17px}
+.info .m{color:var(--ink2);font-size:14px;margin-top:4px;line-height:1.5}
+.info .nota{background:var(--card2);border-radius:9px;padding:8px 10px;margin-top:8px;font-size:14px}
+.badge{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:4px 8px;border-radius:999px;background:#3b2c1c;color:var(--oro2);white-space:nowrap;margin-left:4px}
+.badge.confirmada,.badge.checkin{background:#1f3a26;color:#8fe0a5}.badge.cancelada{background:#3d1d17;color:#ff9d8a}.badge.llego,.badge.checkout{background:#1b2d40;color:#9cc8f0}
+.badge.tipo{background:#123331;color:#8fe0d8}
+.acc{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.acc .btn{padding:0 12px;font-size:14px;border-radius:10px;background:var(--card2);color:var(--ink);border:1px solid var(--linea)}
+.acc .ok{background:var(--verde);color:#fff;border-color:var(--verde)}.acc .wa{background:#25d366;color:#0b2a16;border-color:#25d366}
+.vacio{text-align:center;color:var(--ink2);padding:50px 10px}.vacio b{color:var(--ink);display:block;font-size:17px;margin-bottom:6px}
+.vacio svg{width:46px;height:46px;color:var(--oro);margin-bottom:10px}
+.bloque{background:var(--card);border:1px solid var(--linea);border-radius:14px;padding:18px;margin-top:14px}
+.bloque label{display:block;font-weight:800;margin-bottom:6px}.bloque p{color:var(--ink2);font-size:14px;margin-bottom:10px;line-height:1.55}
+.bloque input{width:100%;padding:12px;border-radius:10px;border:1px solid var(--linea);background:#0d0805;color:var(--ink);margin-bottom:10px}
+.ocup{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px;margin-top:6px}
+.ocup div{background:var(--card2);border-radius:10px;padding:8px 4px;text-align:center;font-size:12px;color:var(--ink2)}
+.ocup div b{display:block;font:700 22px "Cormorant Garamond",serif;color:var(--ink)}
+.ocup div.on b{color:var(--tq)}
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(140px);background:var(--oro);color:#120c08;font-weight:800;padding:12px 20px;border-radius:999px;transition:.3s;z-index:50;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.toast.on{transform:translateX(-50%) translateY(0)}
+.pie{color:var(--ink2);font-size:12px;text-align:center;padding:30px 0 40px}
+:focus-visible{outline:2px solid var(--oro2);outline-offset:2px}
+@media(max-width:520px){.stat b{font-size:26px}.stat span{font-size:10px}.ocup{grid-template-columns:repeat(4,minmax(0,1fr))}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<div class="toast" id="toast" role="status"></div>
+<script>
+{
+const API="https://cafecoquitaino.vercel.app/api";
+let CLAVE="";try{CLAVE=localStorage.getItem("coqui_clave")||""}catch(e){}
+let datos={reservas:[],config:{}},tab="hoy",tipoF="todas",vistos=null,timer;
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const hoyISO=()=>{const d=new Date();return new Date(d.getTime()-d.getTimezoneOffset()*6e4).toISOString().slice(0,10)};
+const sumar=(f,n)=>{const d=new Date(f+"T12:00:00");d.setDate(d.getDate()+n);return d.toISOString().slice(0,10)};
+const fechaB=f=>{const s=new Date(f+"T12:00:00").toLocaleDateString("es-CO",{weekday:"long",day:"numeric",month:"long"});return s[0].toUpperCase()+s.slice(1)};
+const fechaC=f=>new Date(f+"T12:00:00").toLocaleDateString("es-CO",{day:"numeric",month:"short"});
+const h12=h=>{const[H,M]=h.split(":").map(Number);return `${((H+11)%12)+1}:${String(M).padStart(2,"0")}`};
+const ampm=h=>parseInt(h)<12?"a. m.":"p. m.";
+const hace=iso=>{const m=Math.round((Date.now()-new Date(iso))/6e4);return m<1?"ahora":m<60?`hace ${m} min`:m<1440?`hace ${Math.round(m/60)} h`:new Date(iso).toLocaleDateString("es-CO",{day:"numeric",month:"short"})};
+const waNum=n=>{const d=String(n).replace(/\D/g,"");return d.length===10?"57"+d:d};
+const SVG={cal:'M4 6h16v14H4zM4 10h16M9 3v5M15 3v5',cama:'M3 18v-7h18v7M3 14h18M6 11V8h5v3',ok:'M5 12l5 5 9-10',lista:'M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01'};
+const ic=k=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="${SVG[k]}"/></svg>`;
+function toast(t){const e=$("#toast");e.textContent=t;e.classList.add("on");clearTimeout(e._t);e._t=setTimeout(()=>e.classList.remove("on"),2400)}
+function beep(){try{const a=new(window.AudioContext||window.webkitAudioContext)();[0,.2].forEach(d=>{const o=a.createOscillator(),g=a.createGain();o.frequency.value=880;o.connect(g);g.connect(a.destination);g.gain.setValueAtTime(.15,a.currentTime+d);g.gain.exponentialRampToValueAtTime(.001,a.currentTime+d+.16);o.start(a.currentTime+d);o.stop(a.currentTime+d+.17)})}catch(e){}}
+async function api(p,o={}){const r=await fetch(API+p,{...o,headers:{"Content-Type":"application/json","x-clave":CLAVE,...(o.headers||{})}});const j=await r.json().catch(()=>({ok:false,error:"Sin respuesta"}));if(r.status===401)throw Object.assign(new Error(j.error||"Clave incorrecta"),{auth:true});if(!j.ok)throw new Error(j.error||"Error");return j}
+
+function login(msg=""){clearInterval(timer);
+ $("#app").innerHTML=`<div class="login"><div class="caja"><div class="logo">Cafe Coqui <i>Taino</i></div><small>PANEL DE RESERVAS</small>
+ <form id="fl"><input id="clave" type="password" placeholder="Clave del panel" autocomplete="current-password" required aria-label="Clave del panel"><button class="btn btn-oro">Entrar</button><div class="err">${esc(msg)}</div></form>
+ <p style="color:var(--ink2);font-size:13px;margin-top:16px">Mesas del café y habitaciones del hotel en un solo lugar.</p></div></div>`;
+ $("#fl").onsubmit=async e=>{e.preventDefault();CLAVE=$("#clave").value.trim();try{await cargar();try{localStorage.setItem("coqui_clave",CLAVE)}catch(e){}app()}catch(err){login(err.auth?"Clave incorrecta":"No se pudo conectar. Revisa tu internet.")}}}
+
+async function cargar(sil){const[r,c]=await Promise.all([api("/reservas"),api("/config")]);
+ const ids=new Set(r.reservas.map(x=>x.id));
+ if(vistos&&sil){const n=[...ids].filter(i=>!vistos.has(i)).length;if(n){beep();toast(`Nueva${n>1?"s":""} reserva${n>1?"s":""}: ${n}`)}}
+ vistos=ids;r.reservas.sort((a,b)=>(a.fecha+(a.hora||"15:00")).localeCompare(b.fecha+(b.hora||"15:00")));datos={reservas:r.reservas,config:c.config}}
+
+function app(){
+ $("#app").innerHTML=`<header><div class="wrap"><div class="t"><small>Panel</small><b>Cafe Coqui Taino</b></div>
+ <button class="ico" title="Actualizar" aria-label="Actualizar" onclick="refrescar()">⟳</button><button class="ico" title="Salir" aria-label="Salir" onclick="salir()">⎋</button></div></header>
+ <main class="wrap"><div class="stats" id="stats"></div><div class="tabs" id="tabs" role="tablist"></div><div id="cont"></div>
+ <div class="pie">Se actualiza solo cada 30 segundos · Sistema hecho a la medida para Cafe Coqui Taino</div></main>`;
+ pintar();clearInterval(timer);timer=setInterval(()=>cargar(true).then(pintar).catch(()=>{}),30000)}
+window.refrescar=async()=>{try{await cargar(true);pintar();toast("Actualizado")}catch(e){toast("Sin conexión")}};
+window.salir=()=>{CLAVE="";try{localStorage.removeItem("coqui_clave")}catch(e){}vistos=null;login()};
+window.setTab=t=>{tab=t;pintar()};window.setTipo=t=>{tipoF=t;pintar()};
+
+const enHotel=(r,f)=>r.tipo==="hotel"&&r.estado!=="cancelada"&&r.fecha<=f&&r.salida>f;
+function pintar(){
+ const hoy=hoyISO(),R=datos.reservas;
+ const mesasHoy=R.filter(r=>r.tipo==="mesa"&&r.fecha===hoy&&r.estado!=="cancelada");
+ const pend=R.filter(r=>r.fecha>=hoy&&r.estado==="pendiente").length;
+ const huesp=R.filter(r=>enHotel(r,hoy));
+ $("#stats").innerHTML=`<div class="stat"><b>${mesasHoy.length}</b><span>Mesas hoy</span></div><div class="stat"><b>${mesasHoy.reduce((s,r)=>s+r.personas,0)}</b><span>Personas hoy</span></div><div class="stat"><b>${huesp.length}</b><span>Habitaciones ocupadas</span></div><div class="stat"><b>${pend}</b><span>Por confirmar</span></div>`;
+ const T=[["hoy","Hoy"],["proximas","Próximas",pend],["hotel","Hotel"],["historial","Historial"],["ajustes","Ajustes"]];
+ $("#tabs").innerHTML=T.map(([k,l,n])=>`<button role="tab" aria-selected="${tab===k}" class="${tab===k?"on":""}" onclick="setTab('${k}')">${l}${n?`<span class="n">${n}</span>`:""}</button>`).join("");
+ const c=$("#cont"),filt=l=>l.filter(r=>tipoF==="todas"||r.tipo===tipoF);
+ const fb=`<div class="filtro">${[["todas","Todas"],["mesa","Mesas del café"],["hotel","Habitaciones"]].map(([k,l])=>`<button class="${tipoF===k?"on":""}" onclick="setTipo('${k}')">${l}</button>`).join("")}</div>`;
+ if(tab==="hoy"){const l=filt(R.filter(r=>r.fecha===hoy||(r.tipo==="hotel"&&r.salida===hoy)));
+  c.innerHTML=fb+(l.length?`<div class="dia">Hoy, ${fechaB(hoy).toLowerCase()}</div>`+l.map(tarjeta).join(""):vacio("cal","No hay reservas para hoy todavía.","Cuando alguien reserve desde la página, aparece aquí al instante."))}
+ else if(tab==="proximas"){const l=filt(R.filter(r=>r.fecha>hoy&&r.estado!=="cancelada"));c.innerHTML=fb+(l.length?agrupar(l):vacio("cal","No hay reservas próximas.",""))}
+ else if(tab==="historial"){const l=filt(R.filter(r=>r.fecha<hoy||r.estado==="cancelada")).reverse();c.innerHTML=fb+(l.length?agrupar(l):vacio("lista","Aún no hay historial.",""))}
+ else if(tab==="hotel")hotel(c,hoy);else ajustes(c)}
+function vacio(i,t,s){return `<div class="vacio">${ic(i)}<b>${t}</b><p style="font-size:14px">${s}</p></div>`}
+function agrupar(l){let h="",u="";l.forEach(r=>{if(r.fecha!==u){u=r.fecha;h+=`<div class="dia">${fechaB(r.fecha)}</div>`}h+=tarjeta(r)});return h}
+const NOM={pendiente:"Por confirmar",confirmada:"Confirmada",cancelada:"Cancelada",llego:"Ya llegó",checkin:"Hospedado",checkout:"Salió"};
+function tarjeta(r){
+ const nom=esc(r.nombre.split(" ")[0]),H=r.tipo==="hotel";
+ const msg=H?`Hola ${r.nombre.split(" ")[0]} 👋 Te escribimos del *Hotel Cafe Coqui Taino*. Tu reserva quedó *confirmada* ✅\n\n🛏️ ${r.habitacion||"Habitación"}\n📅 Llegada: ${fechaB(r.fecha)}\n📅 Salida: ${fechaB(r.salida)}\n👥 ${r.personas} huésped${r.personas>1?"es":""}\n📍 Centro Comercial Coqui Taino, parque principal de Filandia\n\n¡Te esperamos!`
+  :`Hola ${r.nombre.split(" ")[0]} 👋 Te escribimos de *Cafe Coqui Taino*. Tu reserva quedó *confirmada* ✅\n\n📅 ${fechaB(r.fecha)}\n🕐 ${h12(r.hora)} ${ampm(r.hora)}\n👥 ${r.personas} persona${r.personas>1?"s":""}${r.ocasion&&r.ocasion!=="Visita normal"?`\n🎉 ${r.ocasion}`:""}\n📍 Centro Comercial Coqui Taino, parque principal de Filandia\n\n¡Te esperamos! ☕`;
+ const izq=H?`<div class="hora h">${fechaC(r.fecha)}<small>${r.noches} noche${r.noches>1?"s":""}</small></div>`:`<div class="hora">${h12(r.hora)}<small>${ampm(r.hora)}</small></div>`;
+ const det=H?`${esc(r.habitacion||"Habitación")} · ${r.personas} huésped${r.personas>1?"es":""}<br>Llega ${fechaC(r.fecha)} · Sale ${fechaC(r.salida)}`:`${r.personas} persona${r.personas>1?"s":""}${r.ocasion&&r.ocasion!=="Visita normal"?` · ${esc(r.ocasion)}`:""}`;
+ const b=(e,t,cl="")=>`<button class="btn ${cl}" onclick="estado('${r.id}','${e}')">${t}</button>`;
+ let acc="";
+ if(r.estado==="pendiente"||r.estado==="cancelada")acc+=b("confirmada","Confirmar","ok");
+ acc+=`<a class="btn wa" target="_blank" rel="noopener" href="https://api.whatsapp.com/send?phone=${waNum(r.celular)}&text=${encodeURIComponent(msg)}">Avisar al cliente</a><a class="btn" href="tel:${esc(r.celular)}">Llamar</a>`;
+ if(!H&&r.estado==="confirmada")acc+=b("llego","Ya llegó");
+ if(H&&r.estado==="confirmada")acc+=b("checkin","Registrar llegada");
+ if(H&&r.estado==="checkin")acc+=b("checkout","Registrar salida");
+ if(r.estado!=="cancelada")acc+=b("cancelada","Cancelar");
+ return `<div class="item ${r.estado}"><div class="fila">${izq}<div class="info"><b>${esc(r.nombre)}</b><span class="badge tipo">${H?"Hotel":"Mesa"}</span><span class="badge ${r.estado}">${NOM[r.estado]||r.estado}</span>
+ <div class="m">${det}<br>${esc(r.celular)} · <span style="opacity:.8">recibida ${hace(r.creada)}</span></div>${r.nota?`<div class="nota">${esc(r.nota)}</div>`:""}</div></div><div class="acc">${acc}</div></div>`}
+window.estado=async(id,e)=>{try{await api("/estado",{method:"POST",body:JSON.stringify({id,estado:e})});const r=datos.reservas.find(x=>x.id===id);if(r)r.estado=e;pintar();toast(NOM[e])}catch(err){if(err.auth)return login("Tu sesión expiró");toast("No se pudo guardar")}};
+function hotel(c,hoy){
+ const R=datos.reservas;const dias=[...Array(14)].map((_,i)=>sumar(hoy,i));
+ const occ=dias.map(f=>R.filter(r=>enHotel(r,f)).length);
+ const llegan=R.filter(r=>r.tipo==="hotel"&&r.fecha===hoy&&r.estado!=="cancelada"),salen=R.filter(r=>r.tipo==="hotel"&&r.salida===hoy&&r.estado!=="cancelada"),dentro=R.filter(r=>enHotel(r,hoy));
+ const prox=R.filter(r=>r.tipo==="hotel"&&r.salida>=hoy&&r.estado!=="cancelada");
+ c.innerHTML=`<div class="bloque"><label>Ocupación de los próximos 14 días</label><p>Habitaciones ocupadas cada noche.</p><div class="ocup">${dias.map((f,i)=>`<div class="${occ[i]?"on":""}"><b>${occ[i]}</b>${new Date(f+"T12:00:00").toLocaleDateString("es-CO",{weekday:"short",day:"numeric"})}</div>`).join("")}</div></div>
+ <div class="stats" style="grid-template-columns:repeat(3,minmax(0,1fr))"><div class="stat"><b>${llegan.length}</b><span>Llegan hoy</span></div><div class="stat"><b>${dentro.length}</b><span>Hospedados</span></div><div class="stat"><b>${salen.length}</b><span>Salen hoy</span></div></div>
+ ${prox.length?`<div class="dia">Estadías activas y próximas</div>`+prox.map(tarjeta).join(""):vacio("cama","No hay estadías próximas.","Las reservas de habitaciones hechas en la página aparecen aquí.")}`}
+function ajustes(c){
+ c.innerHTML=`<div class="bloque"><label for="wa">WhatsApp del negocio</label><p>A este número llegan los mensajes de reserva que envían los clientes desde la página.</p><input id="wa" inputmode="tel" value="${esc(datos.config.whatsapp||"")}"><button class="btn btn-oro" onclick="guardarWa()">Guardar número</button></div>
+ <div class="bloque"><label>Instalar como app</label><p>Abre este panel en Chrome, toca los tres puntos ⋮ y elige “Agregar a la pantalla de inicio”. En iPhone: Compartir → “Agregar a inicio”.</p></div>
+ <div class="bloque"><label>Clave del panel</label><p>La clave solo la tiene el negocio. Si necesitas cambiarla, pídesela a tu desarrollador.</p><button class="btn" style="background:var(--card2);color:var(--ink);border:1px solid var(--linea)" onclick="salir()">Cerrar sesión en este celular</button></div>`}
+window.guardarWa=async()=>{try{await api("/config",{method:"POST",body:JSON.stringify({whatsapp:$("#wa").value})});await cargar();pintar();toast("Número guardado")}catch(e){toast(e.message||"No se pudo guardar")}};
+if(!CLAVE)login();else cargar().then(app).catch(e=>login(e.auth?"":"No se pudo conectar. Revisa tu internet."));
+}
+</script>
+</body>
+</html>

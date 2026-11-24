@@ -257,14 +257,14 @@ footer b{color:#fff;font:500 22px "Playfair Display",serif}
 
 <section class="band bk" id="reservas">
  <div class="wrap bkgrid">
-  <div><p class="kick" style="font-size:clamp(32px,4.2vw,46px);line-height:1.1;margin-bottom:8px">Reservas</p><h2>Reserva tu mesa o tu habitación</h2><p>Completa los datos y te llevamos a WhatsApp con el mensaje listo. Respondemos rápido para confirmar disponibilidad.</p></div>
+  <div><p class="kick" style="font-size:clamp(32px,4.2vw,46px);line-height:1.1;margin-bottom:8px">Reservas</p><h2>Reserva tu mesa o tu habitación</h2><p>Reserva en línea las 24 horas. Tu reserva queda registrada al instante y te confirmamos por WhatsApp.</p></div>
   <div>
    <div class="seg" role="group" aria-label="Tipo de reserva"><button type="button" id="sm" aria-pressed="true">Mesa en el café</button><button type="button" id="sh" aria-pressed="false">Habitación</button></div>
    <form id="form" novalidate>
-    <label class="full">Nombre<input id="fn" autocomplete="name" placeholder="Tu nombre"></label>
+    <label class="full">Nombre<input id="fn" autocomplete="name" placeholder="Tu nombre"></label><label class="full">Celular / WhatsApp<input id="fcel" type="tel" inputmode="tel" autocomplete="tel" placeholder="300 000 0000"></label>
     <div id="fmesa" style="display:contents">
      <label>Fecha<input type="date" id="fd"></label><label>Hora<input type="time" id="ft" value="16:00"></label>
-     <label class="full">Personas<select id="fp"><option>2</option><option>1</option><option>3</option><option>4</option><option>5</option><option>6 o más</option></select></label>
+     <label class="full">Personas<select id="fp"><option>2</option><option>1</option><option>3</option><option>4</option><option>5</option><option>6 o más</option></select></label><label class="full">Ocasión<select id="foc"><option>Visita normal</option><option>Cumpleaños</option><option>Aniversario</option><option>Reunión de trabajo</option><option>Otra celebración</option></select></label>
     </div>
     <div id="fhotel" style="display:none">
      <label>Llegada<input type="date" id="fi"></label><label>Salida<input type="date" id="fo"></label>
@@ -272,7 +272,7 @@ footer b{color:#fff;font:500 22px "Playfair Display",serif}
      <label>Habitación<select id="fr"></select></label>
     </div>
     <label class="full">Comentario<textarea id="fc" rows="2" placeholder="Celebración, hora de llegada, preferencias…"></textarea></label>
-    <button class="btn solid full" type="submit">Enviar por WhatsApp</button>
+    <button class="btn solid full" type="submit">Reservar ahora</button>
     <p class="fmsg" id="fmsg" role="status"></p>
    </form>
   </div>
@@ -324,14 +324,29 @@ let mode='mesa';const sm=document.getElementById('sm'),sh=document.getElementByI
 const setMode=m=>{mode=m;sm.setAttribute('aria-pressed',m==='mesa');sh.setAttribute('aria-pressed',m==='hotel');document.getElementById('fmesa').style.display=m==='mesa'?'contents':'none';document.getElementById('fhotel').style.display=m==='hotel'?'contents':'none'};
 sm.onclick=()=>setMode('mesa');sh.onclick=()=>setMode('hotel');
 document.addEventListener('click',e=>{const a=e.target.closest('[data-room]');if(a){setMode('hotel');document.getElementById('fr').value=a.dataset.room}});
-const today=new Date().toISOString().slice(0,10);['fd','fi','fo'].forEach(id=>document.getElementById(id).min=today);document.getElementById('fd').value=today;
+const today=(d=>new Date(d.getTime()-d.getTimezoneOffset()*6e4).toISOString().slice(0,10))(new Date());['fd','fi','fo'].forEach(id=>document.getElementById(id).min=today);document.getElementById('fd').value=today;
 const v=id=>document.getElementById(id).value.trim();
-document.getElementById('form').addEventListener('submit',e=>{e.preventDefault();const msg=document.getElementById('fmsg');
+const API='https://cafecoquitaino.vercel.app/api';let WAN=WA;fetch(API+'/config').then(r=>r.json()).then(j=>{if(j.whatsapp)WAN=j.whatsapp}).catch(()=>{});
+document.getElementById('ft').min='07:00';document.getElementById('ft').max='20:30';
+document.getElementById('form').addEventListener('submit',async e=>{e.preventDefault();const msg=document.getElementById('fmsg'),btn=e.target.querySelector('button[type=submit]');
  if(!v('fn')){msg.textContent='Escribe tu nombre para continuar.';return}
- let t;if(mode==='mesa')t=`Hola Cafe Coqui Taino, soy ${v('fn')}. Quiero reservar una mesa para ${v('fp')} personas el ${v('fd')||'(fecha por definir)'} a las ${v('ft')}.`;
- else{if(!v('fi')||!v('fo')){msg.textContent='Elige las fechas de llegada y salida.';return}t=`Hola Hotel Cafe Coqui Taino, soy ${v('fn')}. Quiero consultar disponibilidad de ${v('fr')} para ${v('fg')} huéspedes, del ${v('fi')} al ${v('fo')}.`}
+ if(v('fcel').replace(/\D/g,'').length<7){msg.textContent='Escribe tu celular para confirmarte la reserva.';return}
+ let body,t;
+ if(mode==='mesa'){const h=v('ft');if(!v('fd')){msg.textContent='Elige la fecha de tu reserva.';return}
+  if(!h||h<'07:00'||h>'20:30'){msg.textContent='Atendemos de 7:00 a. m. a 9:00 p. m. Elige una hora entre 7:00 a. m. y 8:30 p. m.';return}
+  body={tipo:'mesa',nombre:v('fn'),celular:v('fcel'),fecha:v('fd'),hora:h,personas:parseInt(v('fp'))||6,ocasion:v('foc'),nota:v('fc'),origen:location.pathname};
+  t=`Hola Cafe Coqui Taino, soy ${v('fn')}. Acabo de reservar una mesa para ${v('fp')} personas el ${v('fd')} a las ${h}${v('foc')!=='Visita normal'?' ('+v('foc')+')':''}.`}
+ else{if(!v('fi')||!v('fo')||v('fo')<=v('fi')){msg.textContent='Revisa las fechas: la salida debe ser después de la llegada.';return}
+  body={tipo:'hotel',nombre:v('fn'),celular:v('fcel'),llegada:v('fi'),salida:v('fo'),personas:parseInt(v('fg'))||1,habitacion:v('fr'),nota:v('fc'),origen:location.pathname};
+  t=`Hola Hotel Cafe Coqui Taino, soy ${v('fn')}. Acabo de solicitar ${v('fr')} para ${v('fg')} huéspedes, del ${v('fi')} al ${v('fo')}.`}
  if(v('fc'))t+=` Comentario: ${v('fc')}`;
- const url=`https://wa.me/${WA}?text=${encodeURIComponent(t)}`;msg.innerHTML=`Abriendo WhatsApp… si no abre, <a href="${url}" target="_blank" rel="noopener">toca aquí</a>.`;window.open(url,'_blank')});
+ btn.disabled=true;btn.style.opacity=.6;msg.textContent='Enviando tu reserva…';
+ let ok=false,err='';try{const r=await fetch(API+'/reservas',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});const j=await r.json();ok=!!j.ok;err=j.error||''}catch(x){}
+ btn.disabled=false;btn.style.opacity='';
+ const url=`https://wa.me/${WAN}?text=${encodeURIComponent(t)}`;
+ if(ok){msg.innerHTML=`<b>¡Reserva recibida!</b> Ya quedó registrada y te confirmamos por WhatsApp al ${body.celular}. ¿Quieres escribirnos de una vez? <a href="${url}" target="_blank" rel="noopener">Abrir WhatsApp</a>.`;['fn','fcel','fc'].forEach(i=>document.getElementById(i).value='')}
+ else msg.innerHTML=`${err?err+' ':''}No pudimos registrarla en línea en este momento. <a href="${url}" target="_blank" rel="noopener">Envíala por WhatsApp</a> y te confirmamos.`;
+});
 const wl=`https://wa.me/${WA}?text=${encodeURIComponent('Hola Cafe Coqui Taino, quiero más información.')}`;document.getElementById('wa').href=wl;document.getElementById('wa2').href=wl;
 document.querySelectorAll('.wanum').forEach(s=>s.textContent=WAtxt);document.getElementById('yr').textContent=new Date().getFullYear();
 }
