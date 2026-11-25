@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Inventario · Sistema de vitrinas</title>
+<title>Tecnocenter · Inventario</title>
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#111214">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%23ff4f00'/%3E%3Cpath d='M5 8l7-3 7 3-7 3-7-3zM5 8v8l7 3 7-3V8M12 11v8' fill='none' stroke='white' stroke-width='1.8'/%3E%3C/svg%3E">
@@ -99,7 +99,7 @@ footer{color:var(--soft);font-size:13px;text-align:center;padding:24px 14px 36px
 <section id="login">
  <div class="lg-art"><div class="stack3" id="lgFotos"></div>
   <div><div class="logo"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 7v10l9 4 9-4V7"/><path d="M12 11v10"/></svg></div>
-  <h1>Inventario de vitrinas</h1><p>Productos, existencias, ventas y fotos en un solo lugar. Se guarda en la nube y se abre igual en el celular o el computador.</p></div>
+  <h1>Tecnocenter<br>Inventario</h1><p>Productos, existencias, ventas y fotos en un solo lugar. Se guarda en la nube y se abre igual en el celular o el computador.</p></div>
  </div>
  <div class="lg-form"><form id="fLogin" autocomplete="on">
   <h2>Ingresar</h2><p class="lbl" style="margin:-6px 0 4px">Escriba el usuario y la clave que le entregamos.</p>
@@ -113,7 +113,7 @@ footer{color:var(--soft);font-size:13px;text-align:center;padding:24px 14px 36px
 <div id="app" hidden>
 <div class="top"><div class="wrap">
  <div class="brand"><div class="logo"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 7v10l9 4 9-4V7"/><path d="M12 11v10"/></svg></div>
-  <div><b id="nTienda">Inventario de la tienda</b><small><span class="sync" id="sync"><i></i><b id="syncT">Guardado en la nube</b></span></small></div></div>
+  <div><b id="nTienda">Tecnocenter</b><small><span class="sync" id="sync"><i></i><b id="syncT">Guardado en la nube</b></span></small></div></div>
  <div class="acts">
   <button class="btn" id="bNuevo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg><span>Nuevo producto</span></button>
   <button class="btn pri" id="bExcel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 19h16"/></svg>Descargar archivo Excel</button>
@@ -255,7 +255,7 @@ const cats=()=>[...new Set(S.items.map(r=>r.c))].sort((a,b)=>a.localeCompare(b,'
 const hoyStr=()=>new Date().toDateString();
 function resumen(){
  const it=S.items,v=it.reduce((a,r)=>a+tot(r),0),u=it.reduce((a,r)=>a+(r.q||0),0),cf=it.filter(r=>r.nota).length;
- const nom=S.tienda||'Inventario de la tienda';$('#nTienda').textContent=nom;document.title=nom+' · Inventario';
+ const nom=S.tienda||'Tecnocenter';$('#nTienda').textContent=nom;document.title=nom+' · Inventario';
  $('#kValor').textContent=cop(v);$('#kUni').textContent=u.toLocaleString('es-CO');$('#kRef').textContent=it.length;$('#kConf').textContent=cf;
  $('#kHoy').textContent=cop(S.ventas.filter(x=>new Date(x.f).toDateString()===hoyStr()).reduce((a,x)=>a+x.t,0));
  const sp=it.filter(r=>r.p==null).length;$('#kValorSub').textContent=sp?sp+' productos sin precio no suman al total':'Todos los productos tienen precio';
@@ -331,7 +331,7 @@ let rs=0;$('#bReset').onclick=()=>{if(!rs){rs=1;$('#bReset').textContent='¿Segu
  S={tienda:S.tienda,items:structuredClone(D.items),ventas:[],rev:S.rev};rs=0;$('#bReset').textContent='Restaurar conteo original';cambio();todo();toast('Conteo original restaurado')};
 $('#bExcel').onclick=()=>{
  if(!window.XLSX){toast('Cargando Excel… intente en un momento');return}
- const X=window.XLSX,wb=X.utils.book_new(),nom=S.tienda||'Inventario de la tienda',fecha=new Date().toLocaleDateString('es-CO');
+ const X=window.XLSX,wb=X.utils.book_new(),nom=S.tienda||'Tecnocenter',fecha=new Date().toLocaleDateString('es-CO');
  const fmt='"$"#,##0';
  const filas=[[nom+' — Inventario general'],['Generado el '+fecha],[],['Categoría','Producto','Modelo / referencia','Cantidad','Precio unitario','Valor total','Marcado %','Hoja del cuaderno','Nota','Foto']];
  const ord=S.items.slice().sort((a,b)=>a.c.localeCompare(b.c,'es')||a.n.localeCompare(b.n,'es'));
