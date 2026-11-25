@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mega Muebles HL · Propuestas de página web</title>
+<link rel="icon" href="favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:#111013;color:#f2eee9;min-height:100vh;-webkit-font-smoothing:antialiased}
+.wrap{width:min(1200px,92%);margin:auto;padding:60px 0 50px}
+.top{display:flex;align-items:center;gap:14px}
+.top svg{width:54px;height:54px}
+.top b{font-size:1.5rem;font-weight:800;letter-spacing:-.02em}
+.top small{display:block;color:#9d968f;font-size:.85rem}
+h1{font-size:clamp(2rem,4.5vw,3.4rem);font-weight:800;letter-spacing:-.03em;line-height:1.05;margin:44px 0 12px}
+h1 span{background:linear-gradient(90deg,#d7192f,#e5137a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:#a8a19a;max-width:640px;font-size:1.05rem}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+a.p{display:flex;flex-direction:column;border-radius:24px;overflow:hidden;background:#1b191c;border:1px solid #2c292d;text-decoration:none;color:inherit;transition:transform .35s,border-color .35s}
+a.p:hover{transform:translateY(-6px);border-color:#e5137a}
+.thumb{height:260px;position:relative;overflow:hidden}
+.thumb img{width:100%;height:100%;object-fit:cover;transition:transform 1s}
+a.p:hover .thumb img{transform:scale(1.06)}
+.thumb i{position:absolute;left:16px;top:16px;font-style:normal;font-weight:800;font-size:.78rem;padding:6px 12px;border-radius:20px;background:#fff;color:#111}
+.dots{display:flex;gap:6px;margin-top:14px}
+.dots span{width:22px;height:22px;border-radius:50%;border:2px solid rgba(255,255,255,.15)}
+.info{padding:22px 22px 26px}
+.info h2{font-size:1.4rem;font-weight:800;letter-spacing:-.02em}
+.info p{color:#a8a19a;font-size:.92rem;margin-top:6px}
+.go{margin-top:18px;font-weight:700;color:#ff4f9a}
+.note{margin-top:40px;color:#8d8680;font-size:.85rem;text-align:center}
+@media(max-width:900px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <svg viewBox="0 0 100 100"><defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#d7192f"/><stop offset="1" stop-color="#e5137a"/></linearGradient></defs><path d="M50 4 90 27v46L50 96 10 73V27Z" fill="url(#g)"/><path d="M28 72V40q0-9 8-5l14 18 14-18q8-4 8 5v32" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div><b>Mega Muebles HL</b><small>Quimbaya, Quindío</small></div>
+  </div>
+  <h1>Tres propuestas para tu <span>página web</span></h1>
+  <p class="lead">Las tres tienen catálogo, carrito de compras que envía el pedido directo a tu WhatsApp y botón de WhatsApp flotante. Ábrelas, pruébalas y dinos cuál te gusta más.</p>
+  <div class="grid">
+    <a class="p" href="propuesta-1/index.html">
+      <div class="thumb"><img src="img/comedor-madera.jpg" alt=""><i>Propuesta 1</i></div>
+      <div class="info"><h2>Elegancia Clásica</h2><p>Tonos crema y madera, letras finas tipo revista de decoración. Transmite tradición, calidad y lujo.</p>
+        <div class="dots"><span style="background:#f6f1e9"></span><span style="background:#8a5a36"></span><span style="background:#b5122e"></span><span style="background:#1e1a17"></span></div>
+        <div class="go">Ver propuesta →</div></div>
+    </a>
+    <a class="p" href="propuesta-2/index.html">
+      <div class="thumb"><img src="img/tienda.jpg" alt=""><i>Propuesta 2</i></div>
+      <div class="info"><h2>Noche Premium</h2><p>Fondo oscuro con fucsia y dorado, el color de su letrero. Moderna, exclusiva y muy llamativa.</p>
+        <div class="dots"><span style="background:#0f0d0e"></span><span style="background:#e0197d"></span><span style="background:#d6b57a"></span><span style="background:#f3ede6"></span></div>
+        <div class="go">Ver propuesta →</div></div>
+    </a>
+    <a class="p" href="propuesta-3/index.html">
+      <div class="thumb"><img src="img/comedor-taburetes.jpg" alt=""><i>Propuesta 3</i></div>
+      <div class="info"><h2>Tienda Moderna</h2><p>Blanca, limpia y con degradado rojo-fucsia, estilo tienda online grande. Pensada para vender.</p>
+        <div class="dots"><span style="background:#fff"></span><span style="background:#d7192f"></span><span style="background:#e5137a"></span><span style="background:#1b1b1f"></span></div>
+        <div class="go">Ver propuesta →</div></div>
+    </a>
+  </div>
+  <p class="note">Borradores de diseño · Los precios, productos y fotos se ajustan con la información final del negocio.</p>
+</div>
+</body>
+</html>

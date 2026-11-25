@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es" data-base="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mega Muebles HL · Tienda de muebles en Quimbaya, Quindío</title>
+<meta name="description" content="Compra muebles personalizados: salas, comedores, camas, closets y más. Madera de roble, otras maderas y MDF. Paga a cuotas con Addi y Sistecrédito.">
+<link rel="icon" href="../favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../base.css">
+<style>
+:root{--bg:#ffffff;--panel:#ffffff;--ink:#1b1b1f;--muted:#6b6b75;--accent:#d7192f;--accent2:#e5137a;--soft:#f6f4f2;--line:#ececef;--radius:20px;--pill:12px;--font-head:'Plus Jakarta Sans',sans-serif;--font-body:'Plus Jakarta Sans',sans-serif}
+.wrap{width:min(1280px,92%);margin:auto}
+.grad{background:linear-gradient(110deg,var(--accent),var(--accent2))}
+.promo{color:#fff;font-size:.84rem;font-weight:600;text-align:center;padding:10px}
+.promo a{text-decoration:underline;margin-left:8px}
+header.top{position:sticky;top:0;z-index:60;background:#fff;border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;gap:26px;height:78px}
+.brand{display:flex;align-items:center;gap:10px}
+.brand b{font-weight:800;font-size:1.35rem;letter-spacing:-.02em}
+.brand b span{color:var(--accent)}
+.search{flex:1;display:flex;align-items:center;gap:10px;background:var(--soft);border-radius:14px;padding:0 16px;height:48px;color:var(--muted);font-size:.9rem;max-width:520px}
+.top-r{display:flex;align-items:center;gap:12px;margin-left:auto}
+.ico{position:relative;display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;font-weight:600;font-size:.9rem;transition:.2s}
+.ico:hover{background:var(--soft)}
+.ico-wa{background:#25d366;color:#fff}.ico-wa:hover{background:#1fbf5b}
+.ico [data-cart-count]{top:2px;right:2px}
+.catbar{border-bottom:1px solid var(--line)}
+.catbar .wrap{display:flex;gap:28px;overflow:auto;height:50px;align-items:center;font-size:.88rem;font-weight:600;color:#45454d;scrollbar-width:none}
+.catbar a{white-space:nowrap}.catbar a:hover{color:var(--accent)}
+/* hero */
+.hero{padding:28px 0}
+.hero .wrap{display:grid;grid-template-columns:2fr 1fr;gap:20px}
+.h-main{position:relative;border-radius:28px;overflow:hidden;min-height:520px;display:flex;align-items:flex-end;color:#fff}
+.h-main img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.h-main::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,10,14,.85) 0%,rgba(20,10,14,.45) 50%,transparent 80%)}
+.h-main>div{position:relative;z-index:2;padding:48px;max-width:560px}
+.chip{display:inline-block;padding:7px 14px;border-radius:30px;background:rgba(255,255,255,.18);backdrop-filter:blur(8px);font-size:.78rem;font-weight:700;letter-spacing:.04em}
+.h-main h1{font-size:clamp(2.2rem,4.4vw,3.8rem);line-height:1.05;letter-spacing:-.03em;font-weight:800;margin:16px 0 14px}
+.h-main p{opacity:.9;font-size:1.05rem}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+.b{display:inline-flex;align-items:center;gap:8px;padding:15px 24px;border-radius:14px;font-weight:700;font-size:.95rem;transition:.25s}
+.b-w{background:#fff;color:var(--ink)}.b-w:hover{transform:translateY(-2px)}
+.b-r{color:#fff}.b-r:hover{filter:brightness(1.08)}
+.b-g{background:#25d366;color:#fff}
+.h-side{display:grid;grid-template-rows:1fr 1fr;gap:20px}
+.h-card{position:relative;border-radius:28px;overflow:hidden;padding:28px;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;min-height:250px}
+.h-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.h-card::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 30%,rgba(0,0,0,.75))}
+.h-card>*:not(img){position:relative;z-index:2}
+.h-card b{font-size:1.4rem;font-weight:800;letter-spacing:-.02em}
+.h-card small{opacity:.9}
+.h-card.grad::after{display:none}
+.h-card.grad b{font-size:2rem;line-height:1.05}
+/* beneficios */
+.perks .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.perk{display:flex;gap:14px;align-items:center;padding:20px;border-radius:18px;background:var(--soft)}
+.perk i{font-style:normal;width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:#fff;color:var(--accent);font-size:1.3rem;flex:none;box-shadow:0 6px 18px -8px rgba(215,25,47,.4)}
+.perk b{display:block;font-size:.95rem}.perk span{font-size:.82rem;color:var(--muted)}
+section{padding:80px 0}
+.sh{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:30px}
+.sh h2{font-size:clamp(1.8rem,3vw,2.5rem);font-weight:800;letter-spacing:-.03em}
+.sh p{color:var(--muted)}
+#filters{display:flex;gap:8px;flex-wrap:wrap}
+#filters button{padding:10px 18px;border-radius:12px;background:var(--soft);font-weight:700;font-size:.88rem}
+#filters button.active{background:var(--ink);color:#fff}
+#grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.card{border-radius:var(--radius);border:1px solid var(--line);transition:box-shadow .3s,transform .3s}
+.card:hover{box-shadow:0 24px 50px -24px rgba(0,0,0,.25);transform:translateY(-4px)}
+.card-img{aspect-ratio:1/1;margin:10px 10px 0;border-radius:14px}
+.card-body{padding:16px 18px 20px}
+.card-body h3{font-size:1.08rem;font-weight:700;letter-spacing:-.01em}
+.card-body p{font-size:.84rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-tag{background:linear-gradient(110deg,var(--accent),var(--accent2))}
+.card-add{width:100%;padding:12px;border-radius:12px;background:var(--ink);font-size:.88rem}
+.card-foot{flex-direction:column;align-items:stretch}
+.card-price{font-weight:700;color:var(--accent);font-size:.86rem}
+/* banner cuotas */
+.banner{border-radius:28px;overflow:hidden;display:grid;grid-template-columns:1.2fr 1fr;color:#fff}
+.banner>div{padding:56px}
+.banner h2{font-size:clamp(2rem,3.6vw,3rem);line-height:1.05;letter-spacing:-.03em;font-weight:800;margin:14px 0}
+.banner ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:24px 0 30px}
+.banner li{background:rgba(255,255,255,.15);padding:14px 16px;border-radius:14px;font-weight:700;font-size:.92rem}
+.banner li small{display:block;font-weight:500;opacity:.85}
+.banner img{width:100%;height:100%;object-fit:cover}
+/* extra */
+.ex-wrap{background:var(--soft);border-radius:28px;padding:40px}
+#extra{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px}
+#extra a{background:#fff;padding:18px 20px;border-radius:14px;font-weight:700;display:flex;justify-content:space-between;transition:.2s}
+#extra a:hover{color:var(--accent);box-shadow:0 10px 24px -14px rgba(0,0,0,.3)}
+#extra a span{color:var(--accent)}
+/* pasos */
+.how{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.how div{padding:30px;border:1px solid var(--line);border-radius:22px}
+.how b{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:50%;color:#fff;font-weight:800;margin-bottom:18px}
+.how h4{font-size:1.2rem;font-weight:800;margin-bottom:6px}
+.how p{color:var(--muted);font-size:.92rem}
+/* visit */
+.visit{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.visit img{border-radius:28px;width:100%;height:100%;object-fit:cover;min-height:380px}
+.v-info{border-radius:28px;background:var(--ink);color:#fff;padding:50px;display:flex;flex-direction:column;justify-content:center}
+.v-info h2{font-size:clamp(1.9rem,3vw,2.6rem);font-weight:800;letter-spacing:-.03em;margin-bottom:18px}
+.v-info p{color:#c9c9d1;margin:4px 0}
+footer.site{margin-top:40px;color:#fff;padding:50px 0 30px}
+footer.site .wrap{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:30px}
+footer.site h5{font-size:.95rem;margin-bottom:10px}
+footer.site p,footer.site li{opacity:.9;font-size:.9rem;list-style:none;margin:4px 0}
+.legal{text-align:center;opacity:.8;font-size:.8rem;margin-top:36px}
+@media(max-width:1060px){#grid{grid-template-columns:repeat(3,1fr)}.perks .wrap{grid-template-columns:1fr 1fr}#extra{grid-template-columns:1fr 1fr}}
+@media(max-width:820px){
+  .search{display:none}
+  .hero .wrap{grid-template-columns:1fr}.h-main{min-height:440px}.h-main>div{padding:28px}
+  .h-side{grid-template-columns:1fr 1fr;grid-template-rows:auto}.h-card{min-height:200px}
+  #grid{grid-template-columns:1fr 1fr;gap:12px}
+  .banner{grid-template-columns:1fr}.banner>div{padding:34px 26px}.banner img{max-height:280px}
+  .how,.visit{grid-template-columns:1fr}
+  .v-info{padding:34px 26px}
+  footer.site .wrap{grid-template-columns:1fr}
+  .ex-wrap{padding:26px 18px}
+  section{padding:56px 0}
+}
+@media(max-width:520px){.ico-wa .t{display:none}.h-side{grid-template-columns:1fr}.perks .wrap{grid-template-columns:1fr}.banner ul{grid-template-columns:1fr}}
+</style>
+</head>
+<body id="inicio">
+<div class="promo grad">🔥 Llévate tu mueble hoy y págalo a cuotas con Addi o Sistecrédito <a data-wa="¡Hola Mega Muebles! Quiero comprar a cuotas.">Pregunta aquí</a></div>
+<header class="top">
+  <div class="wrap">
+    <a href="#inicio" class="brand"><svg class="logo-mark" viewBox="0 0 100 100"><defs><linearGradient id="lg" x1="0" x2="1"><stop offset="0" stop-color="#d7192f"/><stop offset="1" stop-color="#e5137a"/></linearGradient></defs><path d="M50 4 90 27v46L50 96 10 73V27Z" fill="url(#lg)"/><path d="M28 72V40q0-9 8-5l14 18 14-18q8-4 8 5v32" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Mega<span>Muebles</span></b></a>
+    <a href="#catalogo" class="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>¿Qué mueble estás buscando?</a>
+    <div class="top-r">
+      <a class="ico ico-wa" data-wa="¡Hola Mega Muebles! Quiero información sobre sus muebles."><svg width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" id="waicon"/></svg><span class="t">322 949 8300</span></a>
+      <button class="ico" data-cart-open aria-label="Ver carrito"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2 3h3l2.6 12.2a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.5L21.5 8H6"/></svg><span data-cart-count>0</span></button>
+    </div>
+  </div>
+  <div class="catbar"><div class="wrap">
+    <a href="#catalogo" data-cat="Salas">Salas</a><a href="#catalogo" data-cat="Comedores">Comedores</a><a href="#catalogo" data-cat="Alcobas">Camas y colchones</a><a href="#catalogo" data-cat="Alcobas">Closets</a><a href="#catalogo" data-cat="Alcobas">Peinadores</a><a href="#mas">Gabinetes de cocina</a><a href="#mas">Mesas para TV</a><a href="#mas">Electrodomésticos</a>
+  </div></div>
+</header>
+
+<section class="hero" style="padding:28px 0">
+  <div class="wrap">
+    <div class="h-main">
+      <img src="../img/comedor-taburetes.jpg" alt="Comedor compacto con taburetes tapizados">
+      <div>
+        <span class="chip">✦ Personalizado a tu gusto</span>
+        <h1>Muebles que se adaptan a tu hogar</h1>
+        <p>Madera de roble, otras maderas o MDF. Tú eliges tela, color y cojinería.</p>
+        <div class="btns"><a href="#catalogo" class="b b-w">Comprar ahora</a><a class="b b-g" data-wa="¡Hola Mega Muebles! Quiero cotizar un mueble personalizado.">Cotizar por WhatsApp</a></div>
+      </div>
+    </div>
+    <div class="h-side">
+      <a href="#catalogo" data-cat="Salas" class="h-card"><img src="../img/sofa-capitoneado.jpg" alt=""><b>Salas</b><small>Tapizadas en la tela que quieras →</small></a>
+      <a class="h-card grad" data-wa="¡Hola Mega Muebles! Quiero separar un mueble."><b>Sistema de separado</b><small>Aparta hoy tu mueble con un abono →</small></a>
+    </div>
+  </div>
+</section>
+
+<div class="perks"><div class="wrap">
+  <div class="perk"><i>🌳</i><div><b>Madera de roble</b><span>y otras maderas finas</span></div></div>
+  <div class="perk"><i>🎨</i><div><b>Telas y colores</b><span>a tu elección</span></div></div>
+  <div class="perk"><i>💳</i><div><b>Paga a cuotas</b><span>Addi y Sistecrédito</span></div></div>
+  <div class="perk"><i>💬</i><div><b>Asesoría por WhatsApp</b><span>atención personalizada</span></div></div>
+</div></div>
+
+<section id="catalogo">
+  <div class="wrap">
+    <div class="sh"><div><h2>Nuestros productos</h2><p>Personaliza, agrega al carrito y envía tu pedido por WhatsApp.</p></div><div id="filters"></div></div>
+    <div id="grid"></div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="banner grad">
+      <div>
+        <span class="chip">Facilidades de pago</span>
+        <h2>Estrena muebles hoy, paga a tu ritmo</h2>
+        <ul>
+          <li>Addi<small>Compra ya, paga a cuotas</small></li>
+          <li>Sistecrédito<small>Crédito inmediato</small></li>
+          <li>Separado<small>Abona y paga por partes</small></li>
+          <li>Tarjetas<small>Mastercard · Maestro</small></li>
+        </ul>
+        <a class="b b-w" data-wa="¡Hola Mega Muebles! Quiero saber cómo pagar a cuotas.">Quiero pagar a cuotas</a>
+      </div>
+      <img src="../img/sala-l.jpg" alt="Sala en L">
+    </div>
+  </div>
+</section>
+
+<section id="mas" style="padding-top:0">
+  <div class="wrap ex-wrap">
+    <h2 style="font-size:1.6rem;font-weight:800;letter-spacing:-.02em">¿Buscas algo más? También tenemos</h2>
+    <div id="extra"></div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sh"><h2>Así de fácil es comprar</h2></div>
+    <div class="how">
+      <div><b class="grad">1</b><h4>Elige tu mueble</h4><p>Escoge en el catálogo o cuéntanos qué tienes en mente.</p></div>
+      <div><b class="grad">2</b><h4>Personalízalo</h4><p>Material, tela, color y cojinería: todo a tu gusto.</p></div>
+      <div><b class="grad">3</b><h4>Envía tu pedido</h4><p>Lo recibimos por WhatsApp y te confirmamos precio y entrega.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap visit">
+    <img src="../img/esquina.jpg" alt="Almacén Mega Muebles en Quimbaya">
+    <div class="v-info">
+      <h2>Visita nuestro almacén en Quimbaya</h2>
+      <p>📍 Quimbaya, Quindío</p>
+      <p>📞 Cel. / WhatsApp 322 949 8300</p>
+      <div class="btns"><a class="b b-g" data-wa="¡Hola Mega Muebles! Quiero visitar el almacén.">Escríbenos</a><a class="b b-w" href="https://www.google.com/maps/search/Mega+Muebles+Quimbaya+Quindio" target="_blank" rel="noopener">Cómo llegar</a></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site grad">
+  <div class="wrap">
+    <div><b style="font-size:1.4rem;font-weight:800">Mega Muebles HL</b><p>Muebles y electrodomésticos con full acabados, hechos a tu medida.</p></div>
+    <div><h5>Productos</h5><ul><li>Salas · Comedores</li><li>Camas · Sofá camas · Colchones</li><li>Closets · Peinadores · Cajoneras</li></ul></div>
+    <div><h5>Contacto</h5><ul><li>WhatsApp 322 949 8300</li><li>Quimbaya, Quindío</li></ul></div>
+  </div>
+  <p class="legal">© 2026 Mega Muebles HL</p>
+</footer>
+<script src="../app.js"></script>
+<script>document.addEventListener('DOMContentLoaded',()=>{document.getElementById('waicon').setAttribute('d',MM.WA_PATH)});</script>
+</body>
+</html>
