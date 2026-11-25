@@ -1,8 +1,10 @@
 import { put } from '@vercel/blob';
-import { valido, cuerpo } from './_auth.js';
+import { sesion, cuerpo } from './_auth.js';
 export const config = { api: { bodyParser: { sizeLimit: '4mb' } } };
 export default async function handler(req, res) {
-  if (!valido(req)) return res.status(401).json({ error: 'Sesión vencida' });
+  const s = sesion(req);
+  if (!s) return res.status(401).json({ error: 'Sesión vencida' });
+  if (s.rol !== 'dueno') return res.status(403).json({ error: 'Solo el dueño puede subir fotos' });
   if (req.method !== 'POST') return res.status(405).json({ error: 'Método no permitido' });
   try {
     const { data } = cuerpo(req);
