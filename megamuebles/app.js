@@ -78,7 +78,15 @@
     updateSend();
   }
 
-  function waLink(text) { return 'https://wa.me/' + WA + '?text=' + encodeURIComponent(text); }
+  /* Abre siempre el WhatsApp normal (no Business). En Android se fuerza la app com.whatsapp;
+     si no la tiene instalada, cae a wa.me. En iPhone y computador se usa wa.me. */
+  const ANDROID = /Android/i.test(navigator.userAgent);
+  function waLink(text) {
+    const web = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(text);
+    if (!ANDROID) return web;
+    return 'intent://send?phone=' + WA + '&text=' + encodeURIComponent(text) +
+      '#Intent;scheme=whatsapp;package=com.whatsapp;S.browser_fallback_url=' + encodeURIComponent(web) + ';end';
+  }
 
   function updateSend() {
     const btn = $('#cartSend'); if (!btn) return;
@@ -118,7 +126,7 @@
   }
   function renderExtra() {
     const e = $('#extra'); if (!e) return;
-    e.innerHTML = EXTRA.map((x) => `<a href="${waLink('¡Hola Mega Muebles! Quiero información sobre ' + x.toLowerCase() + '.')}" target="_blank" rel="noopener">${x}<span>→</span></a>`).join('');
+    e.innerHTML = EXTRA.map((x) => `<a href="${waLink('¡Hola Mega Muebles! Quiero información sobre ' + x.toLowerCase() + '.')}" target="${ANDROID ? '_self' : '_blank'}" rel="noopener">${x}<span>→</span></a>`).join('');
   }
 
   /* ---------- Modal de personalización ---------- */
@@ -143,7 +151,7 @@
             <div class="pm-qty"><button data-pq="-1">−</button><span id="pmQty">1</span><button data-pq="1">+</button></div>
             <button class="pm-add" id="pmAdd">Agregar al carrito</button>
           </div>
-          <a class="pm-wa" target="_blank" rel="noopener" href="${waLink('¡Hola Mega Muebles! Me interesa: ' + p.name + '. ¿Me dan más información?')}">Preguntar por WhatsApp</a>
+          <a class="pm-wa" target="${ANDROID ? '_self' : '_blank'}" rel="noopener" href="${waLink('¡Hola Mega Muebles! Me interesa: ' + p.name + '. ¿Me dan más información?')}">Preguntar por WhatsApp</a>
         </div>
       </div>`;
     m.classList.add('open'); document.body.classList.add('lock');
@@ -185,12 +193,12 @@
         <footer>
           <p class="cart-note">Te enviamos precio, opciones de tela y tiempo de entrega por WhatsApp. Aceptamos sistema de separado, Addi y Sistecrédito.</p>
           <input id="cartName" placeholder="Tu nombre (opcional)">
-          <a id="cartSend" class="disabled" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="${WA_PATH}"/></svg> Enviar pedido por WhatsApp</a>
+          <a id="cartSend" class="disabled" href="#" target="${ANDROID ? '_self' : '_blank'}" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="${WA_PATH}"/></svg> Enviar pedido por WhatsApp</a>
         </footer>
       </aside>
       <div id="pmodal"></div>
       ${BASE ? '<a class="back-prop" href="' + BASE + 'index.html">← Ver las 3 propuestas</a>' : ''}
-      <a class="wa-float" href="${waLink('¡Hola Mega Muebles! Quiero información sobre sus muebles.')}" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+      <a class="wa-float" href="${waLink('¡Hola Mega Muebles! Quiero información sobre sus muebles.')}" target="${ANDROID ? '_self' : '_blank'}" rel="noopener" aria-label="Escríbenos por WhatsApp">
         <svg viewBox="0 0 24 24" width="30" height="30"><path fill="#fff" d="${WA_PATH}"/></svg><span>¿Te ayudamos?</span>
       </a>`);
   }
@@ -201,7 +209,7 @@
 
   document.addEventListener('DOMContentLoaded', () => {
     injectShell(); renderFilters(); renderGrid(); renderExtra(); renderCount(); renderCart();
-    $$('[data-wa]').forEach((a) => { a.href = waLink(a.dataset.wa || '¡Hola Mega Muebles! Quiero información.'); a.target = '_blank'; a.rel = 'noopener'; });
+    $$('[data-wa]').forEach((a) => { a.href = waLink(a.dataset.wa || '¡Hola Mega Muebles! Quiero información.'); a.target = ANDROID ? '_self' : '_blank'; a.rel = 'noopener'; });
     document.addEventListener('click', (ev) => {
       const t = ev.target;
       const op = t.closest('[data-open]'); if (op) { ev.preventDefault(); openProduct(op.dataset.open); return; }
