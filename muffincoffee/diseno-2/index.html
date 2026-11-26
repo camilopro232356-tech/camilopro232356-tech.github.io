@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Muffin & Coffee · Quimbaya</title>
+<meta name="description" content="Muffin & Coffee, Quimbaya: pastel de nata artesanal, café de especialidad, panadería, pizzas y almuerzo ejecutivo gourmet. Pide por WhatsApp.">
+<meta property="og:image" content="../img/nata-bandeja.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/common.css">
+<style>
+:root{--bg:#0d0a07;--bg2:#16110c;--oro:#c9a15a;--oro2:#e6c98d;--tx:#ece3d3;--font:'Montserrat',sans-serif;--acc:#c9a15a;--acc-tx:#0d0a07;--sheet-bg:#16110c;--sheet-tx:#ece3d3}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--tx);font:300 16px/1.75 var(--font)}
+img{max-width:100%;display:block}a{color:inherit}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:600;line-height:1.05;margin:0}
+.wrap{width:min(1200px,92%);margin:auto}
+.kick{display:inline-flex;align-items:center;gap:14px;font:600 11px/1 var(--font);letter-spacing:.4em;text-transform:uppercase;color:var(--oro)}
+.kick::before,.kick::after{content:"";width:34px;height:1px;background:var(--oro)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 30px;font:600 12px/1 var(--font);letter-spacing:.2em;text-transform:uppercase;text-decoration:none;transition:all .35s;border:1px solid var(--oro)}
+.btn svg{width:20px;height:20px}
+.btn-g{background:var(--oro);color:var(--bg)}.btn-g:hover{background:var(--oro2)}
+.btn-o{color:var(--oro)}.btn-o:hover{background:var(--oro);color:var(--bg)}
+
+header{position:fixed;inset:0 0 auto;z-index:80;padding:24px 0;transition:all .4s}
+header.scrolled{background:rgba(13,10,7,.92);backdrop-filter:blur(12px);padding:12px 0;border-bottom:1px solid rgba(201,161,90,.2)}
+.hd{display:flex;justify-content:space-between;align-items:center}
+.logo{text-decoration:none;font:600 28px/1 'Cormorant Garamond',serif;letter-spacing:.06em}
+.logo i{color:var(--oro)}
+nav{display:flex;gap:34px;align-items:center}
+nav a{text-decoration:none;font-size:12px;letter-spacing:.24em;text-transform:uppercase;transition:color .3s}
+nav a:hover{color:var(--oro)}
+.burger{display:none;background:none;border:0;color:var(--oro);font-size:28px;cursor:pointer}
+@media(max-width:900px){.burger{display:block;position:relative;z-index:2}nav{position:fixed;inset:0;background:var(--bg);flex-direction:column;justify-content:center;opacity:0;pointer-events:none;transition:opacity .4s}nav a{font-size:16px}.nav-open nav{opacity:1;pointer-events:auto}}
+
+.hero{position:relative;height:100vh;min-height:640px;display:grid;place-items:center;text-align:center;overflow:hidden}
+.hero #slides{position:absolute;inset:0}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(13,10,7,.45),rgba(13,10,7,.88) 75%),linear-gradient(to bottom,rgba(13,10,7,.4),transparent 30%,var(--bg))}
+.hero .c{position:relative;z-index:2;padding:0 5%}
+.hero h1{font-size:clamp(54px,9vw,128px);font-weight:500;letter-spacing:.02em;margin:24px 0 10px}
+.hero h1 i{color:var(--oro);font-style:italic}
+.hero .tag{font:italic 500 clamp(20px,2.4vw,28px) 'Cormorant Garamond',serif;color:var(--oro2);margin:0 0 40px}
+.hero .cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.scroll{position:absolute;bottom:34px;left:50%;z-index:2;width:1px;height:60px;background:linear-gradient(var(--oro),transparent);animation:sc 2s infinite}
+@keyframes sc{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+section{padding:120px 0}
+.sh{text-align:center;max-width:720px;margin:0 auto 64px}
+.sh h2{font-size:clamp(40px,5.4vw,70px);font-weight:500;margin:20px 0 14px}
+.sh h2 i{color:var(--oro)}
+.sh p{opacity:.7;margin:0}
+
+.legado .g{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.legado .ph{position:relative}
+.legado .ph img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.legado .ph::before{content:"";position:absolute;inset:24px -24px -24px 24px;border:1px solid var(--oro);z-index:-1}
+.legado .ph .mini{position:absolute;width:44%;right:-40px;bottom:-40px;aspect-ratio:1;border:6px solid var(--bg)}
+.legado h2{font-size:clamp(38px,4.6vw,62px);font-weight:500;margin:22px 0 24px}
+.legado h2 i{color:var(--oro)}
+.legado p{opacity:.8}
+.sig{font:italic 500 34px 'Cormorant Garamond',serif;color:var(--oro);margin-top:24px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(201,161,90,.3);margin-top:34px;padding-top:26px}
+.stats b{display:block;font:500 46px/1 'Cormorant Garamond',serif;color:var(--oro)}
+.stats span{font-size:11px;letter-spacing:.2em;text-transform:uppercase;opacity:.7}
+@media(max-width:900px){.legado .g{grid-template-columns:1fr;gap:70px}.legado .ph .mini{right:-10px}}
+
+.firma{background:var(--bg2);position:relative;overflow:hidden}
+.firma .g{display:grid;grid-template-columns:repeat(4,1fr);gap:2px}
+.fc{position:relative;aspect-ratio:3/4;overflow:hidden}
+.fc img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s,filter .6s;filter:brightness(.7)}
+.fc:hover img{transform:scale(1.08);filter:brightness(.9)}
+.fc div{position:absolute;inset:auto 0 0;padding:28px 24px;background:linear-gradient(transparent,rgba(0,0,0,.85))}
+.fc h3{font-size:30px;font-weight:500}
+.fc p{margin:4px 0 0;font-size:13px;opacity:.8}
+@media(max-width:900px){.firma .g{grid-template-columns:1fr 1fr}}
+
+.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 30px;margin-bottom:56px;border-bottom:1px solid rgba(201,161,90,.2);padding-bottom:18px}
+.tabs button{background:none;border:0;color:var(--tx);opacity:.55;font:500 22px 'Cormorant Garamond',serif;cursor:pointer;padding:6px 0;position:relative;transition:opacity .3s}
+.tabs button::after{content:"";position:absolute;left:0;right:0;bottom:-19px;height:2px;background:var(--oro);transform:scaleX(0);transition:transform .35s}
+.tabs button.on,.tabs button:hover{opacity:1;color:var(--oro2)}
+.tabs button.on::after{transform:none}
+#mhead{text-align:center;margin-bottom:40px}
+#mhead p{font:italic 500 22px 'Cormorant Garamond',serif;color:var(--oro);margin:0}
+.items{display:grid;grid-template-columns:1fr 1fr;gap:26px 60px}
+.it{display:flex;gap:20px;align-items:flex-start;padding:22px 0;border-bottom:1px solid rgba(236,227,211,.1)}
+.it img{width:84px;height:84px;object-fit:cover;flex:none;border:1px solid rgba(201,161,90,.5);padding:3px}
+.it .tx{flex:1}
+.it h4{font-size:26px;font-weight:600;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.it h4 small{font:600 9px/1 var(--font);letter-spacing:.22em;text-transform:uppercase;color:var(--oro);border:1px solid var(--oro);padding:5px 8px}
+.it p{margin:6px 0 12px;font-size:14px;opacity:.7}
+.it .mc-add{color:var(--oro);border-radius:0;letter-spacing:.12em;text-transform:uppercase;font-size:11px}
+@media(max-width:820px){.items{grid-template-columns:1fr}}
+.nota{text-align:center;margin-top:44px;font-size:13px;letter-spacing:.1em;opacity:.6}
+
+.bento{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:170px;gap:10px}
+.g-it{border:0;padding:0;cursor:zoom-in;overflow:hidden;background:#000;position:relative}
+.g-it img{width:100%;height:100%;object-fit:cover;transition:transform 1s,opacity .5s;opacity:.88}
+.g-it:hover img{transform:scale(1.07);opacity:1}
+.g-it:nth-child(6n+1){grid-column:span 2;grid-row:span 2}
+.g-it:nth-child(6n+2),.g-it:nth-child(6n+3){grid-column:span 2}
+.g-it:nth-child(6n+4){grid-column:span 2;grid-row:span 2}
+.g-it:nth-child(6n+5),.g-it:nth-child(6n+6){grid-column:span 2}
+@media(max-width:700px){.bento{grid-template-columns:1fr 1fr;grid-auto-rows:150px}.g-it:nth-child(n){grid-column:span 1;grid-row:span 1}.g-it:nth-child(3n+1){grid-column:span 2;grid-row:span 2}}
+
+.quote{position:relative;text-align:center;padding:150px 0;overflow:hidden}
+.quote .bgi{position:absolute;inset:0;background:url(../img/nata-tanda.jpg) center/cover fixed;filter:brightness(.25)}
+.quote .c{position:relative}
+.quote .r{font:500 110px/1 'Cormorant Garamond',serif;color:var(--oro)}
+.quote .s{color:var(--oro);letter-spacing:8px;font-size:22px}
+.quote p{font:italic 500 clamp(24px,3vw,36px)/1.3 'Cormorant Garamond',serif;max-width:760px;margin:24px auto 36px}
+
+.visit .g{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid rgba(201,161,90,.3)}
+.visit .inf{padding:56px}
+.visit h3{font-size:44px;font-weight:500;margin-bottom:30px}
+.visit dl{margin:0}
+.visit dt{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--oro);margin-top:22px}
+.visit dd{margin:6px 0 0;font-size:16px}
+.visit iframe{width:100%;height:100%;min-height:460px;border:0;filter:grayscale(1) invert(.92) contrast(.9) sepia(.3)}
+@media(max-width:820px){.visit .g{grid-template-columns:1fr}.visit .inf{padding:36px 26px}}
+footer{text-align:center;padding:60px 0 120px;border-top:1px solid rgba(201,161,90,.2);font-size:13px;opacity:.85}
+footer .logo{display:block;font-size:40px;margin-bottom:12px}
+footer a{color:var(--oro)}
+</style>
+</head>
+<body>
+<header><div class="wrap hd">
+  <a class="logo" href="#inicio">Muffin <i>&amp;</i> Coffee</a>
+  <button class="burger" data-nav-toggle aria-label="Menú">☰</button>
+  <nav><a href="#legado">Legado</a><a href="#menu">Menú</a><a href="#galeria">Galería</a><a href="#visitanos">Visítanos</a><a class="btn btn-o" data-wa="Hola Muffin & Coffee 👋 Quiero hacer un pedido.">Pedir</a></nav>
+</div></header>
+
+<div class="hero" id="inicio">
+  <div id="slides"></div>
+  <div class="c">
+    <span class="kick rv">Quimbaya · Quindío · Desde hace 14 años</span>
+    <h1 class="rv d1">Muffin <i>&amp;</i> Coffee</h1>
+    <p class="tag rv d2">El sabor que define a Quimbaya</p>
+    <div class="cta rv d3">
+      <a class="btn btn-g" data-wa="Hola Muffin & Coffee 👋 Quiero hacer un pedido."><span class="ico"></span>Pedir por WhatsApp</a>
+      <a class="btn btn-o" href="#menu">Descubrir el menú</a>
+    </div>
+  </div>
+  <div class="scroll"></div>
+</div>
+
+<section class="legado" id="legado">
+  <div class="wrap g">
+    <div class="ph rv"><img src="../img/sm/olnardy-nata.jpg" alt="Olnardy con un pastel de nata" loading="lazy"><img class="mini" src="../img/sm/nata-closeup.jpg" alt="Pastel de nata" loading="lazy"></div>
+    <div class="rv d1">
+      <span class="kick">El legado</span>
+      <h2>Catorce años de pasión <i>en cada rebanada</i></h2>
+      <p>El maestro pastelero <strong>Olnardy Maya</strong> trajo a Quimbaya el icónico pastel de Belém, nacido en el siglo XIX en el Monasterio de los Jerónimos de Lisboa. Con su receta original, perfeccionada durante 14 años, lo convirtió en una leyenda local.</p>
+      <p>En el encantador pasaje peatonal Mario Echeverry te espera nuestro pequeño rincón: café recién hecho, panadería exclusiva y una experiencia auténtica que te conecta con el corazón del Quindío.</p>
+      <div class="sig">Olnardy · Pastel de Nata</div>
+      <div class="stats"><div><b>14</b><span>Años</span></div><div><b>4.9</b><span>Google</span></div><div><b>171</b><span>Opiniones</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="firma">
+  <div class="wrap">
+    <div class="sh rv"><span class="kick">Especialidades</span><h2>Hecho a mano, <i>cada día</i></h2></div>
+  </div>
+  <div class="g">
+    <div class="fc rv"><img src="../img/sm/nata-dorado.jpg" alt="Pastel de nata" loading="lazy"><div><h3>Pastel de Nata</h3><p>La receta original de Olnardy</p></div></div>
+    <div class="fc rv d1"><img src="../img/sm/cafe-taza.jpg" alt="Café de especialidad" loading="lazy"><div><h3>Café de Especialidad</h3><p>De nuestra tierra cafetera</p></div></div>
+    <div class="fc rv d2"><img src="../img/sm/pan-artesanal.jpg" alt="Panadería artesanal" loading="lazy"><div><h3>Panadería Artesanal</h3><p>Muffins, ciabattas y más</p></div></div>
+    <div class="fc rv d3"><img src="../img/sm/pizza-gourmet.jpg" alt="Pizza artesanal" loading="lazy"><div><h3>Pizzas Artesanales</h3><p>Siete sabores de la casa</p></div></div>
+  </div>
+</section>
+
+<section id="menu">
+  <div class="wrap">
+    <div class="sh rv"><span class="kick">La carta</span><h2>Nuestro <i>menú</i></h2><p>Agrega lo que te antoje y envía tu pedido completo por WhatsApp.</p></div>
+    <div class="tabs rv" id="tabs"></div>
+    <div id="mhead"></div>
+    <div class="items" id="items"></div>
+    <p class="nota">Precios y disponibilidad del día por WhatsApp · <span data-fill="waTxt"></span></p>
+  </div>
+</section>
+
+<section id="galeria" style="padding-top:40px">
+  <div class="wrap">
+    <div class="sh rv"><span class="kick">Galería</span><h2>Momentos <i>Muffin &amp; Coffee</i></h2></div>
+    <div class="bento rv" id="gal"></div>
+  </div>
+</section>
+
+<div class="quote">
+  <div class="bgi"></div>
+  <div class="c wrap rv">
+    <div class="r">4.9</div><div class="s">★★★★★</div>
+    <p>“Parada obligatoria en Quimbaya” — así nos describen quienes nos visitan.</p>
+    <a class="btn btn-g" data-wa="Hola Muffin & Coffee 👋 Quiero reservar una mesa.">Reservar mesa</a>
+  </div>
+</div>
+
+<section class="visit" id="visitanos">
+  <div class="wrap">
+    <div class="sh rv"><span class="kick">Visítanos</span><h2>Te <i>esperamos</i></h2></div>
+    <div class="g rv">
+      <div class="inf">
+        <h3>Muffin &amp; Coffee</h3>
+        <dl>
+          <dt>Dirección</dt><dd><span data-fill="dir"></span><br><span data-fill="ciudad"></span></dd>
+          <dt>Horario</dt><dd data-fill="horario"></dd>
+          <dt>WhatsApp</dt><dd data-fill="waTxt"></dd>
+        </dl>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:36px">
+          <a class="btn btn-g" data-wa="Hola Muffin & Coffee 👋">Escribir</a>
+          <a class="btn btn-o" data-maps>Cómo llegar</a>
+        </div>
+      </div>
+      <iframe data-map title="Mapa Muffin & Coffee" loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="logo">Muffin &amp; Coffee</span>
+  Pastel de Nata · Café de Especialidad · Panadería Artesanal<br>
+  <span data-fill="ciudad"></span> · <a data-ig>@muffincoffee_co</a><br><br>
+  © <span data-year></span> Muffin &amp; Coffee
+</footer>
+
+<script>window.MC_BASE="../";</script>
+<script src="../assets/data.js"></script>
+<script src="../assets/common.js"></script>
+<script>
+document.querySelectorAll('.ico').forEach(s=>s.outerHTML=mcWaIcon);
+mcSlides('#slides',['nata-bandeja','terraza-girasoles','nata-cafe','olnardy-horneando','pizza-gourmet']);
+mcMenu({tabs:'#tabs',items:'#items',head:'#mhead',
+  headTpl:c=>`<p>${c.sub}</p>`,
+  itemTpl:it=>`<div class="it">${it.img?`<img src="${mcImg(it.img,1)}" alt="${it.n}" loading="lazy">`:''}<div class="tx"><h4>${it.n}${it.tag?`<small>${it.tag}</small>`:''}</h4><p>${it.d}</p>${mcAddBtn(it)}</div></div>`});
+mcGallery('#gal');
+</script>
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Muffin & Coffee — Quimbaya</title>
+<meta name="description" content="Muffin & Coffee, Quimbaya. Pastel de nata, café de especialidad, panadería, pizzas y almuerzo ejecutivo. Pide por WhatsApp.">
+<meta property="og:image" content="../img/nata-closeup.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/common.css">
+<style>
+:root{--bg:#f7f3ec;--ink:#17130f;--nata:#e9852f;--nata2:#f6c766;--soft:#ece4d7;--font:'Inter',sans-serif;--acc:#17130f;--acc-tx:#f6c766;--sheet-bg:#f7f3ec;--sheet-tx:#17130f}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--font)}
+img{max-width:100%;display:block}a{color:inherit}
+h1,h2,h3,h4{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;line-height:.95;margin:0;letter-spacing:-.03em}
+.wrap{width:min(1280px,93%);margin:auto}
+.pill{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--ink);border-radius:40px;padding:7px 14px;font-size:13px;font-weight:600}
+.pill i{width:8px;height:8px;border-radius:50%;background:#25D366;box-shadow:0 0 0 4px rgba(37,211,102,.25)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 26px;border-radius:60px;font-weight:600;text-decoration:none;transition:all .3s}
+.btn svg{width:22px;height:22px}
+.btn-k{background:var(--ink);color:var(--nata2)}.btn-k:hover{background:var(--nata);color:var(--ink)}
+.btn-wa{background:#25D366;color:#fff}.btn-wa:hover{transform:translateY(-2px)}
+.btn-l{border:1.5px solid var(--ink)}.btn-l:hover{background:var(--ink);color:var(--bg)}
+
+header{position:fixed;inset:14px 0 auto;z-index:80}
+.hd{display:flex;justify-content:space-between;align-items:center;background:rgba(247,243,236,.75);backdrop-filter:blur(14px);border:1px solid rgba(23,19,15,.08);border-radius:60px;padding:10px 10px 10px 24px;transition:box-shadow .3s}
+header.scrolled .hd{box-shadow:0 10px 30px rgba(0,0,0,.1)}
+.logo{font:800 22px/1 'Bricolage Grotesque',sans-serif;text-decoration:none;letter-spacing:-.02em}
+.logo span{color:var(--nata)}
+nav{display:flex;gap:6px;align-items:center}
+nav a{text-decoration:none;font-weight:600;font-size:15px;padding:10px 16px;border-radius:40px;transition:background .25s}
+nav a:hover{background:var(--soft)}
+nav .btn{padding:11px 20px}
+.burger{display:none;border:0;background:var(--ink);color:var(--bg);width:44px;height:44px;border-radius:50%;font-size:20px;cursor:pointer}
+@media(max-width:900px){.burger{display:block;position:relative;z-index:3}nav{position:fixed;inset:0;background:var(--bg);flex-direction:column;justify-content:center;gap:14px;clip-path:circle(0 at 92% 40px);transition:clip-path .6s;z-index:2}nav a{font-size:26px;font-family:'Bricolage Grotesque'}.nav-open nav{clip-path:circle(150% at 92% 40px)}}
+
+.hero{padding:130px 0 40px}
+.hero .top{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:28px}
+.hero h1{font-size:clamp(64px,13vw,200px)}
+.hero h1 .o{color:var(--nata)}
+.hero h1 .ln{display:block;overflow:hidden}
+.hero h1 .ln span{display:inline-block;animation:up 1s cubic-bezier(.2,.8,.2,1) both}
+.hero h1 .ln:nth-child(2) span{animation-delay:.12s}
+@keyframes up{from{transform:translateY(105%)}}
+.hero .side{max-width:360px}
+.hero .side p{margin:14px 0 22px;font-size:17px}
+.hero .side .cta{display:flex;gap:10px;flex-wrap:wrap}
+.hgrid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:14px;height:min(62vh,560px)}
+.hgrid>div{border-radius:28px;overflow:hidden;position:relative;min-height:0}
+.hgrid img{position:absolute;inset:0}
+main{overflow-x:clip}
+.hgrid img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s}
+.hgrid>div:hover img{transform:scale(1.05)}
+.hgrid .stat{background:var(--nata);display:flex;flex-direction:column;justify-content:space-between;padding:26px}
+.hgrid .stat b{font:800 clamp(70px,8vw,120px)/.9 'Bricolage Grotesque'}
+.hgrid .stat span{font-weight:600;font-size:17px}
+.hgrid .col{display:grid;grid-template-rows:1fr 1fr;gap:14px;border-radius:0;overflow:visible}
+.hgrid .col>div{border-radius:28px;overflow:hidden;position:relative;min-height:0}
+.circle{position:absolute;right:18px;bottom:18px;width:118px;height:118px;border-radius:50%;background:var(--ink);color:var(--nata2);display:grid;place-items:center}
+.circle svg{position:absolute;inset:0;animation:rot 14s linear infinite}
+.circle b{font-size:30px}
+@keyframes rot{to{transform:rotate(360deg)}}
+@media(max-width:900px){.hgrid{grid-template-columns:1fr 1fr;height:auto}.hgrid .col>div{position:relative}.hgrid>div:first-child{grid-column:1/-1;aspect-ratio:4/3}.hgrid .col{grid-template-rows:none;grid-template-columns:1fr}.hgrid .col>div,.hgrid .stat{aspect-ratio:1}}
+
+.marq{background:var(--ink);color:var(--nata2);overflow:hidden;padding:18px 0;margin-top:60px;transform:rotate(-1.5deg) scale(1.03)}
+.marq div{display:flex;gap:40px;white-space:nowrap;animation:mq 26s linear infinite;font:800 34px/1 'Bricolage Grotesque'}
+.marq span::after{content:"✺";margin-left:40px;color:var(--nata)}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+section{padding:110px 0}
+.sh{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:50px}
+.sh h2{font-size:clamp(46px,7vw,104px)}
+.sh h2 .o{color:var(--nata)}
+.sh p{max-width:380px;margin:0;font-size:17px}
+.num{font:600 13px var(--font);letter-spacing:.1em;display:block;margin-bottom:16px}
+
+.story{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.story .t{background:var(--ink);color:var(--bg);border-radius:28px;padding:clamp(30px,5vw,60px);display:flex;flex-direction:column;justify-content:space-between;gap:30px}
+.story .t h3{font-size:clamp(34px,4vw,54px)}
+.story .t h3 span{color:var(--nata2)}
+.story .t p{opacity:.8;margin:0 0 12px}
+.story .imgs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.story .imgs img{border-radius:28px;width:100%;height:100%;object-fit:cover;min-height:260px}
+.story .imgs img:first-child{grid-column:1/-1;aspect-ratio:16/10}
+.trio{display:flex;gap:30px;border-top:1px solid rgba(247,243,236,.2);padding-top:22px}
+.trio b{display:block;font:800 40px/1 'Bricolage Grotesque';color:var(--nata2)}
+.trio span{font-size:13px;opacity:.7}
+@media(max-width:900px){.story{grid-template-columns:1fr}}
+
+.tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:8px;margin-bottom:30px;scrollbar-width:none}
+.tabs button{flex:none;border:1.5px solid var(--ink);background:transparent;font:600 15px var(--font);padding:12px 20px;border-radius:40px;cursor:pointer;transition:all .25s;color:var(--ink)}
+.tabs button.on,.tabs button:hover{background:var(--ink);color:var(--nata2)}
+#mhead{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:10px;margin-bottom:24px}
+#mhead h3{font-size:clamp(34px,4.6vw,60px)}
+#mhead p{margin:0;font-weight:500;opacity:.7}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:14px}
+.cd{background:#fff;border-radius:24px;overflow:hidden;display:flex;flex-direction:column;transition:transform .35s,box-shadow .35s}
+.cd:hover{transform:translateY(-6px);box-shadow:0 24px 40px -22px rgba(0,0,0,.35)}
+.cd .im{aspect-ratio:4/3;overflow:hidden;background:var(--soft);position:relative}
+.cd .im img{width:100%;height:100%;object-fit:cover;transition:transform .9s}
+.cd:hover .im img{transform:scale(1.07)}
+.cd .im.no{display:grid;place-items:center;background:linear-gradient(135deg,var(--nata2),var(--nata));font:800 60px 'Bricolage Grotesque';color:var(--ink)}
+.cd .tg{position:absolute;top:14px;left:14px;background:var(--ink);color:var(--nata2);font-size:12px;font-weight:600;padding:6px 12px;border-radius:30px}
+.cd .bd{padding:20px 22px 22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.cd h4{font-size:26px}
+.cd p{margin:0;font-size:15px;opacity:.75;flex:1}
+.cd .mc-add{align-self:flex-start}
+.nota{margin-top:26px;font-weight:500;opacity:.7}
+
+.rail{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 3.5% 20px;scrollbar-width:thin}
+.rail .g-it{flex:none;width:clamp(240px,28vw,380px);aspect-ratio:3/4;border:0;padding:0;border-radius:24px;overflow:hidden;scroll-snap-align:start;cursor:zoom-in;background:var(--soft)}
+.rail .g-it:nth-child(3n+2){aspect-ratio:1;align-self:center}
+.rail .g-it img{width:100%;height:100%;object-fit:cover;transition:transform .9s}
+.rail .g-it:hover img{transform:scale(1.06)}
+.railnav{display:flex;gap:10px}
+.railnav button{width:54px;height:54px;border-radius:50%;border:1.5px solid var(--ink);background:none;font-size:22px;cursor:pointer;color:var(--ink)}
+.railnav button:hover{background:var(--ink);color:var(--bg)}
+
+.cta-big{background:var(--nata);border-radius:36px;padding:clamp(40px,7vw,90px);display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center}
+.cta-big h2{font-size:clamp(46px,7vw,100px)}
+.cta-big .r{display:flex;flex-direction:column;gap:16px;align-items:flex-start}
+.cta-big .r b{font:800 70px/1 'Bricolage Grotesque'}
+@media(max-width:900px){.cta-big{grid-template-columns:1fr}}
+
+.find{display:grid;grid-template-columns:1fr 1.3fr;gap:14px}
+.find .box{background:var(--ink);color:var(--bg);border-radius:28px;padding:40px}
+.find .box h3{font-size:44px;color:var(--nata2);margin-bottom:24px}
+.find dt{font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.6;margin-top:20px}
+.find dd{margin:4px 0 0;font-size:17px}
+.find .mp{border-radius:28px;overflow:hidden;min-height:440px}
+.find iframe{width:100%;height:100%;min-height:440px;border:0}
+@media(max-width:900px){.find{grid-template-columns:1fr}}
+footer{padding:40px 0 120px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;border-top:1.5px solid var(--ink);padding-top:30px}
+footer .logo{font-size:clamp(40px,8vw,110px)}
+</style>
+</head>
+<body>
+<header><div class="wrap hd">
+  <a class="logo" href="#inicio">Muffin<span>&amp;</span>Coffee</a>
+  <button class="burger" data-nav-toggle aria-label="Menú">☰</button>
+  <nav><a href="#nosotros">Nosotros</a><a href="#menu">Menú</a><a href="#galeria">Galería</a><a href="#ubicacion">Ubicación</a><a class="btn btn-k" data-wa="Hola Muffin & Coffee 👋 Quiero hacer un pedido.">Pedir ahora</a></nav>
+</div></header>
+
+<main id="inicio">
+<div class="hero wrap">
+  <div class="top">
+    <h1><span class="ln"><span>Pastel</span></span><span class="ln"><span>de <span class="o">nata.</span></span></span></h1>
+    <div class="side rv">
+      <span class="pill"><i></i> Abierto hoy · 9 a.m. – 10 p.m.</span>
+      <p>La receta original de Olnardy, perfeccionada durante 14 años. Café de especialidad, panadería artesanal y pizzas en el corazón de Quimbaya.</p>
+      <div class="cta"><a class="btn btn-wa" data-wa="Hola Muffin & Coffee 👋 Quiero hacer un pedido."><span class="ico"></span>Pedir</a><a class="btn btn-l" href="#menu">Ver menú</a></div>
+    </div>
+  </div>
+  <div class="hgrid rv d1">
+    <div><img src="../img/nata-bandeja.jpg" alt="Pasteles de nata recién horneados">
+      <div class="circle"><svg viewBox="0 0 100 100"><defs><path id="c" d="M50 50 m-38 0 a38 38 0 1 1 76 0 a38 38 0 1 1 -76 0"/></defs><text font-size="10.5" font-weight="700" fill="#f6c766" letter-spacing="2"><textPath href="#c">RECIÉN HORNEADO • TODOS LOS DÍAS • </textPath></text></svg><b>🥧</b></div></div>
+    <div class="col"><div><img src="../img/sm/cafe-taza.jpg" alt="Café"></div><div><img src="../img/sm/fachada.jpg" alt="Fachada"></div></div>
+    <div class="stat"><span>Calificación en Google</span><div><b>4.9</b><span>★★★★★ · 171 opiniones</span></div></div>
+  </div>
+</div>
+<div class="marq"><div id="mq"></div></div>
+
+<section id="nosotros">
+  <div class="wrap">
+    <div class="sh rv"><div><span class="num">(01) — Nosotros</span><h2>14 años de <span class="o">pasión</span></h2></div><p>Un pequeño rincón en el pasaje peatonal Mario Echeverry que se convirtió en el símbolo dulce de Quimbaya.</p></div>
+    <div class="story">
+      <div class="t rv">
+        <h3>Olnardy Maya, <span>maestro pastelero</span></h3>
+        <div>
+          <p>Hace 14 años empezó a perfeccionar el pastel de nata, el famoso postre portugués de Belém. Con hojaldre crujiente y crema suave, su receta original conquistó a locales y turistas.</p>
+          <p>Hoy Muffin &amp; Coffee es parada obligatoria: café recién hecho, panadería artesanal y exclusiva, y ese sabor que te conecta con el corazón del Quindío.</p>
+        </div>
+        <div class="trio"><div><b>14</b><span>años</span></div><div><b>4.9</b><span>en Google</span></div><div><b>7/7</b><span>días abiertos</span></div></div>
+      </div>
+      <div class="imgs rv d1"><img src="../img/sm/olnardy-horneando.jpg" alt="Olnardy horneando" loading="lazy"><img src="../img/sm/masa-hojaldre.jpg" alt="Hojaldre a mano" loading="lazy"><img src="../img/sm/vitrina.jpg" alt="Vitrina" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<section id="menu" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sh rv"><div><span class="num">(02) — Menú</span><h2>Elige, agrega <span class="o">y pide.</span></h2></div><p>Arma tu pedido con <b>+ Agregar</b> y envíalo completo por WhatsApp en un toque.</p></div>
+    <div class="tabs rv" id="tabs"></div>
+    <div id="mhead"></div>
+    <div class="cards" id="items"></div>
+    <p class="nota">* Precios y disponibilidad del día por WhatsApp: <span data-fill="waTxt"></span></p>
+  </div>
+</section>
+
+<section id="galeria" style="padding-top:20px">
+  <div class="wrap"><div class="sh rv"><div><span class="num">(03) — Galería</span><h2>Así <span class="o">se ve.</span></h2></div><div class="railnav"><button type="button" id="pv" aria-label="Anterior">←</button><button type="button" id="nx" aria-label="Siguiente">→</button></div></div></div>
+  <div class="rail rv" id="gal"></div>
+</section>
+
+<section style="padding-top:20px">
+  <div class="wrap">
+    <div class="cta-big rv">
+      <h2>¿Antojo de pastel de nata?</h2>
+      <div class="r"><p style="margin:0;font-size:18px;font-weight:500">Escríbenos y te lo tenemos listo. También para cajas, regalos y reservas.</p><a class="btn btn-k" data-wa="Hola Muffin & Coffee 👋 Quiero pedir pasteles de nata."><span class="ico"></span>Escribir por WhatsApp</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="ubicacion" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sh rv"><div><span class="num">(04) — Ubicación</span><h2>Ven <span class="o">a vernos.</span></h2></div></div>
+    <div class="find rv">
+      <div class="box"><h3>Muffin &amp; Coffee</h3><dl><dt>Dirección</dt><dd><span data-fill="dir"></span><br><span data-fill="ciudad"></span></dd><dt>Horario</dt><dd data-fill="horario"></dd><dt>WhatsApp</dt><dd data-fill="waTxt"></dd></dl>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:30px"><a class="btn btn-wa" data-wa="Hola Muffin & Coffee 👋">WhatsApp</a><a class="btn btn-l" data-maps style="border-color:var(--bg)">Cómo llegar ↗</a></div></div>
+      <div class="mp"><iframe data-map title="Mapa" loading="lazy"></iframe></div>
+    </div>
+  </div>
+</section>
+</main>
+<footer><div class="wrap"><span class="logo">Muffin<span style="color:var(--nata)">&amp;</span>Coffee</span><div style="align-self:flex-end;text-align:right">Quimbaya, Quindío<br><a data-ig>Instagram @muffincoffee_co</a><br>© <span data-year></span></div></div></footer>
+
+<script>window.MC_BASE="../";</script>
+<script src="../assets/data.js"></script>
+<script src="../assets/common.js"></script>
+<script>
+document.querySelectorAll('.ico').forEach(s=>s.outerHTML=mcWaIcon);
+const w=['Pastel de nata','Café de especialidad','Muffins','Pan artesanal','Pizzas','Almuerzo ejecutivo','Quimbaya, Quindío'];
+document.getElementById('mq').innerHTML=[...w,...w].map(x=>`<span>${x}</span>`).join('');
+mcMenu({tabs:'#tabs',items:'#items',head:'#mhead',
+  headTpl:c=>`<h3>${c.titulo}</h3><p>${c.sub}</p>`,
+  itemTpl:(it,c)=>`<article class="cd"><div class="im${it.img?'':' no'}">${it.img?`<img src="${mcImg(it.img,1)}" alt="${it.n}" loading="lazy">`:it.n[0]}${it.tag?`<span class="tg">${it.tag}</span>`:''}</div><div class="bd"><h4>${it.n}</h4><p>${it.d}</p>${mcAddBtn(it)}</div></article>`});
+mcGallery('#gal');
+const g=document.getElementById('gal');
+document.getElementById('nx').onclick=()=>g.scrollBy({left:g.clientWidth*.7,behavior:'smooth'});
+document.getElementById('pv').onclick=()=>g.scrollBy({left:-g.clientWidth*.7,behavior:'smooth'});
+</script>
+</body>
+</html>
