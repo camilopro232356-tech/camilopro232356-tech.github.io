@@ -8,7 +8,7 @@
 <meta property="og:image" content="../img/fachada.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/common.css">
+<link rel="stylesheet" href="../assets/common.css?v=2">
 <style>
 :root{--teal:#1d5c60;--teal2:#123f42;--rojo:#b8323a;--crema:#fff8ee;--arena:#f4e7d3;--miel:#f2b544;--tx:#2b2420;--pizarra:#22292a;--font:'DM Sans',sans-serif;--acc:#b8323a;--acc-tx:#fff;--sheet-bg:#fff8ee;--sheet-tx:#2b2420}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
@@ -126,7 +126,7 @@ footer a{color:var(--miel)}
 <header><div class="wrap hd">
   <a class="logo" href="#inicio"><span class="m">M</span>Muffin &amp; Coffee</a>
   <button class="burger" data-nav-toggle aria-label="Menú">☰</button>
-  <nav><a href="#historia">Nosotros</a><a href="#menu">Menú</a><a href="#fotos">Fotos</a><a href="#visitanos">Ubicación</a><a class="btn btn-r" data-wa="Hola Muffin & Coffee 👋 Quiero hacer un pedido.">Pedir</a></nav>
+  <nav><a href="#historia">Nosotros</a><a href="#menu">Menú</a><a href="#fotos">Fotos</a><a href="#opinion">Opina</a><a href="#visitanos">Ubicación</a><a class="btn btn-r" data-wa="Hola Muffin & Coffee 👋 Quiero hacer un pedido.">Pedir</a></nav>
 </div></header>
 
 <main id="inicio">
@@ -187,9 +187,11 @@ footer a{color:var(--miel)}
   <div class="wrap rv">
     <div class="big">4.9</div><div class="st">★★★★★</div>
     <p style="font-size:20px;max-width:620px;margin:10px auto 28px">171 opiniones en Google. Síguenos en Instagram para ver lo que sale del horno cada día.</p>
-    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a class="btn btn-r" data-ig>📸 @muffincoffee_co</a><a class="btn btn-wa" data-wa="Hola Muffin & Coffee 👋 Quiero reservar una mesa.">Reservar mesa</a></div>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a class="btn btn-r" data-ig>📸 @muffincoffee_co</a><a class="btn btn-wa" data-wa="Hola Muffin & Coffee 👋 Quiero reservar una mesa.">Reservar mesa</a><a class="btn btn-w" data-resena>⭐ Opinar en Google</a></div>
   </div>
 </section>
+
+<section data-opinion id="opinion" class="rv" style="--op-bg:#fff8ee;--op-tx:#1d5c60;--op-acc:#b8323a;--op-font:'Fraunces',serif"></section>
 
 <section class="vis" id="visitanos">
   <div class="wrap">
@@ -214,8 +216,8 @@ footer a{color:var(--miel)}
 </footer>
 
 <script>window.MC_BASE="../";</script>
-<script src="../assets/data.js"></script>
-<script src="../assets/common.js"></script>
+<script src="../assets/data.js?v=2"></script>
+<script src="../assets/common.js?v=2"></script>
 <script>
 document.querySelectorAll('.ico').forEach(s=>s.outerHTML=mcWaIcon);
 mcMenu({tabs:'#tabs',items:'#items',head:'#mhead',

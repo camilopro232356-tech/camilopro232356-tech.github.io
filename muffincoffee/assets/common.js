@@ -89,8 +89,36 @@
     setInterval(() => { s[i].classList.remove("on"); i = (i + 1) % s.length; s[i].classList.add("on"); }, ms);
   };
 
+
+  /* ---------- Opinión en Google ---------- */
+  function buildReview() {
+    $$("[data-opinion]").forEach((box) => {
+      box.innerHTML = `
+        <div class="op-in">
+          <span class="op-k">Tu opinión nos importa</span>
+          <h2 class="op-h">¿Qué te pareció tu visita?</h2>
+          <p class="op-p">Danos tu opinión y comentario en Google. Toca las estrellas y cuéntales a todos cómo te fue en Muffin &amp; Coffee.</p>
+          <div class="op-stars" role="group" aria-label="Califícanos en Google">
+            ${[1,2,3,4,5].map((n) => `<a href="${MC.resena}" target="_blank" rel="noopener" data-n="${n}" aria-label="${n} estrella${n > 1 ? "s" : ""}">★</a>`).join("")}
+          </div>
+          <div class="op-btns">
+            <a class="op-btn" href="${MC.resena}" target="_blank" rel="noopener"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3l5.7-5.7C34 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg> Dar mi opinión y comentario en Google</a>
+            <a class="op-ln" href="${MC.resenas}" target="_blank" rel="noopener">Ver las ${MC.opiniones} opiniones ★ ${MC.rating}</a>
+          </div>
+        </div>`;
+      const st = $$(".op-stars a", box);
+      st.forEach((a, i) => {
+        a.addEventListener("mouseenter", () => st.forEach((b, j) => b.classList.toggle("on", j <= i)));
+        a.addEventListener("focus", () => st.forEach((b, j) => b.classList.toggle("on", j <= i)));
+      });
+      $(".op-stars", box).addEventListener("mouseleave", () => st.forEach((b) => b.classList.remove("on")));
+    });
+    $$("[data-resena]").forEach((a) => { a.href = MC.resena; a.target = "_blank"; a.rel = "noopener"; });
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
     buildUI();
+    buildReview();
     $$("[data-wa]").forEach((a) => { a.href = mcWa(a.dataset.wa || "Hola Muffin & Coffee 👋"); a.target = "_blank"; a.rel = "noopener"; });
     $$("[data-fill]").forEach((el) => (el.textContent = MC[el.dataset.fill]));
     $$("[data-map]").forEach((f) => (f.src = MC.mapEmbed));

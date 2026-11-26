@@ -8,7 +8,7 @@
 <meta property="og:image" content="../img/nata-bandeja.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/common.css">
+<link rel="stylesheet" href="../assets/common.css?v=2">
 <style>
 :root{--azul:#1d3f8f;--azul2:#14306f;--crema:#fbf6ec;--crema2:#f3e9d6;--dorado:#d9a441;--tx:#1f2a44;--font:'Lato',sans-serif;--acc:#1d3f8f;--acc-tx:#fff;--sheet-bg:#fbf6ec;--sheet-tx:#1f2a44;
 --tile:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Crect width='60' height='60' fill='%23fbf6ec'/%3E%3Cg fill='none' stroke='%231d3f8f' stroke-width='2'%3E%3Ccircle cx='30' cy='30' r='12'/%3E%3Cpath d='M30 0v18M30 42v18M0 30h18M42 30h18'/%3E%3Cpath d='M30 18q6 6 0 12q-6-6 0-12zM30 42q6-6 0-12q-6 6 0 12zM18 30q6-6 12 0q-6 6-12 0zM42 30q-6-6-12 0q6 6 12 0z' fill='%231d3f8f'/%3E%3Cpath d='M0 0l10 10M60 0L50 10M0 60l10-10M60 60L50 50'/%3E%3C/g%3E%3C/svg%3E")}
@@ -131,7 +131,7 @@ footer a{color:var(--dorado)}
 <header><div class="wrap hd">
   <a class="logo" href="#inicio">Muffin <i>&amp;</i> Coffee</a>
   <button class="burger" data-nav-toggle aria-label="Menú">☰</button>
-  <nav><a href="#historia">Historia</a><a href="#menu">Menú</a><a href="#galeria">Galería</a><a href="#visitanos">Visítanos</a><a class="btn btn-wa" data-wa="Hola Muffin & Coffee 👋 Quiero hacer un pedido.">Pedir ya</a></nav>
+  <nav><a href="#historia">Historia</a><a href="#menu">Menú</a><a href="#galeria">Galería</a><a href="#opinion">Opina</a><a href="#visitanos">Visítanos</a><a class="btn btn-wa" data-wa="Hola Muffin & Coffee 👋 Quiero hacer un pedido.">Pedir ya</a></nav>
 </div></header>
 
 <main id="inicio">
@@ -202,9 +202,11 @@ footer a{color:var(--dorado)}
     <div class="big">4.9</div>
     <div class="st">★★★★★</div>
     <p>Más de 170 personas nos han calificado en Google. Ven y descubre por qué somos parada obligatoria en Quimbaya.</p>
-    <a class="btn btn-wa" data-wa="Hola Muffin & Coffee 👋 Quiero reservar una mesa.">Reservar mesa por WhatsApp</a>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a class="btn btn-wa" data-wa="Hola Muffin & Coffee 👋 Quiero reservar una mesa.">Reservar mesa por WhatsApp</a><a class="btn btn-ln" data-resena style="color:#fff">★ Danos tu opinión en Google</a></div>
   </div>
 </section>
+
+<section data-opinion id="opinion" class="rv" style="--op-bg:#fff;--op-tx:#1f2a44;--op-acc:#d9a441;--op-font:'Playfair Display',serif"></section>
 
 <section class="visita" id="visitanos">
   <div class="wrap">
@@ -234,8 +236,8 @@ footer a{color:var(--dorado)}
 </footer>
 
 <script>window.MC_BASE="../";</script>
-<script src="../assets/data.js"></script>
-<script src="../assets/common.js"></script>
+<script src="../assets/data.js?v=2"></script>
+<script src="../assets/common.js?v=2"></script>
 <script>
 document.querySelectorAll('.btn-wa').forEach(b=>{const s=b.querySelector('.ico');if(s)s.outerHTML=mcWaIcon});
 mcSlides('#slides',['nata-bandeja','nata-dorado','fachada','nata-cafe','terraza-girasoles']);

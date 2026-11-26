@@ -8,7 +8,7 @@
 <meta property="og:image" content="../img/nata-closeup.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/common.css">
+<link rel="stylesheet" href="../assets/common.css?v=2">
 <style>
 :root{--bg:#f7f3ec;--ink:#17130f;--nata:#e9852f;--nata2:#f6c766;--soft:#ece4d7;--font:'Inter',sans-serif;--acc:#17130f;--acc-tx:#f6c766;--sheet-bg:#f7f3ec;--sheet-tx:#17130f}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
@@ -141,7 +141,7 @@ footer .logo{font-size:clamp(40px,8vw,110px)}
 <header><div class="wrap hd">
   <a class="logo" href="#inicio">Muffin<span>&amp;</span>Coffee</a>
   <button class="burger" data-nav-toggle aria-label="Menú">☰</button>
-  <nav><a href="#nosotros">Nosotros</a><a href="#menu">Menú</a><a href="#galeria">Galería</a><a href="#ubicacion">Ubicación</a><a class="btn btn-k" data-wa="Hola Muffin & Coffee 👋 Quiero hacer un pedido.">Pedir ahora</a></nav>
+  <nav><a href="#nosotros">Nosotros</a><a href="#menu">Menú</a><a href="#galeria">Galería</a><a href="#opinion">Opina</a><a href="#ubicacion">Ubicación</a><a class="btn btn-k" data-wa="Hola Muffin & Coffee 👋 Quiero hacer un pedido.">Pedir ahora</a></nav>
 </div></header>
 
 <main id="inicio">
@@ -199,10 +199,12 @@ footer .logo{font-size:clamp(40px,8vw,110px)}
   <div class="wrap">
     <div class="cta-big rv">
       <h2>¿Antojo de pastel de nata?</h2>
-      <div class="r"><p style="margin:0;font-size:18px;font-weight:500">Escríbenos y te lo tenemos listo. También para cajas, regalos y reservas.</p><a class="btn btn-k" data-wa="Hola Muffin & Coffee 👋 Quiero pedir pasteles de nata."><span class="ico"></span>Escribir por WhatsApp</a></div>
+      <div class="r"><p style="margin:0;font-size:18px;font-weight:500">Escríbenos y te lo tenemos listo. También para cajas, regalos y reservas.</p><a class="btn btn-k" data-wa="Hola Muffin & Coffee 👋 Quiero pedir pasteles de nata."><span class="ico"></span>Escribir por WhatsApp</a><a class="btn btn-l" data-resena>★ Danos tu opinión en Google</a></div>
     </div>
   </div>
 </section>
+
+<section data-opinion id="opinion" class="rv" style="border-radius:36px;width:min(1280px,93%);margin:0 auto 40px;--op-bg:#17130f;--op-tx:#f7f3ec;--op-acc:#f6c766;--op-font:'Bricolage Grotesque',sans-serif;--op-off:rgba(247,243,236,.2)"></section>
 
 <section id="ubicacion" style="padding-top:20px">
   <div class="wrap">
@@ -218,8 +220,8 @@ footer .logo{font-size:clamp(40px,8vw,110px)}
 <footer><div class="wrap"><span class="logo">Muffin<span style="color:var(--nata)">&amp;</span>Coffee</span><div style="align-self:flex-end;text-align:right">Quimbaya, Quindío<br><a data-ig>Instagram @muffincoffee_co</a><br>© <span data-year></span></div></div></footer>
 
 <script>window.MC_BASE="../";</script>
-<script src="../assets/data.js"></script>
-<script src="../assets/common.js"></script>
+<script src="../assets/data.js?v=2"></script>
+<script src="../assets/common.js?v=2"></script>
 <script>
 document.querySelectorAll('.ico').forEach(s=>s.outerHTML=mcWaIcon);
 const w=['Pastel de nata','Café de especialidad','Muffins','Pan artesanal','Pizzas','Almuerzo ejecutivo','Quimbaya, Quindío'];

@@ -9,6 +9,8 @@ const MC = {
   rating: "4.9",
   opiniones: "171",
   instagram: "https://www.instagram.com/muffincoffee_co/",
+  resena: "https://search.google.com/local/writereview?placeid=ChIJT9kEMOphOI4Rron2UmWhgnc",
+  resenas: "https://search.google.com/local/reviews?placeid=ChIJT9kEMOphOI4Rron2UmWhgnc",
   maps: "https://www.google.com/maps/search/?api=1&query=Muffin+%26+Coffee+Quimbaya",
   mapEmbed: "https://maps.google.com/maps?q=Muffin%20%26%20Coffee%20Quimbaya%20Quind%C3%ADo&t=m&z=17&output=embed",
 };

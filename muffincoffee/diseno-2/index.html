@@ -8,7 +8,7 @@
 <meta property="og:image" content="../img/nata-bandeja.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/common.css">
+<link rel="stylesheet" href="../assets/common.css?v=2">
 <style>
 :root{--bg:#0d0a07;--bg2:#16110c;--oro:#c9a15a;--oro2:#e6c98d;--tx:#ece3d3;--font:'Montserrat',sans-serif;--acc:#c9a15a;--acc-tx:#0d0a07;--sheet-bg:#16110c;--sheet-tx:#ece3d3}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
@@ -127,7 +127,7 @@ footer a{color:var(--oro)}
 <header><div class="wrap hd">
   <a class="logo" href="#inicio">Muffin <i>&amp;</i> Coffee</a>
   <button class="burger" data-nav-toggle aria-label="Menú">☰</button>
-  <nav><a href="#legado">Legado</a><a href="#menu">Menú</a><a href="#galeria">Galería</a><a href="#visitanos">Visítanos</a><a class="btn btn-o" data-wa="Hola Muffin & Coffee 👋 Quiero hacer un pedido.">Pedir</a></nav>
+  <nav><a href="#legado">Legado</a><a href="#menu">Menú</a><a href="#galeria">Galería</a><a href="#opinion">Opina</a><a href="#visitanos">Visítanos</a><a class="btn btn-o" data-wa="Hola Muffin & Coffee 👋 Quiero hacer un pedido.">Pedir</a></nav>
 </div></header>
 
 <div class="hero" id="inicio">
@@ -192,9 +192,11 @@ footer a{color:var(--oro)}
   <div class="c wrap rv">
     <div class="r">4.9</div><div class="s">★★★★★</div>
     <p>“Parada obligatoria en Quimbaya” — así nos describen quienes nos visitan.</p>
-    <a class="btn btn-g" data-wa="Hola Muffin & Coffee 👋 Quiero reservar una mesa.">Reservar mesa</a>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap"><a class="btn btn-g" data-wa="Hola Muffin & Coffee 👋 Quiero reservar una mesa.">Reservar mesa</a><a class="btn btn-o" data-resena>★ Opinar en Google</a></div>
   </div>
 </div>
+
+<section data-opinion id="opinion" class="rv" style="--op-bg:#16110c;--op-tx:#ece3d3;--op-acc:#c9a15a;--op-font:'Cormorant Garamond',serif;--op-off:rgba(236,227,211,.18)"></section>
 
 <section class="visit" id="visitanos">
   <div class="wrap">
@@ -225,8 +227,8 @@ footer a{color:var(--oro)}
 </footer>
 
 <script>window.MC_BASE="../";</script>
-<script src="../assets/data.js"></script>
-<script src="../assets/common.js"></script>
+<script src="../assets/data.js?v=2"></script>
+<script src="../assets/common.js?v=2"></script>
 <script>
 document.querySelectorAll('.ico').forEach(s=>s.outerHTML=mcWaIcon);
 mcSlides('#slides',['nata-bandeja','terraza-girasoles','nata-cafe','olnardy-horneando','pizza-gourmet']);
